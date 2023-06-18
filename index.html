@@ -62,11 +62,11 @@
     <div class="col-lg-6">
     </div>
     <h2>Sobre Mí</h2>
-    <p>Soy Inés.Mi constante curiosidad por las nuevas tecnologías hizo que llegara hasta aquí.Soy una persona
-      positiva,perseverante y resolutiva.Siempre me han gustado los retos y creo que no hay reto mayor,que lanzarse de
-      cabeza por tus sueños.El desarrollo web es la oportunidad para dar lo mejor de mí.Desde pequeña supe que los
-      límites no te los pone el mundo,sino tu misma...si tienes el poder de superarlos,vete a por ello.Pero cualquier
-      reto lleva consigo la preparación,la formación y la práctica.Me gusta la lectura,los buenos debates y formar parte
+    <p>Soy Inés. Mi constante curiosidad por las nuevas tecnologías hizo que llegara hasta aquí. Soy una persona
+      positiva,perseverante y resolutiva. Siempre me han gustado los retos y creo que no hay reto mayor,que lanzarse de
+      cabeza por tus sueños. El desarrollo web es la oportunidad para dar lo mejor de mí. Desde pequeña supe que los
+      límites no te los pone el mundo,sino tu misma...si tienes el poder de superarlos,vete a por ello. Pero cualquier
+      reto lleva consigo la preparación,la formación y la práctica. Me gusta la lectura,los buenos debates y formar parte
       de las grandes oportunidades.¡Sería genial formar parte de tu equipo!</p>
     <!--<div class="row">
       <div class="col-lg-6"> -->
@@ -181,26 +181,34 @@
 
   <!-- Sección de Contacto -->
   <section class="container py-5" id="contact">
-    <img src="imagenes/INES_contacto.png" alt="Ines_contacto">
-    <h2 class="mb-4">Contacto</h2>
-    <form id="form">
-      <div class="mb-3 field">
-        <label for="form_name" class="form-label" id="label-input">Nombre</label>
-        <input type="text" name="from_name" class="form-control" id="form_name">
+    <div class="row">
+      <div class="col-lg-6 order-lg-2">
+        <img src="imagenes/INES_contacto.png" alt="Ines_contacto" class="img-fluid">
       </div>
-
-      <div class="mb-3 field">
-        <label name="email_id" for="email_id" class="form-label" id="label-input">Email</label>
-        <input type="email" name="email_id" class="form-control" id="email_id">
+      <div class="col-lg-6 order-lg-1">
+        <h2 class="mb-4">Contacto</h2>
+        <form id="form">
+          <div class="mb-3 field">
+            <label for="form_name" class="form-label" id="label-input">Nombre</label>
+            <input type="text" name="from_name" class="form-control" id="form_name">
+          </div>
+  
+          <div class="mb-3 field">
+            <label name="email_id" for="email_id" class="form-label" id="label-input">Email</label>
+            <input type="email" name="email_id" class="form-control" id="email_id">
+          </div>
+          <div class="mb-3 field">
+            <label for="message" class="form-label" id="label-input">Mensaje</label>
+            <textarea name="message" id="message" rows="5" class="form-control"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" id="button" value="Send Email">Enviar</button>
+        </form>
       </div>
-      <div class="mb-3 field">
-        <label for="message" class="form-label" id="label-input">Mensaje</label>
-        <textarea name="message" id="message" rows="5" class="form-control"></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary" id="button" value="Send Email">Enviar</button>
-    </form>
+    </div>
   </section>
-
+  
+  
+  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="script.js"></script>
 </body>
