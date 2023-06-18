@@ -1,0 +1,12 @@
+body{
+    background-color: rgb(248, 232, 208);
+   
+}
+section{
+    text-align: center;
+}
+#form{
+    width: 700px;
+    position: relative;
+    margin-left: 300px;
+}
