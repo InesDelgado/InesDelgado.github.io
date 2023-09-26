@@ -1,10 +1,15 @@
-body{
-    background-color: rgb(248, 232, 208);
-   
-}
+body {
+    background-image: url('imagenes/cabecera_nueva.jpg');
+    background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-attachment: fixed; /* Mantiene la imagen fija mientras se desplaza la página */
+  }
+  
 section{
     text-align: center;
 }
+
+  
 
 
 
