@@ -1,13 +1,65 @@
 body {
-    background-image: url('imagenes/cabecera_nueva.jpg');
-    background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    background-attachment: fixed; /* Mantiene la imagen fija mientras se desplaza la página */
-  }
-  
-section{
-    text-align: center;
+  background-image: url('imagenes/portatil_rosa.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: 'exo', sans-serif;
 }
+
+
+section {
+  text-align: center;
+}
+
+ p {
+  color: bisque;
+ 
+}
+h5{
+  color:whitesmoke;
+  
+}
+
+#form {
+  color: bisque;
+}
+
+a {
+  color: rgb(32, 30, 30);
+}
+
+/* Estilos para los botones de tecla de ordenador */
+.computer-key-button {
+  background-color: #f5f5f5;
+  border: 3px solid #ccc; /* Aumentamos el ancho del borde a 2px */
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-color: #999; /* Agregamos el color de borde gris */
+  font-family: 'exo', sans-serif;
+}
+
+.computer-key-button:hover {
+  background-color: #ddd;
+}
+
+/* Estilos para el icono de flecha */
+.computer-key-button .keyboard-icon {
+  font-size: 20px;
+  margin-left: 10px;
+  color: #555;
+}
+
+
+
+
 
   
 
