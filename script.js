@@ -19,10 +19,11 @@ document.getElementById('form')
       alert(JSON.stringify(err));
     });
 });
+//para cerrar la pestaña de busqueda en dispositivo movil
 $(document).ready(function() {
-  // Escuchar el clic en un enlace de navegación
+
   $(".navbar-nav a.nav-link").on("click", function() {
-    // Obtener el atributo href del enlace
+
     var target = $(this).attr("href");
 
     // Desplazarse a la sección correspondiente con animación
