@@ -19,3 +19,19 @@ document.getElementById('form')
       alert(JSON.stringify(err));
     });
 });
+$(document).ready(function() {
+  // Escuchar el clic en un enlace de navegación
+  $(".navbar-nav a.nav-link").on("click", function() {
+    // Obtener el atributo href del enlace
+    var target = $(this).attr("href");
+
+    // Desplazarse a la sección correspondiente con animación
+    $("html, body").animate({
+      scrollTop: $(target).offset().top
+    }, 800); // El número 800 es la duración de la animación en milisegundos
+
+    // Cerrar la pestaña de navegación en dispositivos móviles
+    $(".navbar-toggler").addClass("collapsed");
+    $("#navbarNav").removeClass("show");
+  });
+});
