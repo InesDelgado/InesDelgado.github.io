@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tu Página de Explicación de Código</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
+    <link rel="stylesheet" href="Como se hizo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@300;400;500;700&display=swap" rel="stylesheet">
+    </head>
+    <body data-spy="scroll" data-target="#navbarNav">
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-primary fixed-top"> <!-- Agregamos la clase fixed-top -->
             <div class="container">
                 <a class="navbar-brand" href="#">Mi Explicación de Código</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,13 +19,13 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#inicio">Inicio</a>
+                            <a class="nav-link" href="#inicio">¿Cómo he realizado esta página web?</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#codigo">Mi Código</a>
+                            <a class="nav-link" href="#codigo">Creación del código</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#explicacion">Explicación</a>
+                            <a class="nav-link" href="#Bootstrap">Diseño de la web</a>
                         </li>
                     </ul>
                 </div>
@@ -36,22 +38,53 @@
             <h1>Bienvenido a mi página de explicación de código</h1>
             <p>Aquí explicaré cómo he realizado mi código y los conceptos detrás de él.</p>
         </section>
-    
-        <section id="codigo">
-            <h2>Mi Código</h2>
-            <!-- Coloca tu código aquí -->
+    <section id="codigo">
+            <h2>¿Cómo he realizado esta página web?</h2>
+            <p> La página web la he realizado desde cero utilizando un editor de código de fuentes llamado. Visual Code (VS Code). Este software fue desarrollado por Microsoft.</p>
+            <div class="Vs_Code">
+                <img src="imagenes/VS code.png" class="VS_code" alt="icono_vs" style="max-width: 100px;" >   
+            </div>
+
+            <p> Es un software libre y multiplataforma. Está disponible para Window, GNU/Linux y macOS. </p>
+            <p>La elección de este software lo basé porque cuenta con soporte para depuración de código, y dispone de múltiple número de extensiones, que básicamente te da la posibilidad de escribir y ejecutar código en cualquier lenguaje de programación.</p>
         </section>
     
-        <section id="explicacion">
-            <h2>Explicación</h2>
-            <!-- Escribe tus explicaciones aquí -->
+        <section id="Bootstrap">
+            <h5>Creación del código</h5>
+            <p> Para la realización del código me he apoyado en un framework llamado Bootstrap. Este framework de desarrollo web es de código abierto y está diseñado para facilitar el proceso de desarrollo de los sitios web responsivos.</p>
+            <div class="bootstrap_img">
+                <img src="imagenes/Bootstrap_logo.svg.png" class="bootstrap" alt="icono_bootstrap" style="max-width: 100px;" >   
+            </div>
+
+            <p>Bootstrap consta de scrips basados en HTML, CSS y JS y por tanto,podía demostrar mi dominio de habilidades en desarrollo web</p>
+        </section>
+        <section id="diseño">
+            <h5> Diseño de la web</h5>
+            <p>Hice un estudio de experiencia de usuario, para que mi página web fuera ágil, ligera y legible.Buscaba que el usuario interactuara con diferentes enlaces, pero a la vez la información fuera clara y concisa</p>
+            <p>Otra de mis prioridades era un diseño actual y enfocado a mi profesión. Me apoyé en Canvas que es una herramienta de diseño gráfico, proporciona ideas y soportes y luego, en la personalización de sus productos,puedes demostrar tu valía y conocimientos en diseño web y diseño de interfaz</p>
+            <div class="css_img">
+                <img src="imagenes/logo_css.png" class="css_imagen" alt="icono_css" style="max-width: 100px;" >   
+            </div>
+            <p> Para la personalización de estilos cree enlaces a las propiedades del framework. Para ello, usé el lenguaje CSS con un script donde desararrollé mis diseños.</p>
+        </section>
+        <section id="Final">
+            <h6 class="final_pagina">¡Esto solo una muestra...un aperitivo a todo lo que está por venir!</h6>
+
         </section>
     </main>
     
     <footer class="bg-dark text-light text-center py-3">
-        <p>&copy; 2023 Tu Nombre</p>
+        <p>&copy; Ines Delgado </p>
+        <p>Desarrolladora full stack y multiplataforma</p>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script>
+        // JavaScript para cerrar automáticamente el menú de navegación en dispositivos móviles
+        $('.navbar-nav a').on('click', function(){
+            $('.navbar-collapse').collapse('hide');
+        });
+    </script>
 </body>
 </html>
     
