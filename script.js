@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
         { value: '10px', duration: 100, easing: 'easeInOutSine' },
         { value: '0', duration: 100, easing: 'easeInOutSine' }
       ],
-      loop: 5, // Repite la animación 3 veces
+      loop: 6, // Repite la animación 6 veces
     });
   });
 
