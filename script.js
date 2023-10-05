@@ -148,7 +148,7 @@ inicioLink.addEventListener('click', function(event) {
   const headerOffset = cabecera.getBoundingClientRect().top + window.scrollY;
   window.scrollTo({
     top: headerOffset,
-    behavior: 'smooth' // Agrega un desplazamiento suave
+    behavior: 'smooth' // Agrega un desplazamiento suave (se puede mofificar)
   });
 });
 
