@@ -84,6 +84,28 @@ document.addEventListener('DOMContentLoaded', function() {
       loop: 6, // Repite la animación 6 veces
     });
   });
+  document.addEventListener('DOMContentLoaded', function() {
+    // Obtén el enlace de "Inicio" por su id
+    const inicioLink = document.getElementById('inicio-link');
+  
+    // Agrega un evento de clic al enlace de "Inicio"
+    inicioLink.addEventListener('click', function(event) {
+      // Evita que el enlace se comporte como un enlace normal y recargue la página
+      event.preventDefault();
+  
+      // Selecciona la cabecera por su clase CSS
+      const cabecera = document.querySelector('header');
+  
+      // Elimina la clase de animación actual
+      cabecera.classList.remove('animate__animated', 'animate__bounceInLeft');
+  
+      // Agrega la clase de animación nuevamente para reiniciarla
+      setTimeout(function() {
+        cabecera.classList.add('animate__animated', 'animate__bounceInLeft');
+      }, 10); // Puedes ajustar el tiempo según tu preferencia
+    });
+  });
+  
 
 
 
