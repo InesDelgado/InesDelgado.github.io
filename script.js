@@ -62,5 +62,33 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+  // Selecciona el enlace de "Contacto" en la barra de navegación
+  const contactoLink = document.querySelector('a[href="#contact"]');
+
+  // Selecciona el elemento <h3> en la sección de contacto
+  const contactHeading = document.getElementById('contact-heading');
+
+  // Agrega un evento de clic al enlace de "Contacto"
+  contactoLink.addEventListener('click', (event) => {
+    // Evita que el enlace se comporte como un enlace normal
+    event.preventDefault();
+
+    // Agrega la clase CSS para la animación (utilizando anime.js)
+    anime({
+      targets: contactHeading,
+      translateX: [
+        { value: '-10px', duration: 100, easing: 'easeInOutSine' },
+        { value: '10px', duration: 100, easing: 'easeInOutSine' },
+        { value: '0', duration: 100, easing: 'easeInOutSine' }
+      ],
+      loop: 5, // Repite la animación 3 veces
+    });
+  });
+
+
+
+
+
+
 
 
