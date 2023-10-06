@@ -43,7 +43,7 @@ $(document).ready(function() {
     $(this).addClass('animate__animated animate__bounce'); // Agrega una animación al hacer clic
     setTimeout(function() {
       $('.nav-link').removeClass('animate__animated animate__bounce'); // Elimina la animación después de un tiempo
-    }, 3000); // Cambia esto según la duración de tu animación
+    }, 3000); // duración de la animación
   });
 });
 
@@ -90,7 +90,7 @@ contactoLink.addEventListener('click', (event) => {
           animationCount++;
 
           // Si se completaron las 6 repeticiones, detener la animación
-          if (animationCount >= 6) {
+          if (animationCount >= 8) {
             isAnimating = false;
           } else {
             // Iniciar la siguiente repetición
@@ -124,7 +124,7 @@ sobreMiLink.addEventListener('click', (event) => {
     sobreMiElements.forEach((element) => {
       element.classList.add('animate__animated', 'animate__bounce');
     });
-  }, 45); // Puedes ajustar el tiempo según tu preferencia
+  }, 55); // Puedes ajustar el tiempo según tu preferencia
 });
 
 // Agregar un evento de clic al enlace de "Inicio" para volver a la cabecera
