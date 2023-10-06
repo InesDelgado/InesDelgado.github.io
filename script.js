@@ -43,7 +43,7 @@ $(document).ready(function() {
     $(this).addClass('animate__animated animate__bounce'); // Agrega una animación al hacer clic
     setTimeout(function() {
       $('.nav-link').removeClass('animate__animated animate__bounce'); // Elimina la animación después de un tiempo
-    }, 1000); // Cambia esto según la duración de tu animación
+    }, 3000); // Cambia esto según la duración de tu animación
   });
 });
 
