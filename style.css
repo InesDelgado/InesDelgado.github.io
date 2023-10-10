@@ -12,20 +12,20 @@ section {
 }
 
  p {
-  color: bisque;
+  color: whitesmoke;
  
 }
-h5{
+h5, h2, h3,h4{
   color:whitesmoke;
   
 }
 
 #form {
-  color: bisque;
+  color:whitesmoke;
 }
 
 a {
-  color: rgb(32, 30, 30);
+  color: whitesmoke;
 }
 
 /* Estilos para los botones de tecla de ordenador */
