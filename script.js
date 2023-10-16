@@ -107,11 +107,7 @@ contactoLink.addEventListener('click', (event) => {
 
 // Agrega un evento de clic al enlace "Sobre Mí" en la barra de navegación
 const sobreMiLink = document.querySelector('a.sobre-mi-link');
-
-sobreMiLink.addEventListener('click', (event) => {
-  event.preventDefault();
-
-  // Selecciona los elementos dentro de la sección "Sobre Mí" a los que deseas aplicar el efecto de rebote
+ // Selecciona los elementos dentro de la sección "Sobre Mí" a los que deseas aplicar el efecto de rebote
   const sobreMiElements = document.querySelectorAll('.animate__animated');
 
   // Elimina la clase de animación actual de los elementos
