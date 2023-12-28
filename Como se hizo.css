@@ -1,7 +1,27 @@
 body{
     font-family: 'exo', sans-serif;
-    background-color:rgb(230, 191, 213);
+    background:url('imagenes/portatil_rosa.jpg');
 }
   .final_pagina{
     text-align: center;
+  }
+  section {
+    text-align: center;
+  }
+  
+   p {
+    color: whitesmoke;
+   
+  }
+  h5, h2, h3,h4{
+    color:whitesmoke;
+    
+  }
+  
+  #form {
+    color:whitesmoke;
+  }
+  
+  h1 {
+    color:whitesmoke;
   }
