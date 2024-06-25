@@ -5,23 +5,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portafolio de Inés Delgado Marketing Digital_Desarrolladora Web</title>
-  <!-- IMPORTANTE: SCRIPT PARA EL EMAILJS!!! -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
- <script type="text/javascript">
-  emailjs.init('rL8ykZfSvn7FSF7va');
-</script>
 
-  <!-- IMPORTANTE: CSS PARA BOOTSTRAP!!! -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Exo:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+  <!-- Bootstrap Bundle con Popper.js -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"></script>
+
   <style>
     /* Estilo para la sección de cabecera */
     header {
-      /*background-image: url(imagenes/market_cab.jpg);
-      /* Cambia 'ruta_de_tu_imagen.jpg' por la ruta de tu imagen */
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
@@ -31,7 +28,7 @@
     header h3,
     header p {
       color: rgb(12, 249, 28);
-      font-family: 'exo', yellow;
+      font-family: 'Exo', sans-serif;
     }
   </style>
 </head>
@@ -48,7 +45,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link sobre-mi-link" href="#about">Sobre Mí</a>
+            <a class="nav-link" href="#about">Sobre Mí</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#projects">Formación</a>
@@ -73,17 +70,6 @@
       <h3 class="lead animate__animated animate__fadeIn">Marketing digital y Presencia en redes</h3>
       <h3 class="lead animate__animated animate__fadeIn">Desarrollo web multiplataforma</h3>
     </div>
-    <!-- <div class="container">PARA PONER MI TARJETA DE VISITA
-        <div class="row">
-          <div class="col-md-6">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" id="id-postcard" class="bi bi-postcard" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2ZM1 4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4Zm7.5.5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7ZM2 5.5a.5.5 0 0 1 .5-.5H6a.5.5 0 0 1 0 1H2.5a.5.5 0 0 1-.5-.5Zm0 2a.5.5 0 0 1 .5-.5H6a.5.5 0 0 1 0 1H2.5a.5.5 0 0 1-.5-.5Zm0 2a.5.5 0 0 1 .5-.5H6a.5.5 0 0 1 0 1H2.5a.5.5 0 0 1-.5-.5ZM10.5 5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3ZM13 8h-2V6h2v2Z"/>
-            </svg>
-          </div>
-        </div>
-      </div> -->
-
-
   </header>
   <!-- Sección de Sobre Mí -->
   <section class="container py-5" id="about">
@@ -182,122 +168,127 @@
     <h2 class="mb-4 text-center">Mis proyectos</h2>
     <div class="row justify-content-center">
     </section> -->
-    <!-- Seccion habilidades -->
-    <section class="container py-5" id="skills">
-      <h2 class="mb-4 text-center">Habilidades</h2>
-      <div class="row justify-content-center">
-        <!-- Fila 1 - Cuatro elementos centrados -->
-        <div class="col-lg-3 col-md-6 col-sm-12 text-center">
-          <div class="btn-group-vertical">
-            <button type="button" class="btn btn-light computer-key-button animated btn-bounce"
-              data-bs-toggle="collapse" data-bs-target="#htmlInfo" aria-expanded="false">
-              HTML
-            </button>
-            <div id="htmlInfo" class="collapse">
-              <p>Conocimiento en el desarrollo y diseño de páginas web utilizando HTML5</p>
-              <p>Conocimiento de etiquetas y atributos HTML</p>
-              <p>Competencia en la estructura semántica de HTML para lograr mayor usabilidad</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12 text-center">
-          <div class="btn-group-vertical">
-            <button type="button" class="btn btn-light computer-key-button animated btn-bounce"
-              data-bs-toggle="collapse" data-bs-target="#cssInfo" aria-expanded="false">
-              CSS
-            </button>
-            <div id="cssInfo" class="collapse">
-              <p>Conocimiento en la selección y aplicación de estilos a través de selectores, clases e identificadores
-              </p>
-              <p>Conocimiento de la cascada y la especificidad de CSS para lograr las prioridades adecuadas en la
-                aplicación de estilos</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12 text-center">
-          <div class="btn-group-vertical">
-            <button type="button" class="btn btn-light computer-key-button animated btn-bounce"
-              data-bs-toggle="collapse" data-bs-target="#javascriptInfo" aria-expanded="false">
-              JavaScript
-            </button>
-            <div id="javascriptInfo" class="collapse">
-              <p>Programación básica: variables, tipos de datos, estructuras de control, funciones.</p>
-              <p>Conocimiento de async/await, interacción con elementos HTML, cambios dinámicos en la página, gestión de
-                datos con uso de archivos JSON</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12 text-center">
-          <div class="btn-group-vertical">
-            <button type="button" class="btn btn-light computer-key-button animated btn-bounce"
-              data-bs-toggle="collapse" data-bs-target="#cSharpInfo" aria-expanded="false">
-              C#
-            </button>
-            <div id="cSharpInfo" class="collapse">
-              <p>Conocimiento de programación orientada a objetos clases, objetos, herencia, polimorfismo, encapsulación
-              </p>
-              <p>Estructuras de control: Bucles y condicionales</p>
-              <p>Acceso a base de datos relacionales y servicios web Api con ASP.NET</p>
-            </div>
-          </div>
+<!-- Sección habilidades -->
+<section class="container py-5" id="skills">
+  <h2 class="mb-4 text-center">Habilidades</h2>
+  <div class="row justify-content-center">
+    <!-- HTML -->
+    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+      <div class="btn-group-vertical">
+        <button type="button" class="btn btn-light computer-key-button animated btn-bounce" data-bs-toggle="collapse"
+          data-bs-target="#htmlInfo" aria-expanded="false">
+          HTML
+        </button>
+        <div id="htmlInfo" class="collapse">
+          <p>Conocimiento en el desarrollo y diseño de páginas web utilizando HTML5</p>
+          <p>Conocimiento de etiquetas y atributos HTML</p>
+          <p>Competencia en la estructura semántica de HTML para lograr mayor usabilidad</p>
         </div>
       </div>
-      <!-- Segunda fila - Cuatro elementos centrados -->
-      <div class="row mt-3 justify-content-center">
-        <!-- Cuatro elementos de la quinta habilidad (Dart y Flutter) -->
-        <div class="col-lg-3 col-md-6 col-sm-12 text-center">
-          <div class="btn-group-vertical">
-            <button type="button" class="btn btn-light computer-key-button animated btn-bounce"
-              data-bs-toggle="collapse" data-bs-target="#dartFlutterInfo" aria-expanded="false">
-              Dart y Flutter
-            </button>
-            <div id="dartFlutterInfo" class="collapse">
-              <p>Formación y prácticas en marketing digital</p>
-              <p>Conocimiento del Framework Flutter para la creación de páginas web y aplicaciones multiplataformas con
-                lenguaje Dart</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12 text-center">
-          <div class="btn-group-vertical">
-            <button type="button" class="btn btn-light computer-key-button animated btn-bounce"
-              data-bs-toggle="collapse" data-bs-target="#mysqlInfo" aria-expanded="false">
-              Gestión de equipos
-            </button>
-            <div id="mysqlInfo" class="collapse">
-              <p>Organzización de estrategias comerciales</p>
-              <p>Conocimientos de datos y optimización de consultas</p>
-              <p>Presentación de proyectos y estudios de presencia en la red</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12 text-center">
-          <div class="btn-group-vertical">
-            <button type="button" class="btn btn-light computer-key-button animated btn-bounce"
-              data-bs-toggle="collapse" data-bs-target="#wordpressBootstrapInfo" aria-expanded="false">
-              Wordpress y Bootstrap
-            </button>
-            <div id="wordpressBootstrapInfo" class="collapse">
-              <p>Conocimiento en la creación de páginas web con WordPress</p>
-              <p>Conocimiento del Framework Bootstrap para la creación de páginas web</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12 text-center">
-          <div class="btn-group-vertical">
-            <button type="button" class="btn btn-light computer-key-button animated btn-bounce"
-              data-bs-toggle="collapse" data-bs-target="#otrasHabilidadesInfo" aria-expanded="false">
-              Capacidades
-            </button>
-            <div id="otrasHabilidadesInfo" class="collapse">
-              <p>Liderazgo y experiencia en gestión de equipos de trabajo</p>
-              <p>Amplia experiencia en Marketing ... Hago que tus ideas digitales sean una realidad</p>
-              <p>Capacidad de adaptación a los cambios y nuevos retos</p>
-            </div>
-          </div>
+    </div>
+    <!-- CSS -->
+    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+      <div class="btn-group-vertical">
+        <button type="button" class="btn btn-light computer-key-button animated btn-bounce" data-bs-toggle="collapse"
+          data-bs-target="#cssInfo" aria-expanded="false">
+          CSS
+        </button>
+        <div id="cssInfo" class="collapse">
+          <p>Conocimiento en la selección y aplicación de estilos a través de selectores, clases e identificadores</p>
+          <p>Conocimiento de la cascada y la especificidad de CSS para lograr las prioridades adecuadas en la aplicación
+            de estilos</p>
         </div>
       </div>
-    </section>
+    </div>
+    <!-- JavaScript -->
+    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+      <div class="btn-group-vertical">
+        <button type="button" class="btn btn-light computer-key-button animated btn-bounce" data-bs-toggle="collapse"
+          data-bs-target="#javascriptInfo" aria-expanded="false">
+          JavaScript
+        </button>
+        <div id="javascriptInfo" class="collapse">
+          <p>Programación básica: variables, tipos de datos, estructuras de control, funciones.</p>
+          <p>Conocimiento de async/await, interacción con elementos HTML, cambios dinámicos en la página, gestión de
+            datos con uso de archivos JSON</p>
+        </div>
+      </div>
+    </div>
+    <!-- C# -->
+    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+      <div class="btn-group-vertical">
+        <button type="button" class="btn btn-light computer-key-button animated btn-bounce" data-bs-toggle="collapse"
+          data-bs-target="#cSharpInfo" aria-expanded="false">
+          C#
+        </button>
+        <div id="cSharpInfo" class="collapse">
+          <p>Conocimiento de programación orientada a objetos clases, objetos, herencia, polimorfismo, encapsulación</p>
+          <p>Estructuras de control: Bucles y condicionales</p>
+          <p>Acceso a base de datos relacionales y servicios web Api con ASP.NET</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-3 justify-content-center">
+    <!-- Dart y Flutter -->
+    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+      <div class="btn-group-vertical">
+        <button type="button" class="btn btn-light computer-key-button animated btn-bounce" data-bs-toggle="collapse"
+          data-bs-target="#dartFlutterInfo" aria-expanded="false">
+          Dart y Flutter
+        </button>
+        <div id="dartFlutterInfo" class="collapse">
+          <p>Formación y prácticas en marketing digital</p>
+          <p>Conocimiento del Framework Flutter para la creación de páginas web y aplicaciones multiplataformas con
+            lenguaje Dart</p>
+        </div>
+      </div>
+    </div>
+    <!-- Gestión de equipos -->
+    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+      <div class="btn-group-vertical">
+        <button type="button" class="btn btn-light computer-key-button animated btn-bounce" data-bs-toggle="collapse"
+          data-bs-target="#gestionEquiposInfo" aria-expanded="false">
+          Gestión de equipos
+        </button>
+        <div id="gestionEquiposInfo" class="collapse">
+          <p>Organización de estrategias comerciales</p>
+          <p>Conocimientos de datos y optimización de consultas</p>
+          <p>Presentación de proyectos y estudios de presencia en la red</p>
+        </div>
+      </div>
+    </div>
+    <!-- WordPress y Bootstrap -->
+    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+      <div class="btn-group-vertical">
+        <button type="button" class="btn btn-light computer-key-button animated btn-bounce" data-bs-toggle="collapse"
+          data-bs-target="#wordpressBootstrapInfo" aria-expanded="false">
+          WordPress y Bootstrap
+        </button>
+        <div id="wordpressBootstrapInfo" class="collapse">
+          <p>Conocimiento en la creación de páginas web con WordPress</p>
+          <p>Conocimiento del Framework Bootstrap para la creación de páginas web</p>
+        </div>
+      </div>
+    </div>
+    <!-- Marketing y Venta de ideas -->
+    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+      <div class="btn-group-vertical">
+        <button type="button" class="btn btn-light computer-key-button animated btn-bounce" data-bs-toggle="collapse"
+          data-bs-target="#marketingVentaInfo" aria-expanded="false">
+          Marketing y Venta de ideas
+        </button>
+        <div id="marketingVentaInfo" class="collapse">
+          <p>Liderazgo y experiencia en gestión de equipos de trabajo</p>
+          <p>Amplia experiencia en Marketing ... Hago que tus ideas digitales sean una realidad</p>
+          <p>Capacidad de adaptación a los cambios y nuevos retos</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
   <!-- Sección de Contacto -->
   <section class="container py-5" id="contact">
@@ -317,6 +308,8 @@
       </div>
     </div>
   </section>
+
 </body>
+
 
 </html>
