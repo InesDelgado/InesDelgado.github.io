@@ -8,9 +8,10 @@
   <!-- IMPORTANTE: SCRIPT PARA EL EMAILJS!!! -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script type="text/javascript">
-    emailjs.init('rL8ykZfSvn7FSF7va')
-  </script>
+ <script type="text/javascript">
+  emailjs.init('rL8ykZfSvn7FSF7va');
+</script>
+
   <!-- IMPORTANTE: CSS PARA BOOTSTRAP!!! -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
@@ -19,21 +20,22 @@
   <style>
     /* Estilo para la sección de cabecera */
     header {
-      background-image: url(imagenes/teclado_color_fluor.jpg); /* Cambia 'ruta_de_tu_imagen.jpg' por la ruta de tu imagen */
+      /*background-image: url(imagenes/market_cab.jpg);
+      /* Cambia 'ruta_de_tu_imagen.jpg' por la ruta de tu imagen */
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
     }
-  
+
     /* Estilo para el texto en la sección de cabecera */
-    header h2,
+    header h3,
     header p {
-      color:white;
-      font-family: 'exo', white;
+      color: rgb(12, 249, 28);
+      font-family: 'exo', yellow;
     }
-  
   </style>
 </head>
+
 <body>
   <!-- Barra de navegación -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -44,19 +46,15 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav ms-auto">
           <li class="nav-item">
             <a class="nav-link sobre-mi-link" href="#about">Sobre Mí</a>
           </li>
           <li class="nav-item">
-          <li class="nav-item">
             <a class="nav-link" href="#projects">Formación</a>
-            <!--PENDIENTE A COLOCAR MIS PROYECTOS!!!
-            <li class="nav-item"> 
-              <a class="nav-link" href="#new-projects">Mis proyectos</a>
-          </li> -->
           </li>
-          <a class="nav-link" href="#skills">Habilidades</a>
+          <li class="nav-item">
+            <a class="nav-link" href="#skills">Habilidades</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#contact">Contacto</a>
@@ -65,16 +63,17 @@
       </div>
     </div>
   </nav>
-
   <!-- Sección de Cabecera -->
   <header class="text-white text-center py-5">
     <div class="container">
       <br>
-      <h2 class="display-4 animate__animated animate__bounceInLeft">Inés Delgado</h2>
-      <h3 class="display-8 animate__animated animate__bounceInLeft">Desarrolladora Web Full Stack</h3>
-      <h3 class="lead animate__animated animate__fadeIn">Desarrolladora de aplicaciones multiplataforma en Android e iOS con Flutter y DART</h3>
-      </div>
-      <!-- <div class="container">PARA PONER MI TARJETA DE VISITA
+      <h1 class="display-4 animate__animated animate__bounceInLeft">Inés Delgado</h1>
+      <h3 class="display-8 animate__animated animate__bounceInLeft">Impulso digital, Venta de ideas y Organización de
+        equipos</h3>
+      <h3 class="lead animate__animated animate__fadeIn">Marketing digital y Presencia en redes</h3>
+      <h3 class="lead animate__animated animate__fadeIn">Desarrollo web multiplataforma</h3>
+    </div>
+    <!-- <div class="container">PARA PONER MI TARJETA DE VISITA
         <div class="row">
           <div class="col-md-6">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" id="id-postcard" class="bi bi-postcard" viewBox="0 0 20 20">
@@ -83,16 +82,24 @@
           </div>
         </div>
       </div> -->
-      
-     
+
+
   </header>
   <!-- Sección de Sobre Mí -->
   <section class="container py-5" id="about">
     <div class="col-lg-6">
     </div>
     <h2 class="mb-4">Sobre Mí</h2>
-    <p>Tras una amplia experiencia en atención al cliente, gestión de ventas y coordinación de equipos de trabajo, decidí transformar mi mundo laboral. ¡Creo en tus ideas y las hago creer! Ofrezco mis servicios como Marketing Digital, Gestora de Proyectos y desarrolladora web. ¡Sería genial formar parte de tu equipo! Conmigo tienes garantía de presencia en la red, creciemiento, compromiso y trabajo en equipo.</p>
-    <a href="https://www.linkedin.com/in/mar%C3%ADa-in%C3%A9s-delgado-hern%C3%A1ndez-56728b252/" title="Linkedin" class="btn btn-secondary animate__animated animate__bounce">
+    <p class="strong">Después de una sólida experiencia en marketing y gestión de ventas, decidí dar un giro a mi
+      carrera y sumergirme en el
+      apasionante mundo del desarrollo web full stack y multiplataforma.
+
+      Hoy en día, combino mis habilidades en marketing y ventas con mi formación como desarrolladora web, creando un
+      enfoque
+      único y versátil en mi trabajo. Soy una verdadera creyente en el poder de las ideas, capaz de venderlas y hacerlas
+      crecer, mientras convivo con las complejidades del desarrollo web para dar vida a proyectos innovadores.</p>
+    <a href="https://www.linkedin.com/in/mar%C3%ADa-in%C3%A9s-delgado-hern%C3%A1ndez-56728b252/" title="Linkedin"
+      class="btn btn-secondary animate__animated animate__bounce">
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-linkedin"
         viewBox="0 0 16 16">
         <path
@@ -100,14 +107,15 @@
       </svg>
     </a>
 
-    <a href="https://github.com/InesDelgado" title="GitHub" class="btn btn-secondary animate__animated animate__bounce">
+    <!--<a href="https://github.com/InesDelgado" title="GitHub" class="btn btn-secondary animate__animated animate__bounce">
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-github"
         viewBox="0 0 16 16">
         <path
           d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-      </svg>
+      </svg>-->
     </a>
-    <a href="imagenes/CV_Ines_TEC.pdf" title="Curriculum Vitae" class="btn btn-secondary animate__animated animate__bounce">
+    <a href="imagenes/CV_Ines_TEC.pdf" title="Curriculum Vitae"
+      class="btn btn-secondary animate__animated animate__bounce">
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-file-person"
         viewBox="0 0 16 16">
         <path
@@ -115,9 +123,12 @@
         <path d="M8 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
       </svg>
     </a>
-    <a href="imagenes/CV_InesDelgado_Europass.pdf" title="Curriculum Europass"  class="btn btn-secondary animate__animated animate__bounce">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-person-fill" viewBox="0 0 16 16">
-        <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0zm2 5.755V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-.245S4 12 8 12s5 1.755 5 1.755z"/>
+    <a href="imagenes/CV_InesDelgado_Europass.pdf" title="Curriculum Europass"
+      class="btn btn-secondary animate__animated animate__bounce">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+        class="bi bi-file-earmark-person-fill" viewBox="0 0 16 16">
+        <path
+          d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0zm2 5.755V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-.245S4 12 8 12s5 1.755 5 1.755z" />
       </svg>
     </a>
     </div>
@@ -126,188 +137,186 @@
   <!-- Sección de Formacion -->
   <section class="container py-5" id="projects">
     <h2 class="mb-4">Formación</h2>
-    <h5>IFCD0210_Certificado de profesionalidad de desarrollo de aplicaciones con tecnologías web en INPSI Santa Cruz de Tenerife</h5>
-    <h5>IFCD35_Especializacion de desarrollo de aplicaciones móviles multiplataforma con Flutter y Dart en DYM La Laguna</h5>
+    <h5>IFCD0210_Certificado de profesionalidad de desarrollo de aplicaciones con tecnologías web en INPSI Santa Cruz de
+      Tenerife</h5>
+    <h5>IFCD35_Especializacion de desarrollo de aplicaciones móviles multiplataforma con Flutter y Dart en DYM La Laguna
+    </h5>
     <h5>Bachillerato en IES San Benito La Laguna</h5>
     <br>
     <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+        aria-expanded="false">
         Certificaciones
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
         <li></li><a href="certificaciones/Diploma_desarrollo web_1.pdf"> IFCD0210 Acreditación acción formativa</a>
         <li></li><a href="certificaciones/Diploma_desarrollo web_2.pdf">IFCD0210 Cualificación formativa</a>
         <li></li><a href="certificaciones/Diploma_POsicionamientopdf.pdf">ADGD211PO Posicionamiento en buscadores</a>
-        <li></li><a href="certificaciones/Diploma_comercio electronico.pdf">ADGG035PO Herramientas en internet: Comercio Electrónico</a>
+        <li></li><a href="certificaciones/Diploma_comercio electronico.pdf">ADGG035PO Herramientas en internet: Comercio
+          Electrónico</a>
         <li></li><a href="certificaciones/diploma_facua_ciberseguridad.pdf">Acción formativa Ciberseguridad</a>
         <li></li><a href="certificaciones/seguridad_ciberseguridad_google.pdf">Ciberseguridad en el trabajo</a>
         <li></li><a href="certificaciones/introduccion_desarrollo_web.pdf">Introducción al desarrollo web</a>
         <li></li><a href="certificaciones/diploma_cloud_computing (56).pdf">Cloud computing</a>
         <li></li><a href="certificaciones/diploma_desarrollo_apps_moviles.pdf">Desarrollo apps moviles</a>
-        <li></li><a href="certificaciones/freecodecamp_certificado.pdf">Certificación Freecodecamp Responsive Web Design </a>
+        <li></li><a href="certificaciones/freecodecamp_certificado.pdf">Certificación Freecodecamp Responsive Web Design
+        </a>
       </ul>
     </div>
-</section>
- <!-- Sección de experiencia laboral -->
- <section class="container py-5" id="works">
-  <h2 class="mb-4">Experiencia laboral</h2>
-  <h5> Mas de 20 años de atención al cliente, gestión de ventas y organización de equipos de trabajo</h5>
-  <p> Amplia experiencia en diferentes puestos de responsabilidad</p>
-  <p> Altas capacidades en la atención al cliente y en trabajo de equipo</p>
-  <h5> Prácticas en la empresa X-Net Group</h5>
-  <p> Realizando mis prácticas en el equipo de desarrollo donde pude adquirir conocimientos y habilidades en la creación y mantenimiento de páginas web</p>
-  <h5> SAO (Servicios Avanzados de Opinión)</h5>
-  <p>Actualmente dentro del equipo de desarrollo de proyectos y Marketing Digital. Adquiriendo experiencia trabajando en un equipo multidisciplinar, en la creación y mantenimiento de aplicaciones web, presentación de proyectos y gestión de equipo.</p>
-  <!--Seccion mis proyectos (PENDIENTE PARA COLOCAR MIS PROYECTOS!!!)
+  </section>
+  <!-- Sección de experiencia laboral -->
+  <section class="container py-5" id="works">
+    <h2 class="mb-4">Experiencia laboral</h2>
+    <h5> Mas de 20 años de atención al cliente, gestión de ventas y organización de equipos de trabajo</h5>
+    <p> Amplia experiencia en diferentes puestos de responsabilidad</p>
+    <p> Altas capacidades en la atención al cliente y en trabajo de equipo</p>
+    <h5> Prácticas en la empresa X-Net Group</h5>
+    <p> Realizando mis prácticas en el equipo de desarrollo donde pude adquirir conocimientos y habilidades en la
+      creación y mantenimiento de páginas web</p>
+    <h5> SAO (Servicios Avanzados de Opinión)</h5>
+    <p>Desarrollo de Proyectos y Marketing Digital. Adquiriendo experiencia trabajando
+      en un equipo multidisciplinar, en la creación y mantenimiento de aplicaciones web, presentación de proyectos y
+      gestión de equipo. Venta de ideas e impulso digital.</p>
+    <!--Seccion mis proyectos (PENDIENTE PARA COLOCAR MIS PROYECTOS!!!)
   <section class="container py-5" id="new-projects"> 
     <h2 class="mb-4 text-center">Mis proyectos</h2>
     <div class="row justify-content-center">
     </section> -->
-<!-- Seccion habilidades -->
-  <section class="container py-5" id="skills">
-    <h2 class="mb-4 text-center">Habilidades</h2>
-    <div class="row justify-content-center">
-      <!-- Fila 1 - Cuatro elementos centrados -->
-      <div class="col-lg-3 col-md-6 col-sm-12 text-center">
-        <div class="btn-group-vertical">
-          <button type="button" class="btn btn-light computer-key-button animated btn-bounce" data-bs-toggle="collapse" data-bs-target="#htmlInfo" aria-expanded="false">
-            HTML
-          </button>
-          <div id="htmlInfo" class="collapse">
-            <p>Conocimiento en el desarrollo y diseño de páginas web utilizando HTML5</p>
-            <p>Conocimiento de etiquetas y atributos HTML</p>
-            <p>Competencia en la estructura semántica de HTML para lograr mayor usabilidad</p>
+    <!-- Seccion habilidades -->
+    <section class="container py-5" id="skills">
+      <h2 class="mb-4 text-center">Habilidades</h2>
+      <div class="row justify-content-center">
+        <!-- Fila 1 - Cuatro elementos centrados -->
+        <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+          <div class="btn-group-vertical">
+            <button type="button" class="btn btn-light computer-key-button animated btn-bounce"
+              data-bs-toggle="collapse" data-bs-target="#htmlInfo" aria-expanded="false">
+              HTML
+            </button>
+            <div id="htmlInfo" class="collapse">
+              <p>Conocimiento en el desarrollo y diseño de páginas web utilizando HTML5</p>
+              <p>Conocimiento de etiquetas y atributos HTML</p>
+              <p>Competencia en la estructura semántica de HTML para lograr mayor usabilidad</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+          <div class="btn-group-vertical">
+            <button type="button" class="btn btn-light computer-key-button animated btn-bounce"
+              data-bs-toggle="collapse" data-bs-target="#cssInfo" aria-expanded="false">
+              CSS
+            </button>
+            <div id="cssInfo" class="collapse">
+              <p>Conocimiento en la selección y aplicación de estilos a través de selectores, clases e identificadores
+              </p>
+              <p>Conocimiento de la cascada y la especificidad de CSS para lograr las prioridades adecuadas en la
+                aplicación de estilos</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+          <div class="btn-group-vertical">
+            <button type="button" class="btn btn-light computer-key-button animated btn-bounce"
+              data-bs-toggle="collapse" data-bs-target="#javascriptInfo" aria-expanded="false">
+              JavaScript
+            </button>
+            <div id="javascriptInfo" class="collapse">
+              <p>Programación básica: variables, tipos de datos, estructuras de control, funciones.</p>
+              <p>Conocimiento de async/await, interacción con elementos HTML, cambios dinámicos en la página, gestión de
+                datos con uso de archivos JSON</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+          <div class="btn-group-vertical">
+            <button type="button" class="btn btn-light computer-key-button animated btn-bounce"
+              data-bs-toggle="collapse" data-bs-target="#cSharpInfo" aria-expanded="false">
+              C#
+            </button>
+            <div id="cSharpInfo" class="collapse">
+              <p>Conocimiento de programación orientada a objetos clases, objetos, herencia, polimorfismo, encapsulación
+              </p>
+              <p>Estructuras de control: Bucles y condicionales</p>
+              <p>Acceso a base de datos relacionales y servicios web Api con ASP.NET</p>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-lg-3 col-md-6 col-sm-12 text-center">
-        <div class="btn-group-vertical">
-          <button type="button" class="btn btn-light computer-key-button animated btn-bounce" data-bs-toggle="collapse" data-bs-target="#cssInfo" aria-expanded="false">
-            CSS
-          </button>
-          <div id="cssInfo" class="collapse">
-            <p>Conocimiento en la selección y aplicación de estilos a través de selectores, clases e identificadores</p>
-            <p>Conocimiento de la cascada y la especificidad de CSS para lograr las prioridades adecuadas en la aplicación de estilos</p>
+      <!-- Segunda fila - Cuatro elementos centrados -->
+      <div class="row mt-3 justify-content-center">
+        <!-- Cuatro elementos de la quinta habilidad (Dart y Flutter) -->
+        <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+          <div class="btn-group-vertical">
+            <button type="button" class="btn btn-light computer-key-button animated btn-bounce"
+              data-bs-toggle="collapse" data-bs-target="#dartFlutterInfo" aria-expanded="false">
+              Dart y Flutter
+            </button>
+            <div id="dartFlutterInfo" class="collapse">
+              <p>Formación y prácticas en marketing digital</p>
+              <p>Conocimiento del Framework Flutter para la creación de páginas web y aplicaciones multiplataformas con
+                lenguaje Dart</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+          <div class="btn-group-vertical">
+            <button type="button" class="btn btn-light computer-key-button animated btn-bounce"
+              data-bs-toggle="collapse" data-bs-target="#mysqlInfo" aria-expanded="false">
+              Gestión de equipos
+            </button>
+            <div id="mysqlInfo" class="collapse">
+              <p>Organzización de estrategias comerciales</p>
+              <p>Conocimientos de datos y optimización de consultas</p>
+              <p>Presentación de proyectos y estudios de presencia en la red</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+          <div class="btn-group-vertical">
+            <button type="button" class="btn btn-light computer-key-button animated btn-bounce"
+              data-bs-toggle="collapse" data-bs-target="#wordpressBootstrapInfo" aria-expanded="false">
+              Wordpress y Bootstrap
+            </button>
+            <div id="wordpressBootstrapInfo" class="collapse">
+              <p>Conocimiento en la creación de páginas web con WordPress</p>
+              <p>Conocimiento del Framework Bootstrap para la creación de páginas web</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+          <div class="btn-group-vertical">
+            <button type="button" class="btn btn-light computer-key-button animated btn-bounce"
+              data-bs-toggle="collapse" data-bs-target="#otrasHabilidadesInfo" aria-expanded="false">
+              Capacidades
+            </button>
+            <div id="otrasHabilidadesInfo" class="collapse">
+              <p>Liderazgo y experiencia en gestión de equipos de trabajo</p>
+              <p>Amplia experiencia en Marketing ... Hago que tus ideas digitales sean una realidad</p>
+              <p>Capacidad de adaptación a los cambios y nuevos retos</p>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-lg-3 col-md-6 col-sm-12 text-center">
-        <div class="btn-group-vertical">
-          <button type="button" class="btn btn-light computer-key-button animated btn-bounce" data-bs-toggle="collapse" data-bs-target="#javascriptInfo" aria-expanded="false">
-            JavaScript
-          </button>
-          <div id="javascriptInfo" class="collapse">
-            <p>Programación básica: variables, tipos de datos, estructuras de control, funciones.</p>
-            <p>Conocimiento de async/await, interacción con elementos HTML, cambios dinámicos en la página, gestión de datos con uso de archivos JSON</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6 col-sm-12 text-center">
-        <div class="btn-group-vertical">
-          <button type="button" class="btn btn-light computer-key-button animated btn-bounce" data-bs-toggle="collapse" data-bs-target="#cSharpInfo" aria-expanded="false">
-            C#
-          </button>
-          <div id="cSharpInfo" class="collapse">
-            <p>Conocimiento de programación orientada a objetos clases, objetos, herencia, polimorfismo, encapsulación</p>
-            <p>Estructuras de control: Bucles y condicionales</p>
-            <p>Acceso a base de datos relacionales y servicios web Api con ASP.NET</p>
-          </div>
-        </div>
-      </div>
-    </div>
-   <!-- Segunda fila - Cuatro elementos centrados -->
-    <div class="row mt-3 justify-content-center">
-      <!-- Cuatro elementos de la quinta habilidad (Dart y Flutter) -->
-      <div class="col-lg-3 col-md-6 col-sm-12 text-center">
-        <div class="btn-group-vertical">
-          <button type="button" class="btn btn-light computer-key-button animated btn-bounce" data-bs-toggle="collapse" data-bs-target="#dartFlutterInfo" aria-expanded="false">
-            Dart y Flutter
-          </button>
-          <div id="dartFlutterInfo" class="collapse">
-            <p>Formación y prácticas en marketing digital</p>
-            <p>Conocimiento del Framework Flutter para la creación de páginas web y aplicaciones multiplataformas con lenguaje Dart</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6 col-sm-12 text-center">
-        <div class="btn-group-vertical">
-          <button type="button" class="btn btn-light computer-key-button animated btn-bounce" data-bs-toggle="collapse" data-bs-target="#mysqlInfo" aria-expanded="false">
-            Gestión de equipos
-          </button>
-          <div id="mysqlInfo" class="collapse">
-            <p>Organzización de estrategias comerciales</p>
-            <p>Conocimientos de datos y optimización de consultas</p>
-            <p>Presentación de proyectos y estudios de presencia en la red</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6 col-sm-12 text-center">
-        <div class="btn-group-vertical">
-          <button type="button" class="btn btn-light computer-key-button animated btn-bounce" data-bs-toggle="collapse" data-bs-target="#wordpressBootstrapInfo" aria-expanded="false">
-            Wordpress y Bootstrap
-          </button>
-          <div id="wordpressBootstrapInfo" class="collapse">
-            <p>Conocimiento en la creación de páginas web con WordPress</p>
-            <p>Conocimiento del Framework Bootstrap para la creación de páginas web</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6 col-sm-12 text-center">
-        <div class="btn-group-vertical">
-          <button type="button" class="btn btn-light computer-key-button animated btn-bounce" data-bs-toggle="collapse" data-bs-target="#otrasHabilidadesInfo" aria-expanded="false">
-            Capacidades
-          </button>
-          <div id="otrasHabilidadesInfo" class="collapse">
-            <p>Liderazgo y experiencia en gestión de equipos de trabajo</p>
-            <p>Amplia experiencia en Marketing ... Hago que tus ideas digitales sean una realidad</p>
-            <p>Capacidad de adaptación a los cambios y nuevos retos</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
   <!-- Sección de Contacto -->
   <section class="container py-5" id="contact">
     <div class="row">
+      <div class="col-lg-6 order-lg-1">
+        <!--<img src="ruta/a/tu/imagen.jpg" class="img-fluid" alt="Imagen de ejemplo">-->
+      </div>
       <div class="col-lg-6 order-lg-2">
+        <h3 id="contact-heading">¡Contacta conmigo para conocer más de mí y de mis servicios!</h3>
       <br>
+      <p style="color: yellow;">inesdelgadohernandez1977@gmail.com</p>
       <br>
-      <br>
-      <br>
-      <h3 id="contact-heading">¡Contacta conmigo para conocer más de mí y de mis servicios!</h3>
-      <br>
+        <p>Marketing digital y Soluciones Digitales para empresas</p>
         <p>Creación de páginas web y apps multiplataforma, gestión y dirección de equipos</p>
         <p>Mantenimiento y mejoras de espacios web, impulso de ideas empresariales</p>
-        <p>Marketing digital y soluciones digitales para empresas</p>
         <a href="Como se hizo.html">¿Cómo he realizado esta página web?</a>
-      </div>
-      <br>
-      <div class="col-lg-6 order-lg-1">
-        <h2 class="mb-4">Contacto</h2>
-        <form id="form">
-          <div class="mb-3 field">
-            <label for="form_name" class="form-label" id="label-input">Nombre</label>
-            <input type="text" name="from_name" class="form-control" id="form_name">
-          </div>
-  
-          <div class="mb-3 field">
-            <label name="email_id" for="email_id" class="form-label" id="label-input">Email</label>
-            <input type="email" name="email_id" class="form-control" id="email_id">
-          </div>
-          <div class="mb-3 field">
-            <label for="message" class="form-label" id="label-input">Mensaje</label>
-            <textarea name="message" id="message" rows="5" class="form-control"></textarea>
-          </div>
-          <button type="submit" class="btn btn-light" id="button" value="Send Email">Enviar</button>
-        </form>
       </div>
     </div>
   </section>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-
-  <script src="script.js"></script>
 </body>
+
 </html>

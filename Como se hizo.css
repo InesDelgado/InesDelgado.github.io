@@ -1,6 +1,6 @@
 body{
     font-family: 'exo', sans-serif;
-    background:url('imagenes/portatil_rosa.jpg');
+    background:url('imagenes/market_cab.jpg');
 }
   .final_pagina{
     text-align: center;
@@ -10,11 +10,11 @@ body{
   }
   
    p {
-    color: whitesmoke;
+    color: rgb(0, 0, 0);
    
   }
   h5, h2, h3,h4{
-    color:whitesmoke;
+    color:rgb(6, 252, 35);
     
   }
   
@@ -23,5 +23,5 @@ body{
   }
   
   h1 {
-    color:whitesmoke;
+    color:yellow;
   }
