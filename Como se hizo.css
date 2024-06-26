@@ -1,6 +1,6 @@
 body{
     font-family: 'exo', sans-serif;
-    background:url('imagenes/market_cab.jpg');
+    background:url('imagenes/cerebro.jpeg');
 }
   .final_pagina{
     text-align: center;
@@ -14,7 +14,7 @@ body{
    
   }
   h5, h2, h3,h4{
-    color:rgb(6, 252, 35);
+    color:rgb(252, 6, 88);
     
   }
   

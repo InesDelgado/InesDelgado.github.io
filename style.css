@@ -1,5 +1,5 @@
 body {
-  background-image: url('imagenes/market_cab.jpg');
+  background-image: url('imagenes/c2551225-cc26-4292-8ff2-539dea7e4a99.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -12,16 +12,23 @@ section {
 }
 
  p {
-  color: rgb(233, 192, 192);
+  color: rgb(255, 255, 255);
  
 }
-h3,h4{
-  color: rgb(8, 213, 1);
-  
-}
-
-h1, h2, h5 {
+h1{
   color:yellow;
+}
+h4{
+  color:rgb(212, 254, 255);
+}  
+h5{
+  color: yellow;
+}
+h3{
+  color: rgb(255, 183, 2);
+}
+h2 {
+  color:rgb(0, 255, 13);
 }
 
 #form {
