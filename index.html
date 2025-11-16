@@ -1,37 +1,62 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portafolio de Inés Delgado Marketing Digital_Desarrolladora Web</title>
+  <title>Inés Delgado | Comunicación y Estrategia Comercial</title>
 
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Exo:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-
-  <!-- Bootstrap Bundle con Popper.js -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
-    /* Estilo para la sección de cabecera */
-    header {
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      padding-top: 56px;
-      /* Ajuste para el espacio sobre la barra de navegación en móviles */
+    body {
+      font-family: 'Exo', sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
     }
 
-    /* Estilo para el texto en la sección de cabecera */
-    header h3,
-    header p {
-      color: rgb(24, 244, 0);
-      font-family: 'Exo', sans-serif;
+    /* Navbar */
+    .navbar {
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
     }
+    .nav-link:hover { color: #aefc3c !important; }
+
+    /* Hero Section */
+    header.hero-section {
+      height: 100vh;
+      background: linear-gradient(135deg, rgba(102,126,234,0.9), rgba(118,75,162,0.9)), url('imagenes/fondo_header.jpg') center/cover no-repeat;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+    .hero-section::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.25);
+    }
+    .hero-section .container { position: relative; z-index: 2; }
+    .hero-title { font-size: 4rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; background: linear-gradient(45deg, #fff, #d1c4e9); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero-subtitle { font-weight: 500; font-size: 1.5rem; color: #f3e5f5; margin-top: 0.5rem; }
+    .hero-text { font-size: 1.1rem; color: #e0e0e0; margin-top: 1rem; }
+
+      /* Sección Sobre Mí */
+    #about {
+      background: #fff;
+      border-radius: 10px;
+      padding: 60px 30px;
+      margin-top: 80px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+    #about img { border: 4px solid #aefc3c; transition: transform 0.3s ease; }
+    #about img:hover { transform: scale(1.05); }
+    #about h2 { font-weight: 700; margin-bottom: 20px; }
   </style>
 </head>
 
@@ -39,279 +64,1733 @@
   <!-- Barra de navegación -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#inicio">Inicio</a>
+      <a class="navbar-brand" href="#inicio">Inspire & Design</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#about">Sobre Mí</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#projects">Formación</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#skills">Habilidades</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#contact">Contacto</a>
-          </li>
+          <li class="nav-item"><a class="nav-link" href="#about">Sobre Mí</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Formación</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Habilidades</a></li>
+          <li class="nav-item"><a class="nav-link" href="#works">Proyectos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
         </ul>
       </div>
     </div>
   </nav>
-  <!-- Sección de Cabecera -->
-  <header class="text-white text-center py-5">
-    <div class="container">
-      <br>
-      <h1 class="display-4 animate__animated animate__bounceInLeft">Inés Delgado</h1>
-      <h3 class="display-8 animate__animated animate__bounceInLeft">Impulso digital, Venta de ideas y Organización de
-        equipos</h3>
-      <h3 class="lead animate__animated animate__fadeIn">Marketing digital y Presencia en redes</h3>
-      <h3 class="lead animate__animated animate__fadeIn">Desarrollo web multiplataforma</h3>
-    </div>
-  </header>
-  <!-- Sección de Sobre Mí -->
-  <section class="container py-5" id="about">
-    <div class="col-lg-6">
-    </div>
-    <h2 class="mb-4">Sobre Mí</h2>
-    <p class="strong">Después de una sólida experiencia en marketing y gestión de ventas, decidí dar un giro a mi
-      carrera y sumergirme en el
-      apasionante mundo del desarrollo web full stack y multiplataforma.
 
-      Hoy en día, combino mis habilidades en marketing y ventas con mi formación como desarrolladora web, creando un
-      enfoque
-      único y versátil en mi trabajo. Soy una verdadera creyente en el poder de las ideas, capaz de venderlas y hacerlas
-      crecer, mientras convivo con las complejidades del desarrollo web para dar vida a proyectos innovadores.</p>
-    <a href="https://www.linkedin.com/in/mar%C3%ADa-in%C3%A9s-delgado-hern%C3%A1ndez-56728b252/" title="Linkedin"
-      class="btn btn-secondary animate__animated animate__bounce">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-linkedin"
-        viewBox="0 0 16 16">
-        <path
-          d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
-      </svg>
-    </a>
+  <!-- Cabecera -->
+<header id="inicio" class="hero-section d-flex align-items-center justify-content-center text-center">
+  <div class="container">
+    <h1 class="hero-title animate__animated animate__fadeInDown">Inés Delgado</h1>
+     <!-- <h3 class="hero-subtitle animate__animated animate__fadeInUp">Inspire & Design</h3>-->
+    <h3 class="hero-subtitle animate__animated animate__fadeInUp">Comunicación y Estrategia Comercial</h3>
+    <p class="hero-text animate__animated animate__fadeIn">Soluciones Digitales | Excelencia de Marca | Gestión de Equipos</p>
+   
+  </div>
+</header>
 
-    <!--<a href="https://github.com/InesDelgado" title="GitHub" class="btn btn-secondary animate__animated animate__bounce">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-github"
-        viewBox="0 0 16 16">
-        <path
-          d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-      </svg>-->
-    </a>
-    <a href="imagenes/CV_Ines_TEC.pdf" title="Curriculum Vitae"
-      class="btn btn-secondary animate__animated animate__bounce">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-file-person"
-        viewBox="0 0 16 16">
-        <path
-          d="M12 1a1 1 0 0 1 1 1v10.755S12 11 8 11s-5 1.755-5 1.755V2a1 1 0 0 1 1-1h8zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4z" />
-        <path d="M8 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-      </svg>
-    </a>
-    <a href="imagenes/CV_InesDelgado_Europass.pdf" title="Curriculum Europass"
-      class="btn btn-secondary animate__animated animate__bounce">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-        class="bi bi-file-earmark-person-fill" viewBox="0 0 16 16">
-        <path
-          d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0zm2 5.755V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-.245S4 12 8 12s5 1.755 5 1.755z" />
-      </svg>
-    </a>
-    </div>
-    </div>
-  </section>
-  <!-- Sección de Formacion -->
-  <section class="container py-5" id="projects">
-    <h2 class="mb-4">Formación</h2>
-    <h5>IFCD0210_Certificado de profesionalidad de desarrollo de aplicaciones con tecnologías web en INPSI Santa Cruz de
-      Tenerife</h5>
-    <h5>IFCD35_Especializacion de desarrollo de aplicaciones móviles multiplataforma con Flutter y Dart en DYM La Laguna
-    </h5>
-    <h5>Bachillerato en IES San Benito La Laguna</h5>
-    <br>
-    <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
-        aria-expanded="false">
-        Certificaciones
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-        <li></li><a href="certificaciones/Diploma_desarrollo web_1.pdf"> IFCD0210 Acreditación acción formativa</a>
-        <li></li><a href="certificaciones/Diploma_desarrollo web_2.pdf">IFCD0210 Cualificación formativa</a>
-        <li></li><a href="certificaciones/Diploma_POsicionamientopdf.pdf">ADGD211PO Posicionamiento en buscadores</a>
-        <li></li><a href="certificaciones/Diploma_comercio electronico.pdf">ADGG035PO Herramientas en internet: Comercio
-          Electrónico</a>
-        <li></li><a href="certificaciones/diploma_facua_ciberseguridad.pdf">Acción formativa Ciberseguridad</a>
-        <li></li><a href="certificaciones/seguridad_ciberseguridad_google.pdf">Ciberseguridad en el trabajo</a>
-        <li></li><a href="certificaciones/introduccion_desarrollo_web.pdf">Introducción al desarrollo web</a>
-        <li></li><a href="certificaciones/diploma_cloud_computing (56).pdf">Cloud computing</a>
-        <li></li><a href="certificaciones/diploma_desarrollo_apps_moviles.pdf">Desarrollo apps moviles</a>
-        <li></li><a href="certificaciones/freecodecamp_certificado.pdf">Certificación Freecodecamp Responsive Web Design
-        </a>
-      </ul>
-    </div>
-  </section>
-  <!-- Sección de experiencia laboral -->
-  <section class="container py-5" id="works">
-    <h2 class="mb-4">Experiencia laboral</h2>
-    <h5> Mas de 20 años de atención al cliente, gestión de ventas y organización de equipos de trabajo</h5>
-    <p> Amplia experiencia en diferentes puestos de responsabilidad</p>
-    <p> Altas capacidades en la atención al cliente y en trabajo de equipo</p>
-    <h5> Prácticas en la empresa X-Net Group</h5>
-    <p> Realizando mis prácticas en el equipo de desarrollo donde pude adquirir conocimientos y habilidades en la
-      creación y mantenimiento de páginas web</p>
-    <h5> SAO (Servicios Avanzados de Opinión)</h5>
-    <p>Desarrollo de Proyectos y Marketing Digital. Adquiriendo experiencia trabajando
-      en un equipo multidisciplinar, en la creación y mantenimiento de aplicaciones web, presentación de proyectos y
-      gestión de equipo. Venta de ideas e impulso digital.</p>
-    <!--Seccion mis proyectos (PENDIENTE PARA COLOCAR MIS PROYECTOS!!!)
-  <section class="container py-5" id="new-projects"> 
-    <h2 class="mb-4 text-center">Mis proyectos</h2>
-    <div class="row justify-content-center">
-    </section> -->
-<!-- Sección habilidades -->
-<section class="container py-5" id="skills">
-  <h2 class="mb-4 text-center">Habilidades</h2>
+<!-- Estilos personalizados -->
+<style>
+  .hero-section {
+    height: 100vh;
+    background: linear-gradient(135deg, rgba(102,126,234,0.9), rgba(118,75,162,0.9)), 
+                url('imagenes/fondo_header.jpg') center/cover no-repeat;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-section::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.25);
+  }
+
+  .hero-section .container {
+    position: relative;
+    z-index: 2;
+  }
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #fff, #d1c4e9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+  .hero-subtitle {
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: #f3e5f5;
+    margin-top: 0.5rem;
+  }
+
+  .hero-text {
+    font-size: 1.1rem;
+    margin-top: 1.5rem;
+    color: #e0e0e0;
+    letter-spacing: 0.5px;
+  }
+
+  .hero-btn {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    border: none;
+    border-radius: 50px;
+    color: #fff;
+    font-weight: 600;
+    padding: 12px 35px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 8px 20px rgba(118, 75, 162, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .hero-btn:hover {
+    background: linear-gradient(45deg, #764ba2, #667eea);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(118, 75, 162, 0.4);
+  }
+
+  @media (max-width: 768px) {
+    .hero-title { font-size: 2.5rem; }
+    .hero-subtitle { font-size: 1.2rem; }
+    .hero-text { font-size: 1rem; }
+  }
+</style>
+
+<!-- Sección Sobre Mí -->
+<section class="container py-5" id="about">
+  <div class="text-center mb-4">
+    <img src="imagenes/Ines_FOTO_CV.jpeg" alt="Inés Delgado" 
+         class="img-fluid rounded-circle mb-3"
+         style="width:160px; height:160px; object-fit:cover; display:block; margin: 0 auto;">
+    <h2>Sobre Mí</h2>
+  </div>
+  
   <div class="row justify-content-center">
-    <!-- HTML -->
-    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
-      <div class="btn-group-vertical">
-        <button type="button" class="btn btn-light computer-key-button animated btn-bounce" data-bs-toggle="collapse"
-          data-bs-target="#htmlInfo" aria-expanded="false">
-          HTML
-        </button>
-        <div id="htmlInfo" class="collapse">
-          <p  style="color:rgb(0, 255, 13)">Conocimiento en el desarrollo y diseño de páginas web utilizando HTML5</p>
-          <p style="color:rgb(0, 255, 13)">Conocimiento de etiquetas y atributos HTML</p>
-          <p style="color:rgb(0, 255, 13)">Competencia en la estructura semántica de HTML para lograr mayor usabilidad</p>
-        </div>
-      </div>
-    </div>
-    <!-- CSS -->
-    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
-      <div class="btn-group-vertical">
-        <button type="button" class="btn btn-light computer-key-button animated btn-bounce" data-bs-toggle="collapse"
-          data-bs-target="#cssInfo" aria-expanded="false">
-          CSS
-        </button>
-        <div id="cssInfo" class="collapse">
-          <p style="color:rgb(0, 255, 13)">Conocimiento en la selección y aplicación de estilos a través de selectores, clases e identificadores</p>
-          <p style="color:rgb(0, 255, 13)">Conocimiento de la cascada y la especificidad de CSS para lograr las prioridades adecuadas en la aplicación
-            de estilos</p>
-        </div>
-      </div>
-    </div>
-    <!-- JavaScript -->
-    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
-      <div class="btn-group-vertical">
-        <button type="button" class="btn btn-light computer-key-button animated btn-bounce" data-bs-toggle="collapse"
-          data-bs-target="#javascriptInfo" aria-expanded="false">
-          JavaScript
-        </button>
-        <div id="javascriptInfo" class="collapse">
-          <p style="color:rgb(0, 255, 13)">Programación básica: variables, tipos de datos, estructuras de control, funciones.</p>
-          <p style="color:rgb(0, 255, 13)">Conocimiento de async/await, interacción con elementos HTML, cambios dinámicos en la página, gestión de
-            datos con uso de archivos JSON</p>
-        </div>
-      </div>
-    </div>
-    <!-- C# -->
-    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
-      <div class="btn-group-vertical">
-        <button type="button" class="btn btn-light computer-key-button animated btn-bounce" data-bs-toggle="collapse"
-          data-bs-target="#cSharpInfo" aria-expanded="false">
-          C#
-        </button>
-        <div id="cSharpInfo" class="collapse">
-          <p style="color:rgb(0, 255, 13)">Conocimiento de programación orientada a objetos clases, objetos, herencia, polimorfismo, encapsulación</p>
-          <p style="color:rgb(0, 255, 13)">Estructuras de control: Bucles y condicionales</p>
-          <p style="color:rgb(0, 255, 13)">Acceso a base de datos relacionales y servicios web Api con ASP.NET</p>
-        </div>
-      </div>
+    <div class="col-lg-8">
+      <p>
+        Soy una <strong>profesional híbrida</strong> que une la visión estratégica con la capacidad técnica. 
+        Cuento con experiencia en <strong>desarrollo web full stack y multiplataforma</strong>, 
+        <strong>ventas</strong>, <strong>gestión de clientes</strong> y <strong>liderazgo de equipos</strong>. 
+        Mi fortaleza está en actuar como <strong>conectora entre personas y tecnología</strong>, 
+        traduciendo necesidades complejas en <strong>soluciones digitales claras y efectivas</strong> que aportan valor real.
+      </p>
+
+      <p>
+        Disfruto <strong>coordinando proyectos</strong>, <strong>creando entornos colaborativos</strong> 
+        y <strong>acompañando a otros profesionales</strong> en su desarrollo. 
+        Comprometida con la <strong>diversidad y la inclusión</strong>, participo en comunidades como 
+        <strong>AdaLoveDev</strong> y <strong>WISE Canarias</strong>, promoviendo el 
+        <strong>liderazgo femenino en STEAM</strong> y el acceso equitativo a la tecnología.
+      </p>
+
+      <p>
+        Mi propósito es <strong>impulsar proyectos con propósito</strong>, construir 
+        <strong>equipos cohesionados</strong> y diseñar <strong>procesos sostenibles</strong> 
+        que integren <strong>estrategia, negocio y ejecución técnica</strong> para generar impacto positivo.
+      </p>
     </div>
   </div>
 
-  <div class="row mt-3 justify-content-center">
-    <!-- Dart y Flutter -->
-    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
-      <div class="btn-group-vertical">
-        <button type="button" class="btn btn-light computer-key-button animated btn-bounce" data-bs-toggle="collapse"
-          data-bs-target="#dartFlutterInfo" aria-expanded="false">
-          Dart y Flutter
-        </button>
-        <div id="dartFlutterInfo" class="collapse">
-          <p style="color:rgb(0, 255, 13)">Formación y prácticas en marketing digital</p>
-          <p style="color:rgb(0, 255, 13)">Conocimiento del Framework Flutter para la creación de páginas web y aplicaciones multiplataformas con
-            lenguaje Dart</p>
+<!-- Redes sociales centradas con iconos -->
+<div class="text-center mt-5 mb-5">
+  <!-- LinkedIn -->
+  <a href="https://www.linkedin.com/in/mar%C3%ADa-in%C3%A9s-delgado-hern%C3%A1ndez-56728b252/" 
+     target="_blank" class="btn btn-outline-primary mx-2" title="LinkedIn">
+    <i class="fab fa-linkedin fa-lg"></i>
+  </a>
+
+  <!-- Instagram -->
+  <a href="https://www.instagram.com/inesdelgado_digitalsolutions" 
+     target="_blank" class="btn btn-outline-danger mx-2" title="Instagram">
+    <i class="fab fa-instagram fa-lg"></i>
+  </a>
+
+  <!-- TikTok -->
+  <a href="https://www.tiktok.com/@inesdelgadoweb" 
+     target="_blank" class="btn btn-outline-dark mx-2" title="TikTok">
+    <i class="fab fa-tiktok fa-lg"></i>
+  </a>
+</div>
+
+   <title>Certificaciones Profesionales</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+        body {
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100%;
+        }
+
+        .certifications-container {
+            width: 100%;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .section-title {
+            color: white;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .section-subtitle {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            font-weight: 300;
+        }
+
+        .dropdown-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-button {
+            background: white;
+            color: #4c51bf;
+            border: none;
+            padding: 18px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 280px;
+            justify-content: center;
+        }
+
+        .dropdown-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+            background: #f8fafc;
+        }
+
+        .dropdown-button:active {
+            transform: translateY(0);
+        }
+
+        .dropdown-icon {
+            font-size: 1.3rem;
+            transition: transform 0.3s ease;
+        }
+
+        .dropdown-button.active .dropdown-icon {
+            transform: rotate(180deg);
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            min-width: 400px;
+            max-width: 500px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(-50%) translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            margin-top: 15px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .dropdown-menu.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .dropdown-menu::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .dropdown-menu::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 10px;
+        }
+
+        .dropdown-menu::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+
+        .dropdown-item {
+            display: block;
+            padding: 16px 24px;
+            color: #374151;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            border-bottom: 1px solid #f1f5f9;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .dropdown-item:first-child {
+            border-radius: 20px 20px 0 0;
+        }
+
+        .dropdown-item:last-child {
+            border-bottom: none;
+            border-radius: 0 0 20px 20px;
+        }
+
+        .dropdown-item:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding-left: 32px;
+        }
+
+        .dropdown-item::before {
+            content: "📜";
+            margin-right: 12px;
+            font-size: 1.1rem;
+        }
+
+        .dropdown-item:hover::before {
+            content: "✨";
+        }
+
+        .cert-code {
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 0.85rem;
+            color: #6b7280;
+            font-weight: 400;
+        }
+
+        .dropdown-item:hover .cert-code {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .stats-container {
+            margin-top: 3rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px 30px;
+            color: white;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .dropdown-menu {
+                min-width: 320px;
+                max-width: 90vw;
+            }
+            
+            .dropdown-button {
+                min-width: 250px;
+                padding: 16px 30px;
+            }
+            
+            .stats-container {
+                gap: 1rem;
+            }
+            
+            .stat-item {
+                padding: 15px 20px;
+            }
+        }
+    </style>
+    <section class="projects-section py-5" id="new-projects">
+  <div class="container">
+    <section class="experience-section py-5" id="works">
+  <div class="container">
+    <!-- Sección de formacion-->
+    <h2 class="section-title text-center mb-5">Formación</h2>
+    <section class="experience-section py-5" id="works">
+ 
+    
+    <!-- Casillas de formación -->
+    <div class="row justify-content-center">
+      <!-- Ejemplo de una formación -->
+      <div class="col-md-4 mb-4">
+        <div class="section-card">
+          <h4>Curso de Diseño Web</h4>
+          <h5>Escuela de Diseño XYZ</h5>
+          <p>Aprendizaje de HTML, CSS, JavaScript y frameworks modernos para desarrollo web.</p>
+          <p><strong>Año:</strong> 2023</p>
         </div>
       </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="section-card">
+          <h4>Máster en Marketing Digital</h4>
+          <h5>Universidad ABC</h5>
+          <p>Especialización en estrategias de marketing online, SEO, SEM y redes sociales.</p>
+          <p><strong>Año:</strong> 2022</p>
+        </div>
+      </div>
+
+      <!-- Puedes duplicar este bloque para cada formación -->
     </div>
-    <!-- Gestión de equipos -->
-    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
-      <div class="btn-group-vertical">
-        <button type="button" class="btn btn-light computer-key-button animated btn-bounce" data-bs-toggle="collapse"
-          data-bs-target="#gestionEquiposInfo" aria-expanded="false">
-          Gestión de equipos
-        </button>
-        <div id="gestionEquiposInfo" class="collapse">
-          <p style="color:rgb(0, 255, 13)">Organización de estrategias comerciales</p>
-          <p style="color:rgb(0, 255, 13)">Conocimientos de datos y optimización de consultas</p>
-          <p style="color:rgb(0, 255, 13)">Presentación de proyectos y estudios de presencia en la red</p>
-        </div>
+  </div>
+</section>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body>
+  <main class="certifications-container">
+   <h1 class="section-title" id="sectionTitle">🎓 Mis Certificaciones</h1>
+   <p class="section-subtitle">Formación continua y especialización profesional</p>
+   <div class="dropdown-container"><button class="dropdown-button" id="dropdownButton"> <span class="dropdown-icon">📋</span> <span id="buttonText">Ver Certificaciones</span> <span class="dropdown-icon">⌄</span> </button>
+    <div class="dropdown-menu" id="dropdownMenu"><a class="dropdown-item" href="certificaciones/Diploma_desarrollo web_1.pdf" target="_blank" rel="noopener noreferrer">
+      <div>
+       IFCD0210 — Acreditación acción formativa
       </div>
+      <div class="cert-code">
+       Desarrollo Web
+      </div></a> <a class="dropdown-item" href="certificaciones/Diploma_desarrollo web_2.pdf" target="_blank" rel="noopener noreferrer">
+      <div>
+       IFCD0210 — Cualificación formativa
+      </div>
+      <div class="cert-code">
+       Desarrollo Web
+      </div></a> <a class="dropdown-item" href="certificaciones/Diplomas 14.1 Dirección de equipos y coaching-Delgado Hernandez, María Ines.pdf" target="_blank" rel="noopener noreferrer">
+      <div>
+       ADGD067PO — Dirección de Equipo y Coaching
+      </div>
+      <div class="cert-code">
+       Liderazgo
+      </div></a> <a class="dropdown-item" href="certificaciones/Diploma_POsicionamientopdf.pdf" target="_blank" rel="noopener noreferrer">
+      <div>
+       ADGD211PO — Posicionamiento en buscadores
+      </div>
+      <div class="cert-code">
+       SEO
+      </div></a> <a class="dropdown-item" href="certificaciones/Diploma_comercio electronico.pdf" target="_blank" rel="noopener noreferrer">
+      <div>
+       ADGG035PO — Comercio Electrónico
+      </div>
+      <div class="cert-code">
+       E-commerce
+      </div></a> <a class="dropdown-item" href="certificaciones/diploma_facua_ciberseguridad.pdf" target="_blank" rel="noopener noreferrer">
+      <div>
+       Ciberseguridad — Acción formativa
+      </div>
+      <div class="cert-code">
+       Seguridad
+      </div></a> <a class="dropdown-item" href="certificaciones/seguridad_ciberseguridad_google.pdf" target="_blank" rel="noopener noreferrer">
+      <div>
+       Ciberseguridad en el trabajo
+      </div>
+      <div class="cert-code">
+       Google
+      </div></a> <a class="dropdown-item" href="certificaciones/introduccion_desarrollo_web.pdf" target="_blank" rel="noopener noreferrer">
+      <div>
+       Introducción al desarrollo web
+      </div>
+      <div class="cert-code">
+       Fundamentos
+      </div></a> <a class="dropdown-item" href="certificaciones/diploma_cloud_computing (56).pdf" target="_blank" rel="noopener noreferrer">
+      <div>
+       Cloud Computing
+      </div>
+      <div class="cert-code">
+       Nube
+      </div></a> <a class="dropdown-item" href="certificaciones/diploma_desarrollo_apps_moviles.pdf" target="_blank" rel="noopener noreferrer">
+      <div>
+       Desarrollo de aplicaciones móviles
+      </div>
+      <div class="cert-code">
+       Mobile
+      </div></a> <a class="dropdown-item" href="certificaciones/freecodecamp_certificado.pdf" target="_blank" rel="noopener noreferrer">
+      <div>
+       FreeCodeCamp — Responsive Web Design
+      </div>
+      <div class="cert-code">
+       Frontend
+      </div></a> <a class="dropdown-item" href="certificaciones/gestion_de_proyectos.pdf" target="_blank" rel="noopener noreferrer">
+      <div>
+       Gestión de Proyectos
+      </div>
+      <div class="cert-code">
+       Cámara de Comercio
+      </div></a>
     </div>
-    <!-- WordPress y Bootstrap -->
-    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
-      <div class="btn-group-vertical">
-        <button type="button" class="btn btn-light computer-key-button animated btn-bounce" data-bs-toggle="collapse"
-          data-bs-target="#wordpressBootstrapInfo" aria-expanded="false">
-          WordPress y Bootstrap
-        </button>
-        <div id="wordpressBootstrapInfo" class="collapse">
-          <p style="color:rgb(0, 255, 13)">Conocimiento en la creación de páginas web con WordPress</p>
-          <p style="color:rgb(0, 255, 13)">Conocimiento del Framework Bootstrap para la creación de páginas web</p>
-        </div>
-      </div>
+   </div>
+   <div class="stats-container">
+    <div class="stat-item"><span class="stat-number">12</span>
+     <div class="stat-label">
+      Certificaciones
+     </div>
     </div>
-    <!-- Marketing y Venta de ideas -->
-    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
-      <div class="btn-group-vertical">
-        <button type="button" class="btn btn-light computer-key-button animated btn-bounce" data-bs-toggle="collapse"
-          data-bs-target="#marketingVentaInfo" aria-expanded="false">
-          Marketing y Venta de ideas
-        </button>
-        <div id="marketingVentaInfo" class="collapse">
-          <p style="color:rgb(0, 255, 13)">Liderazgo y experiencia en gestión de equipos de trabajo</p>
-          <p style="color:rgb(0, 255, 13)">Amplia experiencia en Marketing ... Hago que tus ideas digitales sean una realidad</p>
-          <p style="color:rgb(0, 255, 13)">Capacidad de adaptación a los cambios y nuevos retos</p>
+    <div class="stat-item"><span class="stat-number">6</span>
+     <div class="stat-label">
+      Áreas de especialización
+     </div>
+    </div>
+   </div>
+  </main>
+  <script>
+        const defaultConfig = {
+            section_title: "🎓 Mis Certificaciones",
+            button_text: "Ver Certificaciones"
+        };
+
+        let config = { ...defaultConfig };
+
+        // Dropdown functionality
+        const dropdownButton = document.getElementById('dropdownButton');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+
+        dropdownButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            const isOpen = dropdownMenu.classList.contains('show');
+            
+            if (isOpen) {
+                dropdownMenu.classList.remove('show');
+                dropdownButton.classList.remove('active');
+            } else {
+                dropdownMenu.classList.add('show');
+                dropdownButton.classList.add('active');
+            }
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!dropdownButton.contains(e.target) && !dropdownMenu.contains(e.target)) {
+                dropdownMenu.classList.remove('show');
+                dropdownButton.classList.remove('active');
+            }
+        });
+
+        // Close dropdown when pressing Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                dropdownMenu.classList.remove('show');
+                dropdownButton.classList.remove('active');
+            }
+        });
+
+        async function onConfigChange(newConfig) {
+            config = { ...config, ...newConfig };
+            
+            const sectionTitle = document.getElementById('sectionTitle');
+            const buttonText = document.getElementById('buttonText');
+            
+            sectionTitle.textContent = config.section_title || defaultConfig.section_title;
+            buttonText.textContent = config.button_text || defaultConfig.button_text;
+        }
+
+        function mapToCapabilities(config) {
+            return {
+                recolorables: [],
+                borderables: [],
+                fontEditable: undefined,
+                fontSizeable: undefined
+            };
+        }
+
+        function mapToEditPanelValues(config) {
+            return new Map([
+                ["section_title", config.section_title || defaultConfig.section_title],
+                ["button_text", config.button_text || defaultConfig.button_text]
+            ]);
+        }
+
+        // Initialize Element SDK
+        if (window.elementSdk) {
+            window.elementSdk.init({
+                defaultConfig,
+                onConfigChange,
+                mapToCapabilities,
+                mapToEditPanelValues
+            });
+        }
+    </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99facbf873a5c902',t:'MTc2MzMzNjA0Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+
+<!-- Estilos personalizados -->
+<style>
+  .custom-dropdown-btn {
+    background: linear-gradient(45deg, #7426b9, #764ba2);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    box-shadow: 0 8px 20px rgba(118, 75, 162, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .custom-dropdown-btn:hover {
+    background: linear-gradient(45deg, #764ba2, #667eea);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(118, 75, 162, 0.4);
+  }
+
+  .custom-dropdown {
+    border-radius: 15px;
+    padding: 0.5rem 0;
+    animation: fadeIn 0.3s ease;
+  }
+
+  .custom-dropdown .dropdown-item {
+    font-weight: 500;
+    color: #2c3e50;
+    padding: 0.75rem 1.25rem;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+  }
+
+  .custom-dropdown .dropdown-item:hover {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: #fff;
+    transform: translateX(5px);
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+
+<!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<!-- Sección de Experiencia Laboral -->
+<section class="projects-section py-5" id="new-projects">
+  <div class="container">
+    <section class="experience-section py-5" id="works">
+  <div class="container">
+    <h2 class="section-title text-center mb-5">Experiencia laboral</h2>
+
+      <!-- Bloque 1 -->
+      <div class="timeline-item">
+        <div class="timeline-icon">
+          <i class="fas fa-user-tie"></i>
+        </div>
+        <div class="timeline-content">
+          <h4 class="fw-semibold text-primary">+20 años de experiencia en atención al cliente y liderazgo</h4>
+          <p>Trayectoria consolidada en <strong>gestión de ventas, coordinación de equipos</strong> y <strong>optimización de procesos comerciales</strong>. Habilidades sólidas en comunicación, resolución de conflictos y orientación al cliente, garantizando resultados de alto impacto.</p>
         </div>
       </div>
+
+      <!-- Bloque 2 -->
+      <div class="timeline-item">
+        <div class="timeline-icon">
+          <i class="fas fa-code"></i>
+        </div>
+        <div class="timeline-content">
+          <h4 class="fw-semibold text-primary">Prácticas Profesionales — X-Net Group</h4>
+          <p>Integrante del <strong>equipo de desarrollo web</strong>, participando en la creación, mantenimiento y mejora de sitios corporativos. Reforcé conocimientos en <em>HTML, CSS, JavaScript</em> y metodologías ágiles de trabajo colaborativo.</p>
+        </div>
+      </div>
+
+      <!-- Bloque 3 -->
+      <div class="timeline-item">
+        <div class="timeline-icon">
+          <i class="fas fa-bullhorn"></i>
+        </div>
+        <div class="timeline-content">
+          <h4 class="fw-semibold text-primary">Responsable Comercial y Comunicación Digital — SAO (Servicios Avanzados de Opinión) <span class="text-muted">| Actualidad</span></h4>
+          <p>Encargada de la <strong>estrategia comercial y comunicación digital</strong> de la empresa. Liderando la <strong>organización de equipos</strong> y la implementación de <strong>soluciones digitales personalizadas</strong> orientadas a la excelencia de marca y la satisfacción del cliente.</p>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
+<!-- Estilos personalizados -->
+<style>
+  .experience-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    margin-bottom: 8rem; /* Espacio entre experiencia y proyectos */
+  }
 
-  <!-- Sección de Contacto -->
-  <section class="container py-5" id="contact">
-    <div class="row">
-      <div class="col-lg-6 order-lg-1">
-        <!--<img src="ruta/a/tu/imagen.jpg" class="img-fluid" alt="Imagen de ejemplo">-->
+  .section-title {
+    font-weight: 800;
+    color: #2c3e50;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+  }
+
+  .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    border-radius: 2px;
+  }
+
+  .timeline {
+    position: relative;
+    margin: 2rem 0;
+    padding-left: 30px;
+    border-left: 3px solid #764ba2;
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 2.5rem;
+  }
+
+  .timeline-icon {
+    position: absolute;
+    left: -45px;
+    top: 0;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(118, 75, 162, 0.3);
+  }
+
+  .timeline-content {
+    background: #fff;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+  }
+
+  .timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  }
+
+  .timeline-content h4 {
+    margin-bottom: 0.75rem;
+  }
+
+  .timeline-content p {
+    color: #555;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .timeline {
+      border-left: none;
+      padding-left: 0;
+    }
+    .timeline-icon {
+      display: none;
+    }
+  }
+</style>
+
+<!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<!-- Sección de Mis Proyectos -->
+<section class="projects-section py-5" id="new-projects">
+  <div class="container">
+    <section class="experience-section py-5" id="works">
+  <div class="container">
+    <h2 class="section-title text-center mb-5">Proyectos Destacados</h2>
+
+    <div class="timeline">
+
+    <div class="row g-4 justify-content-center">
+
+      <!-- Proyecto -->
+      <div class="col-lg-4 col-md-6">
+        <div class="project-card">
+          <div class="project-image">
+            <img src="imagenes/proyecto1.jpg" alt="Proyecto 1">
+            <div class="overlay">
+              <a href="#" class="btn-view">Ver Proyecto</a>
+            </div>
+          </div>
+          <div class="project-content">
+            <h5>Proyecto 1</h5>
+            <p>Breve descripción del proyecto, tecnologías usadas y objetivo alcanzado.</p>
+          </div>
+        </div>
       </div>
-      <div class="col-lg-6 order-lg-2">
-        <h3 id="contact-heading">¡Contacta conmigo para conocer más de mí y de mis servicios!</h3>
-      <br>
-      <p style="color: yellow;">inesdelgadohernandez1977@gmail.com</p>
-      <br>
-        <p>Marketing digital y Soluciones Digitales para empresas</p>
-        <p>Creación de páginas web y apps multiplataforma, gestión y dirección de equipos</p>
-        <p>Mantenimiento y mejoras de espacios web, impulso de ideas empresariales</p>
-        <a href="Como se hizo.html">¿Cómo he realizado esta página web?</a>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="project-card">
+          <div class="project-image">
+            <img src="imagenes/proyecto2.jpg" alt="Proyecto 2">
+            <div class="overlay">
+              <a href="#" class="btn-view">Ver Proyecto</a>
+            </div>
+          </div>
+          <div class="project-content">
+            <h5>Proyecto 2</h5>
+            <p>Breve descripción del proyecto, tecnologías usadas y objetivo alcanzado.</p>
+          </div>
+        </div>
       </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="project-card">
+          <div class="project-image">
+            <img src="imagenes/proyecto3.jpg" alt="Proyecto 3">
+            <div class="overlay">
+              <a href="#" class="btn-view">Ver Proyecto</a>
+            </div>
+          </div>
+          <div class="project-content">
+            <h5>Proyecto 3</h5>
+            <p>Breve descripción del proyecto, tecnologías usadas y objetivo alcanzado.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="project-card">
+          <div class="project-image">
+            <img src="imagenes/proyecto4.jpg" alt="Proyecto 4">
+            <div class="overlay">
+              <a href="#" class="btn-view">Ver Proyecto</a>
+            </div>
+          </div>
+          <div class="project-content">
+            <h5>Proyecto 4</h5>
+            <p>Breve descripción del proyecto, tecnologías usadas y objetivo alcanzado.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="project-card">
+          <div class="project-image">
+            <img src="imagenes/proyecto5.jpg" alt="Proyecto 5">
+            <div class="overlay">
+              <a href="#" class="btn-view">Ver Proyecto</a>
+            </div>
+          </div>
+          <div class="project-content">
+            <h5>Proyecto 5</h5>
+            <p>Breve descripción del proyecto, tecnologías usadas y objetivo alcanzado.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="project-card">
+          <div class="project-image">
+            <img src="imagenes/proyecto6.jpg" alt="Proyecto 6">
+            <div class="overlay">
+              <a href="#" class="btn-view">Ver Proyecto</a>
+            </div>
+          </div>
+          <div class="project-content">
+            <h5>Proyecto 6</h5>
+            <p>Breve descripción del proyecto, tecnologías usadas y objetivo alcanzado.</p>
+          </div>
+        </div>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
+<!-- Estilos personalizados -->
+<style>
+  .projects-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border-radius: 20px;
+  }
+
+  .section-title {
+    font-weight: 800;
+    color: #2c3e50;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+  }
+
+  .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    border-radius: 2px;
+  }
+
+  .project-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+  }
+
+  .project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  }
+
+  .project-image {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .project-image img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .project-card:hover img {
+    transform: scale(1.1);
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(102, 126, 234, 0.8);
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.4s ease;
+  }
+
+  .project-card:hover .overlay {
+    opacity: 1;
+  }
+
+  .btn-view {
+    background: #fff;
+    color: #667eea;
+    font-weight: 600;
+    padding: 10px 25px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+
+  .btn-view:hover {
+    background: #764ba2;
+    color: #fff;
+  }
+
+  .project-content {
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  .project-content h5 {
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 0.75rem;
+  }
+
+  .project-content p {
+    color: #555;
+    font-size: 0.95rem;
+  }
+</style>
+
+
+<!-- Sección habilidades -->
+<title>Sección de Habilidades - Portfolio</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Animate.css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com" defer></script>
+
+<!-- Estilos personalizados -->
+<style>
+  body {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100%;
+    padding: 2rem 0;
+  }
+
+  .skills-section {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    margin: 2rem auto;
+    max-width: 1200px;
+  }
+
+  .section-title {
+    color: #2c3e50;
+    font-weight: 800;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 3rem;
+    position: relative;
+  }
+
+  .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    border-radius: 2px;
+  }
+
+  .skill-card {
+    background: white;
+    border: none;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .skill-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  .skill-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .skill-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  .skill-icon svg {
+    position: relative;
+    z-index: 2;
+  }
+
+  .skill-title {
+    color: #2c3e50;
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+
+  .skill-item {
+    color: #27ae60;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+    position: relative;
+  }
+
+  .skill-item::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #27ae60;
+    font-weight: bold;
+  }
+
+  @media (max-width: 768px) {
+    .section-title { font-size: 2rem; }
+    .skill-icon { width: 60px; height: 60px; font-size: 2rem; }
+  }
+</style>
+</head>
+<body>
+  <main>
+    <section class="skills-section container py-5" id="skills">
+      <h2 id="section-title" class="section-title text-center">Habilidades</h2>
+      <div class="row justify-content-center g-4">
+
+        <!-- Comunicación y Estrategia Comercial -->
+        <div class="col-md-4">
+          <div class="skill-card p-4 text-center">
+            <div class="skill-icon" style="--primary-color:#6a1b9a; --secondary-color:#8e24aa;">
+              <i class="fas fa-comments"></i>
+            </div>
+            <h3 class="skill-title">Comunicación y Estrategia Comercial</h3>
+            <p class="skill-item">Comunicación corporativa y digital</p>
+            <p class="skill-item">Estrategia de marca y posicionamiento</p>
+            <p class="skill-item">Gestión de campañas y contenidos</p>
+            <p class="skill-item">Relaciones públicas y storytelling</p>
+          </div>
+        </div>
+
+        <!-- Soluciones Digitales y Excelencia de Marca -->
+        <div class="col-md-4">
+          <div class="skill-card p-4 text-center">
+            <div class="skill-icon" style="--primary-color:#007bff; --secondary-color:#00bcd4;">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+            <h3 class="skill-title">Soluciones Digitales | Excelencia de Marca</h3>
+            <p class="skill-item">Diseño UX/UI y experiencia de usuario</p>
+            <p class="skill-item">Automatización y herramientas no-code</p>
+            <p class="skill-item">Optimización de procesos digitales</p>
+            <p class="skill-item">Gestión de identidad visual y coherencia de marca</p>
+          </div>
+        </div>
+
+        <!-- Gestión de Equipos y Desarrollo Técnico -->
+        <div class="col-md-4">
+          <div class="skill-card p-4 text-center">
+            <div class="skill-icon" style="--primary-color:#27ae60; --secondary-color:#2ecc71;">
+              <i class="fas fa-users-cog"></i>
+            </div>
+            <h3 class="skill-title">Gestión de Equipos y Desarrollo Técnico</h3>
+            <p class="skill-item">Liderazgo y coordinación de proyectos</p>
+            <p class="skill-item">Trabajo colaborativo y metodologías ágiles</p>
+            <p class="skill-item">HTML, CSS, JavaScript</p>
+            <p class="skill-item">Git, GitHub, Bootstrap</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
+  </main>
 
+  <!-- Scripts -->
+  <script>
+    // Animación de entrada escalonada
+    document.addEventListener('DOMContentLoaded', function() {
+      const cards = document.querySelectorAll('.skill-card');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting){
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, { threshold: 0.1 });
 
+      cards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = 'all 0.6s ease';
+        observer.observe(card);
+      });
+    });
+  </script>
+    
+<!-- Sección de Contacto -->
+<section class="container py-5" id="contact">
+  <div class="row align-items-center">
+    
+    <!-- Imagen opcional -->
+
+    
+<section class="row align-items-center mb-5">
+  
+  <!-- QR a la izquierda -->
+  <div class="col-lg-6 mb-4 mb-lg-0 text-center">
+    <div class="qr-card" style="display:inline-block; text-align:center; padding:12px; border:1px solid #6a1b9a; border-radius:10px; box-shadow:0 1px 6px rgba(0,0,0,0.15); background:#fff;">
+      <img src="imagenes/QR_ines.jpeg"
+           class="img-fluid" 
+           alt="Inés Delgado" 
+           style="width:300px; height:300px; object-fit:contain; border-radius:10px; display:block; margin:0 auto;">
+    </div>
+  </div>
+
+   <title>Contact Section</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+        body {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 30px 20px;
+            font-family: 'Inter', -webkit-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #6b46c1 0%, #9333ea 100%);
+            min-height: 100%;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            pointer-events: none;
+        }
+
+        .contact-section {
+            max-width: 500px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #6b46c1, #9333ea, #6b46c1);
+            background-size: 200% 100%;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { background-position: 200% 0; }
+            50% { background-position: -200% 0; }
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #4c1d95;
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+
+        .section-subtitle {
+            font-size: 15px;
+            color: #4a5568;
+            font-weight: 400;
+            opacity: 0.8;
+        }
+
+        .services-grid {
+            display: grid;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .service-card {
+            display: flex;
+            align-items: flex-start;
+            padding: 16px;
+            background: linear-gradient(135deg, #f7fafc 0%, #ffffff 100%);
+            border-radius: 16px;
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #6b46c1, #9333ea);
+            border-radius: 20px;
+            padding: 2px;
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(107, 70, 193, 0.15);
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-icon {
+            width: 36px;
+            height: 36px;
+            margin-right: 14px;
+            flex-shrink: 0;
+            background: linear-gradient(135deg, #6b46c1, #9333ea);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 6px 18px rgba(107, 70, 193, 0.2);
+        }
+
+        .service-icon::after {
+            content: '✓';
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .service-content {
+            flex: 1;
+        }
+
+        .service-text {
+            color: #4c1d95;
+            font-size: 14px;
+            line-height: 1.5;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        .cta-container {
+            text-align: center;
+            position: relative;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #6b46c1 0%, #9333ea 100%);
+            color: white;
+            text-decoration: none;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 15px;
+            letter-spacing: 0.3px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 30px rgba(107, 70, 193, 0.3);
+            border: none;
+            position: relative;
+            overflow: hidden;
+            min-width: 220px;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.8s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(107, 70, 193, 0.4);
+            color: white;
+            text-decoration: none;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:active {
+            transform: translateY(-2px) scale(1.01);
+        }
+
+        .trust-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            opacity: 0.7;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #4a5568;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .trust-icon {
+            width: 16px;
+            height: 16px;
+            background: linear-gradient(135deg, #6b46c1, #9333ea);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-header {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .service-card {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        .service-card:nth-child(1) { animation-delay: 0.2s; }
+        .service-card:nth-child(2) { animation-delay: 0.3s; }
+        .service-card:nth-child(3) { animation-delay: 0.4s; }
+        .service-card:nth-child(4) { animation-delay: 0.5s; }
+
+        .cta-container {
+            animation: fadeInUp 0.8s ease-out 0.7s forwards;
+            opacity: 0;
+        }
+
+        @media (max-width: 768px) {
+            .contact-section {
+                padding: 30px 24px;
+                margin: 20px;
+            }
+            
+            .section-title {
+                font-size: 26px;
+            }
+            
+            .section-subtitle {
+                font-size: 16px;
+            }
+            
+            .service-card {
+                padding: 20px;
+            }
+            
+            .service-icon {
+                width: 40px;
+                height: 40px;
+                margin-right: 16px;
+            }
+            
+            .service-text {
+                font-size: 15px;
+            }
+            
+            .cta-button {
+                padding: 18px 32px;
+                font-size: 16px;
+                min-width: 240px;
+            }
+            
+            .trust-indicators {
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+            }
+        }
+    </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body>
+  <div class="contact-section">
+   <div class="section-header">
+    <h2 class="section-title" id="section-title">¿Listo para impulsar tu negocio?</h2>
+    <p class="section-subtitle" id="section-subtitle">Estos son mis servicios principales</p>
+   </div>
+   <div class="services-grid">
+    <div class="service-card">
+     <div class="service-icon"></div>
+     <div class="service-content">
+      <p class="service-text" id="service-1">Marketing digital y soluciones digitales para empresas</p>
+     </div>
+    </div>
+    <div class="service-card">
+     <div class="service-icon"></div>
+     <div class="service-content">
+      <p class="service-text" id="service-2">Comunicación y estrategia comercial e impulso de marca</p>
+     </div>
+    </div>
+    <div class="service-card">
+     <div class="service-icon"></div>
+     <div class="service-content">
+      <p class="service-text" id="service-3">Gestión y dirección de equipos</p>
+     </div>
+    </div>
+    <div class="service-card">
+     <div class="service-icon"></div>
+     <div class="service-content">
+      <p class="service-text" id="service-4">Mantenimiento y mejoras de espacios web, impulso de ideas empresariales</p>
+     </div>
+    </div>
+   </div>
+   <div class="cta-container"><a href="https://calendar.app.google/eHYgs4wEDspc1DqW7" target="_blank" rel="noopener noreferrer" class="cta-button" id="cta-button"> 📅 Reservar Consulta Gratuita </a>
+    <div class="trust-indicators">
+     <div class="trust-item">
+      <div class="trust-icon">
+       🔒
+      </div><span>100% Confidencial</span>
+     </div>
+     <div class="trust-item">
+      <div class="trust-icon">
+       ⚡
+      </div><span>Respuesta en 24h</span>
+     </div>
+     <div class="trust-item">
+      <div class="trust-icon">
+       💡
+      </div><span>Consulta Gratuita</span>
+     </div>
+    </div>
+   </div>
+  </div>
+  <script>
+        const defaultConfig = {
+            section_title: "¿Listo para impulsar tu negocio?",
+            section_subtitle: "Estos son mis servicios principales",
+            service_1: "Marketing digital y soluciones digitales para empresas",
+            service_2: "Comunicación y estrategia comercial e impulso de marca", 
+            service_3: "Gestión y dirección de equipos",
+            service_4: "Mantenimiento y mejoras de espacios web, impulso de ideas empresariales",
+            cta_text: "📅 Reservar Consulta Gratuita",
+            primary_color: "#6b46c1",
+            secondary_color: "#9333ea",
+            background_color: "#faf5ff",
+            text_color: "#4c1d95",
+            accent_color: "#ffffff"
+        };
+
+        async function onConfigChange(config) {
+            const sectionTitle = config.section_title || defaultConfig.section_title;
+            const sectionSubtitle = config.section_subtitle || defaultConfig.section_subtitle;
+            const service1 = config.service_1 || defaultConfig.service_1;
+            const service2 = config.service_2 || defaultConfig.service_2;
+            const service3 = config.service_3 || defaultConfig.service_3;
+            const service4 = config.service_4 || defaultConfig.service_4;
+            const ctaText = config.cta_text || defaultConfig.cta_text;
+            const primaryColor = config.primary_color || defaultConfig.primary_color;
+            const secondaryColor = config.secondary_color || defaultConfig.secondary_color;
+            const backgroundColor = config.background_color || defaultConfig.background_color;
+            const textColor = config.text_color || defaultConfig.text_color;
+            const accentColor = config.accent_color || defaultConfig.accent_color;
+
+            // Update text content
+            document.getElementById('section-title').textContent = sectionTitle;
+            document.getElementById('section-subtitle').textContent = sectionSubtitle;
+            document.getElementById('service-1').textContent = service1;
+            document.getElementById('service-2').textContent = service2;
+            document.getElementById('service-3').textContent = service3;
+            document.getElementById('service-4').textContent = service4;
+            document.getElementById('cta-button').textContent = ctaText;
+
+            // Update colors
+            document.body.style.background = `linear-gradient(135deg, ${primaryColor} 0%, ${secondaryColor} 100%)`;
+            
+            const serviceCards = document.querySelectorAll('.service-card');
+            serviceCards.forEach(card => {
+                card.style.background = `linear-gradient(135deg, ${backgroundColor} 0%, ${accentColor} 100%)`;
+            });
+
+            const serviceTexts = document.querySelectorAll('.service-text');
+            serviceTexts.forEach(text => {
+                text.style.color = textColor;
+            });
+
+            const sectionTitle_el = document.getElementById('section-title');
+            sectionTitle_el.style.color = textColor;
+
+            const serviceIcons = document.querySelectorAll('.service-icon');
+            serviceIcons.forEach(icon => {
+                icon.style.background = `linear-gradient(135deg, ${primaryColor}, ${secondaryColor})`;
+            });
+
+            const ctaButton = document.getElementById('cta-button');
+            ctaButton.style.background = `linear-gradient(135deg, ${primaryColor} 0%, ${secondaryColor} 100%)`;
+            ctaButton.style.boxShadow = `0 12px 40px ${primaryColor}50`;
+
+            const trustIcons = document.querySelectorAll('.trust-icon');
+            trustIcons.forEach(icon => {
+                icon.style.background = `linear-gradient(135deg, ${primaryColor}, ${secondaryColor})`;
+            });
+        }
+
+        function mapToCapabilities(config) {
+            return {
+                recolorables: [
+                    {
+                        get: () => config.primary_color || defaultConfig.primary_color,
+                        set: (value) => {
+                            config.primary_color = value;
+                            window.elementSdk.setConfig({ primary_color: value });
+                        }
+                    },
+                    {
+                        get: () => config.secondary_color || defaultConfig.secondary_color,
+                        set: (value) => {
+                            config.secondary_color = value;
+                            window.elementSdk.setConfig({ secondary_color: value });
+                        }
+                    },
+                    {
+                        get: () => config.background_color || defaultConfig.background_color,
+                        set: (value) => {
+                            config.background_color = value;
+                            window.elementSdk.setConfig({ background_color: value });
+                        }
+                    },
+                    {
+                        get: () => config.text_color || defaultConfig.text_color,
+                        set: (value) => {
+                            config.text_color = value;
+                            window.elementSdk.setConfig({ text_color: value });
+                        }
+                    },
+                    {
+                        get: () => config.accent_color || defaultConfig.accent_color,
+                        set: (value) => {
+                            config.accent_color = value;
+                            window.elementSdk.setConfig({ accent_color: value });
+                        }
+                    }
+                ],
+                borderables: [],
+                fontEditable: undefined,
+                fontSizeable: undefined
+            };
+        }
+
+        function mapToEditPanelValues(config) {
+            return new Map([
+                ["section_title", config.section_title || defaultConfig.section_title],
+                ["section_subtitle", config.section_subtitle || defaultConfig.section_subtitle],
+                ["service_1", config.service_1 || defaultConfig.service_1],
+                ["service_2", config.service_2 || defaultConfig.service_2],
+                ["service_3", config.service_3 || defaultConfig.service_3],
+                ["service_4", config.service_4 || defaultConfig.service_4],
+                ["cta_text", config.cta_text || defaultConfig.cta_text]
+            ]);
+        }
+
+        // Initialize the SDK
+        if (window.elementSdk) {
+            window.elementSdk.init({
+                defaultConfig,
+                onConfigChange,
+                mapToCapabilities,
+                mapToEditPanelValues
+            });
+        }
+    </script>
+<!-- Bootstrap JS y Popper -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"></script>
+<script>
+  window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+</script>
+<script>
+window.addEventListener('scroll', function() {
+  const navbar = document.querySelector('.navbar');
+  if(window.scrollY > 50) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+</script>
+</body>
 </html>
+
+
+
