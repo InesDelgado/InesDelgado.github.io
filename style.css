@@ -1,301 +1,47 @@
-/* =====================
-   VARIABLES GLOBALES
-===================== */
-:root {
-  --color-body-text: #fff;
-  --color-link: red;
-  --color-hero-gradient-start: rgba(102,126,234,0.9);
-  --color-hero-gradient-end: rgba(118,75,162,0.9);
-  --color-hero-text-gradient-start: #fff;
-  --color-hero-text-gradient-end: #d1c4e9;
-  --color-card-border: #aefc3c;
-  --color-navbar-bg: rgba(0,0,0,0.85);
-  --color-navbar-bg-scrolled: rgba(0,0,0,1);
-  --color-timeline-line: #aefc3c;
-  --color-timeline-icon: #212529;
-  --color-btn-bounce-shadow: rgba(118,75,162,0.3);
-  --color-btn-bounce-shadow-hover: rgba(118,75,162,0.4);
-  --color-linkedin: #0077b5;
-  --color-linkedin-hover: #005885;
-  --color-tiktok: #000;
-  --color-tiktok-hover: #333;
-}
+ /*<style>
+    body {
+      font-family: 'Exo', sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+    }
 
-/* =====================
-   GENERAL
-===================== */
-body {
-  background-image: url('imagenes/c2551225-cc26-4292-8ff2-539dea7e4a99.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  font-family: 'Exo', sans-serif;
-  padding-top: 70px;
-  color: var(--color-body-text);
-}
+    /* Navbar 
+    .navbar {
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    .nav-link:hover { color: #aefc3c !important; }
 
-section { text-align: center; }
+    /* Hero Section 
+    header.hero-section {
+      height: 100vh;
+      background: linear-gradient(135deg, rgba(102,126,234,0.9), rgba(118,75,162,0.9)), url('imagenes/fondo_header.jpg') center/cover no-repeat;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+    .hero-section::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.25);
+    }
+    .hero-section .container { position: relative; z-index: 2; }
+    .hero-title { font-size: 4rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; background: linear-gradient(45deg, #fff, #d1c4e9); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero-subtitle { font-weight: 500; font-size: 1.5rem; color: #f3e5f5; margin-top: 0.5rem; }
+    .hero-text { font-size: 1.1rem; color: #e0e0e0; margin-top: 1rem; }
 
-p { color: var(--color-body-text); }
-h1 { color: yellow; }
-h2 { color: rgb(0, 255, 13); }
-h3 { color: rgb(255, 183, 2); }
-h4 { color: rgb(212, 254, 255); }
-h5 { color: yellow; }
-
-#form { color: black; }
-a { color: var(--color-link); }
-
-/* =====================
-   BOTONES TECLADO
-===================== */
-.computer-key-button {
-  background-color: pink;
-  border: 3px solid #999;
-  border-radius: 5px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  margin-bottom: 10px;
-  width: 100%;
-  text-align: left;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-family: 'Exo', sans-serif;
-  transition: background-color 0.3s ease;
-}
-
-.computer-key-button:hover {
-  background-color: rgb(6, 252, 35);
-}
-
-.computer-key-button:active {
-  transform: translateY(2px);
-}
-
-.computer-key-button .keyboard-icon {
-  font-size: 20px;
-  margin-left: 10px;
-  color: #555;
-}
-
-/* =====================
-   NAVBAR
-===================== */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 9999;
-  background-color: var(--color-navbar-bg);
-  transition: background-color 0.3s ease;
-}
-
-.navbar.scrolled { background-color: var(--color-navbar-bg-scrolled); }
-
-.navbar-dark .navbar-nav .nav-link,
-.navbar-dark .navbar-brand { color: #fff !important; }
-
-.navbar-nav .nav-link:hover { background-color: #333; }
-
-/* =====================
-   HERO
-===================== */
-.hero-section {
-  height: 100vh;
-  background: linear-gradient(135deg, var(--color-hero-gradient-start), var(--color-hero-gradient-end)),
-              url('imagenes/fondo_header.jpg') center/cover no-repeat;
-  color: #fff;
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-}
-
-.hero-section::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.25);
-  z-index: 0;
-}
-
-.hero-section .container { position: relative; z-index: 2; }
-
-.hero-title {
-  font-size: 4rem;
-  font-weight: 800;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  background: linear-gradient(45deg, var(--color-hero-text-gradient-start), var(--color-hero-text-gradient-end));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.hero-subtitle {
-  font-weight: 500;
-  font-size: 1.5rem;
-  color: #f3e5f5;
-  margin-top: 0.5rem;
-}
-
-.hero-text {
-  font-size: 1.1rem;
-  margin-top: 1.5rem;
-  color: #e0e0e0;
-  letter-spacing: 0.5px;
-}
-
-.hero-btn {
-  background: linear-gradient(45deg, #667eea, #764ba2);
-  border: none;
-  border-radius: 50px;
-  color: #fff;
-  font-weight: 600;
-  padding: 12px 35px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  box-shadow: 0 8px 20px var(--color-btn-bounce-shadow);
-  transition: all 0.3s ease;
-}
-
-.hero-btn:hover {
-  background: linear-gradient(45deg, #764ba2, #667eea);
-  transform: translateY(-3px);
-  box-shadow: 0 12px 25px var(--color-btn-bounce-shadow-hover);
-}
-
-@media (max-width: 768px) {
-  .hero-title { font-size: 2.5rem; }
-  .hero-subtitle { font-size: 1.2rem; }
-  .hero-text { font-size: 1rem; }
-  body { background-attachment: scroll; } /* mejora rendimiento en móviles */
-}
-
-/* =====================
-   SECCIONES UNIFORMES
-===================== */
-.section-card {
-  background-color: #fff;
-  border-radius: 10px;
-  padding: 60px 30px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  margin: 80px auto 0 auto;
-  max-width: 900px;
-}
-
-.section-card img {
-  border: 4px solid var(--color-card-border);
-  transition: transform 0.3s ease;
-}
-
-.section-card img:hover { transform: scale(1.05); }
-
-.section-card h2, .section-card h4 {
-  color: #212529;
-  text-align: center;
-}
-
-.section-card h2 { font-weight: 700; margin-bottom: 30px; }
-.section-card h4 { font-weight: 600; margin-bottom: 10px; }
-
-.section-card p {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: #555;
-  margin-bottom: 20px;
-}
-
-/* =====================
-   TIMELINE EXPERIENCIA
-===================== */
-.timeline {
-  position: relative;
-  margin: 0;
-  padding: 0;
-}
-
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 20px;
-  top: 0;
-  bottom: 0;
-  width: 4px;
-  background: var(--color-timeline-line);
-  border-radius: 2px;
-}
-
-.timeline-item {
-  position: relative;
-  padding-left: 60px;
-  margin-bottom: 40px;
-}
-
-.timeline-icon {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 40px;
-  height: 40px;
-  background-color: #fff;
-  border: 4px solid var(--color-card-border);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  color: var(--color-timeline-icon);
-}
-
-.timeline-content h4 { margin-bottom: 10px; color: #212529; }
-.timeline-content p { color: #555; }
-
-/* =====================
-   BOTONES REDES SOCIALES
-===================== */
-.btn-linkedin {
-  background-color: var(--color-linkedin) !important;
-  border-color: var(--color-linkedin) !important;
-  color: white !important;
-}
-
-.btn-linkedin:hover {
-  background-color: var(--color-linkedin-hover) !important;
-  border-color: var(--color-linkedin-hover) !important;
-}
-
-.btn-instagram {
-  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) !important;
-  border: none !important;
-  color: white !important;
-}
-
-.btn-instagram:hover {
-  background: linear-gradient(45deg, #d17a2b 0%, #c55a34 25%, #b4223b 50%, #a31e5c 75%, #931680 100%) !important;
-  color: white !important;
-}
-
-.btn-tiktok {
-  background-color: var(--color-tiktok) !important;
-  border-color: var(--color-tiktok) !important;
-  color: white !important;
-}
-
-.btn-tiktok:hover {
-  background-color: var(--color-tiktok-hover) !important;
-  border-color: var(--color-tiktok-hover) !important;
-  color: white !important;
-}
-
-/* =====================
-   ANIMACIONES BOUNCE
-===================== */
-.btn-bounce { animation: bounce 0.5s; }
-
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-  60% { transform: translateY(-10px); }
-  40% { transform: translateY(-5px); }
-}
+      /* Sección Sobre Mí 
+    #about {
+      background: #fff;
+      border-radius: 10px;
+      padding: 60px 30px;
+      margin-top: 80px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+    #about img { border: 4px solid #aefc3c; transition: transform 0.3s ease; }
+    #about img:hover { transform: scale(1.05); }
+    #about h2 { font-weight: 700; margin-bottom: 20px; }
+  </style> */
