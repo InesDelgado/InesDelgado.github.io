@@ -1,1186 +1,309 @@
 <!doctype html>
-<html lang="es">
- <head>
+<html lang="es" class="scroll-smooth">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portafolio Profesional</title>
-  <script src="/_sdk/element_sdk.js"></script>
+  <title>Agencia Digital | Inspire in Design</title>
+  
   <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&family=Work+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  
   <style>
-    body {
-      box-sizing: border-box;
+    /* --- Estilos Base del Diseño (Tema Oscuro) --- */
+    body { 
+        font-family: 'Inter', sans-serif; 
+        box-sizing: border-box; 
+        background-color: #0f0a1f; /* Fondo oscuro principal */
+        color: #e9d5ff; /* Texto claro base */
     }
     
-    * {
-      box-sizing: border-box;
+    /* Títulos y acentos con Work Sans, incluida la clase brand-font */
+    h1, h2, h3, h4, h5, h6, .brand-font {
+        font-family: 'Work Sans', sans-serif;
+        color: white;
     }
 
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
+    /* --- Clase de Tarjetas (Efecto Neón del diseño del portafolio) --- */
+    .neon-card {
+        background-color: #1a0f2e; /* Fondo de tarjeta más claro */
+        border: 2px solid rgba(126, 34, 206, 0.5); /* Borde morado sutil */
+        transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Curva suave de transición */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     }
 
-    .dropdown-transition {
-      transition: transform 0.3s ease;
+    /* Efecto NEÓN VERDE en Hover para todas las tarjetas */
+    .neon-card:hover {
+        border-color: #00ff00; /* Borde verde neón */
+        box-shadow: 0 0 25px 5px rgba(0, 255, 0, 0.4), /* Sombra neón principal */
+                    0 0 50px 10px rgba(0, 255, 0, 0.1); /* Sombra difusa */
+        transform: translateY(-5px) scale(1.02);
+        z-index: 10;
+    }
+    
+    /* Estilo para el borde brillante de la foto de perfil */
+    .profile-glow {
+        box-shadow: 0 0 30px 8px rgba(168, 85, 247, 0.4),
+                    0 0 50px 15px rgba(168, 85, 247, 0.2);
+        border: 4px solid #a855f7;
     }
 
-    .skill-card {
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    /* Botón de Contacto Principal */
+    .primary-button {
+        border: 2px solid #a855f7;
+        background-color: transparent;
+        color: white;
+        transition: all 0.3s ease;
     }
 
-    .skill-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    .primary-button:hover {
+        background-color: #a855f7;
+        color: #0f0a1f;
+        box-shadow: 0 0 15px rgba(168, 85, 247, 0.6);
     }
 
-    .project-card {
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    /* Estilos específicos para el logo "ID" */
+    .logo-container {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem; /* Espacio entre el círculo y el texto */
     }
 
-    .project-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    .logo-circle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.25rem; /* w-9 */
+        height: 2.25rem; /* h-9 */
+        border-radius: 9999px; /* rounded-full */
+        background: linear-gradient(to bottom right, #a78bfa, #8b5cf6); /* from-purple-400 to-violet-600 */
+        color: white;
+        font-weight: 600; /* font-semibold */
+        font-size: 0.75rem; /* text-xs */
+        box-shadow: 0 4px 12px rgba(168, 85, 247, 0.3); /* shadow-lg shadow-purple-500/30 */
+        transition: box-shadow 0.3s ease;
     }
+
+    .logo-circle:hover {
+        box-shadow: 0 6px 16px rgba(168, 85, 247, 0.5); /* group-hover:shadow-purple-500/50 */
+    }
+    
+    /* -- CORRECCIÓN APLICADA AQUÍ -- */
+    .logo-text {
+        font-size: 1rem; /* Más pequeño: text-base (16px) */
+        font-weight: 600; /* Más fino: font-semibold */
+        letter-spacing: 0.15em; /* Espaciado ajustado, un poco menos que antes */
+        text-transform: uppercase;
+        color: white;
+    }
+    /* ------------------------------ */
+
   </style>
-  <style>@view-transition { navigation: auto; }</style>
-  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
- </head>
- <body class="w-full"><!-- Header / Navegación -->
-  <header class="w-full shadow-md sticky top-0 z-50" id="header">
-   <nav class="main-container mx-auto px-6 py-4">
-    <div class="flex justify-between items-center"><span class="text-2xl font-bold" id="brandTitle">Inspire in Design</span> <!-- Botón hamburguesa móvil --> <button id="navToggle" class="lg:hidden focus:outline-none focus:ring-2 focus:ring-offset-2 rounded p-2" aria-label="Toggle navigation menu" aria-expanded="false">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-      </svg></button> <!-- Links de navegación -->
-     <div id="navLinks" class="hidden lg:flex lg:items-center lg:space-x-6"><a href="#about" class="block py-2 lg:py-0 hover:opacity-80 transition-opacity" id="aboutLabel">Nosotros</a> <a href="#training" class="block py-2 lg:py-0 hover:opacity-80 transition-opacity" id="trainingLabel">Servicios</a> <a href="#skills" class="block py-2 lg:py-0 hover:opacity-80 transition-opacity" id="skillsLabel">Especialidades</a> <a href="#contact" class="block py-2 lg:py-0 hover:opacity-80 transition-opacity" id="contactLabel">Contacto</a>
-     </div>
+  <script src="/_sdk/element_sdk.js"></script>
+</head>
+
+<body class="w-full">
+  <header class="w-full sticky top-0 z-50 bg-[#1a0f2e]/90 backdrop-blur-sm border-b border-purple-900/40" id="header">
+   <nav class="main-container max-w-7xl mx-auto px-6 py-4">
+    <div class="flex justify-between items-center">
+      
+      <a href="#hero" class="logo-container group">
+        <span class="logo-circle">ID</span>
+        <span class="logo-text">Inspire in Design</span>
+      </a>
+      
+      <button id="navToggle" class="lg:hidden text-[#e9d5ff] hover:text-white focus:outline-none focus:ring-2 focus:ring-purple-500 rounded p-2" aria-label="Toggle navigation menu" aria-expanded="false">
+       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+      </button> 
+      
+      <div id="navLinks" class="hidden lg:flex lg:items-center lg:space-x-8 text-sm font-light">
+          <a href="#about" class="block py-2 lg:py-0 text-[#e9d5ff] hover:text-white transition-colors" id="aboutLabel">Nosotros</a> 
+          <a href="#training" class="block py-2 lg:py-0 text-[#e9d5ff] hover:text-white transition-colors" id="trainingLabel">Servicios</a> 
+          <a href="#skills" class="block py-2 lg:py-0 text-[#e9d5ff] hover:text-white transition-colors" id="skillsLabel">Especialidades</a> 
+          <a href="#contact" class="px-6 py-2 text-sm font-normal rounded-full primary-button" id="contactLabel">Contacto</a>
+      </div>
+    </div>
+    <div id="mobileMenu" class="hidden lg:hidden mt-4 pb-4 space-y-4 text-center bg-[#1a0f2e]">
+        <a href="#about" class="block text-[#e9d5ff] hover:text-white">Nosotros</a>
+        <a href="#training" class="block text-[#e9d5ff] hover:text-white">Servicios</a>
+        <a href="#skills" class="block text-[#e9d5ff] hover:text-white">Especialidades</a>
+        <a href="#contact" class="block text-[#a855f7] font-medium">Contacto</a>
     </div>
    </nav>
-  </header><!-- Sección Hero -->
-  <main>
-   <section class="w-full py-20 px-6" id="hero">
-    <div class="main-container mx-auto text-center">
-     <h1 class="text-5xl font-bold mb-4" id="heroTitle">Hola, soy [Tu Nombre]</h1>
-     <p class="text-2xl mb-6" id="heroSubtitle">Diseñador UX/UI &amp; Desarrollador Frontend</p>
-     <p class="text-lg max-w-2xl mx-auto mb-8" id="heroText">Creo experiencias digitales excepcionales que combinan diseño intuitivo con código limpio y funcional.</p><img id="profileImage" src="" alt="Foto de perfil profesional" class="w-48 h-48 rounded-full mx-auto object-cover shadow-lg" onerror="this.style.display='none'; this.alt='Imagen no disponible';">
-    </div>
-   </section><!-- Sección Sobre mí -->
-   <section id="about" class="w-full py-16 px-6">
-    <div class="main-container mx-auto">
-     <h2 class="text-4xl font-bold text-center mb-12" id="aboutTitle">Sobre mí</h2>
-     <div class="max-w-3xl mx-auto space-y-6">
-      <p class="text-lg leading-relaxed" id="aboutParagraph1">Soy un profesional apasionado por crear soluciones digitales que marcan la diferencia. Con experiencia en diseño UX/UI y desarrollo frontend, me especializo en transformar ideas complejas en interfaces intuitivas y atractivas.</p>
-      <p class="text-lg leading-relaxed" id="aboutParagraph2">Mi enfoque combina la empatía con el usuario, el pensamiento estratégico y la excelencia técnica. Creo firmemente que el buen diseño no solo se ve bien, sino que resuelve problemas reales de manera elegante.</p>
-      <p class="text-lg leading-relaxed" id="aboutParagraph3">Cuando no estoy diseñando o programando, me encontrarás explorando nuevas tendencias en tecnología, contribuyendo a proyectos de código abierto, o compartiendo conocimientos con la comunidad.</p>
+  </header>
+
+  <main class="pt-20">
+   <section class="w-full py-24 px-6 flex items-center justify-center min-h-[80vh]" id="hero">
+    <div class="main-container max-w-4xl mx-auto text-center">
+     <h1 class="text-6xl lg:text-7xl font-bold mb-6" id="heroTitle">
+        Hola, somos
+        <span class="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-violet-600">Inspire in Design</span>
+     </h1>
+     <h3 class="text-2xl lg:text-3xl font-light text-[#c084fc] mb-8" id="heroSubtitle">Soluciones Digitales | Excelencia de Marca | Gestión de Equipos</h3>
+     <p class="text-lg max-w-2xl mx-auto mb-12 text-[#e9d5ff] leading-relaxed" id="heroText">Creamos experiencias digitales excepcionales que combinan estilo, estrategias y sobre todo, hacemos crecer tus ideas y te acompañamos en todo el proceso.</p>
+     
+     <div class="relative inline-block">
+         <img id="profileImage" src="https://via.placeholder.com/200" alt="Foto de perfil profesional" class="w-48 h-48 rounded-full mx-auto object-cover profile-glow" onerror="this.style.display='none'; this.alt='Imagen no disponible';">
      </div>
     </div>
-   </section><!-- Sección Servicios con diseño de timeline -->
-   <section id="training" class="w-full py-16 px-6">
-    <div class="main-container mx-auto">
-     <h2 class="text-4xl font-bold text-center mb-8" id="certificationsTitle">Nuestros Servicios</h2>
-     <p class="text-center text-lg mb-12 max-w-2xl mx-auto" id="certificationsSubtitle">Soluciones digitales completas para impulsar tu negocio al siguiente nivel.</p>
+   </section>
+
+   <section id="about" class="w-full py-20 px-6 bg-[#1a0f2e]/50">
+    <div class="main-container max-w-4xl mx-auto">
+     <h2 class="text-4xl font-bold text-center mb-12 text-white" id="aboutTitle">Sobre Nosotros</h2>
+     <div class="space-y-6 text-lg leading-relaxed font-light">
+      <p class="text-[#e9d5ff]" id="aboutParagraph1"><strong class="text-white font-normal">Tu voz es nuestra prioridad</strong> Digitalizamos tus ideas con alma y pasión para que tu marca alcance la excelencia, sin que dejemos de escucharte en cada paso.</p>
+      <p class="text-[#e9d5ff]" id="aboutParagraph2">Nuestro enfoque combina la <strong class="text-white font-normal">empatía con el usuario</strong>, el pensamiento estratégico y la excelencia técnica. Creemos firmemente que el buen diseño no solo se ve bien, sino que resuelve problemas reales de manera elegante.</p>
+      <p class="text-[#e9d5ff]" id="aboutParagraph3">Somos expertos en comunicación, en qué te conozcan, y en que quieran conocerte.¿Quieres vender tus ideas? ¿Buscas soluciones digitales? ¡Hablemos! </p>
+     </div>
+    </div>
+   </section>
+
+   <section id="training" class="w-full py-20 px-6">
+    <div class="main-container max-w-6xl mx-auto">
+     <h2 class="text-4xl font-bold text-center mb-8 text-white" id="certificationsTitle">Nuestros Servicios</h2>
+     <p class="text-center text-lg mb-16 max-w-2xl mx-auto text-[#c084fc]" id="certificationsSubtitle">Soluciones digitales completas para impulsar tu negocio al siguiente nivel.</p>
+     
      <div class="max-w-5xl mx-auto">
-      <div class="relative"><!-- Línea vertical de timeline -->
+      <div class="relative">
        <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-600 via-violet-500 to-purple-600 hidden md:block"></div>
-       <div class="space-y-12"><!-- Servicio 1 -->
-        <div class="relative pl-0 md:pl-20">
-         <div class="absolute left-0 top-0 w-16 h-16 rounded-full bg-gradient-to-br from-purple-400 to-violet-600 flex items-center justify-center shadow-lg shadow-purple-500/40 hidden md:flex">
-          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-          </svg>
+       
+       <div class="space-y-12">
+        <div class="relative pl-0 md:pl-24">
+         <div class="absolute left-0 top-0 w-16 h-16 rounded-full bg-gradient-to-br from-purple-400 to-violet-600 flex items-center justify-center shadow-lg shadow-purple-500/40 hidden md:flex z-10">
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" /></svg>
          </div>
-         <div class="bg-[#1a0f2e] border border-purple-800/40 rounded-2xl p-8 hover:border-purple-600/60 hover:shadow-xl hover:shadow-purple-900/30 transition-all duration-300">
-          <h4 id="exp1Title" class="text-xl font-semibold text-white mb-3">Diseño UX/UI</h4>
-          <p id="exp1Description" class="text-base text-[#e9d5ff] leading-relaxed">Creamos interfaces intuitivas y atractivas centradas en la experiencia del usuario. Diseñamos productos digitales que conectan emocionalmente con tu audiencia.</p>
+         <div class="neon-card rounded-2xl p-8">
+          <h4 id="exp1Title" class="text-xl font-semibold text-white mb-3">Comunicación y Estrategia Comercial</h4>
+          <p id="exp1Description" class="text-base text-[#e9d5ff] leading-relaxed">
+    • Comunicación corporativa y digital
+    • Estrategia de marca y posicionamiento
+    • Gestión de campañas y contenidos
+    • Relaciones públicas y storytelling
+</p>
          </div>
-        </div><!-- Servicio 2 -->
-        <div class="relative pl-0 md:pl-20">
-         <div class="absolute left-0 top-0 w-16 h-16 rounded-full bg-gradient-to-br from-purple-400 to-violet-600 flex items-center justify-center shadow-lg shadow-purple-500/40 hidden md:flex">
-          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-          </svg>
+        </div>
+
+        <div class="relative pl-0 md:pl-24">
+         <div class="absolute left-0 top-0 w-16 h-16 rounded-full bg-gradient-to-br from-purple-400 to-violet-600 flex items-center justify-center shadow-lg shadow-purple-500/40 hidden md:flex z-10">
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
          </div>
-         <div class="bg-[#1a0f2e] border border-purple-800/40 rounded-2xl p-8 hover:border-purple-600/60 hover:shadow-xl hover:shadow-purple-900/30 transition-all duration-300">
-          <h4 id="exp2Title" class="text-xl font-semibold text-white mb-3">Desarrollo Web</h4>
-          <p id="exp2Description" class="text-base text-[#e9d5ff] leading-relaxed">Sitios web responsive y aplicaciones web modernas con las últimas tecnologías. Código limpio, optimizado y escalable para tu negocio.</p>
+         <div class="neon-card rounded-2xl p-8">
+          <h4 id="exp2Title" class="text-xl font-semibold text-white mb-3">Soluciones Digitales | Excelencia de Marca</h4>
+          <p id="exp2Description" class="text-base text-[#e9d5ff] leading-relaxed">
+    • Diseño UX/UI y experiencia de usuario
+    • Automatización y herramientas no-code
+    • Optimización de procesos digitales
+    • Gestión de identidad visual y coherencia de marca
+</p>
          </div>
-        </div><!-- Servicio 3 -->
-        <div class="relative pl-0 md:pl-20">
-         <div class="absolute left-0 top-0 w-16 h-16 rounded-full bg-gradient-to-br from-purple-400 to-violet-600 flex items-center justify-center shadow-lg shadow-purple-500/40 hidden md:flex">
-          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-          </svg>
+        </div>
+
+        <div class="relative pl-0 md:pl-24">
+         <div class="absolute left-0 top-0 w-16 h-16 rounded-full bg-gradient-to-br from-purple-400 to-violet-600 flex items-center justify-center shadow-lg shadow-purple-500/40 hidden md:flex z-10">
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>
          </div>
-         <div class="bg-[#1a0f2e] border border-purple-800/40 rounded-2xl p-8 hover:border-purple-600/60 hover:shadow-xl hover:shadow-purple-900/30 transition-all duration-300">
-          <h4 id="exp3Title" class="text-xl font-semibold text-white mb-3">Branding Digital</h4>
-          <p class="text-sm text-purple-300 mb-3" id="exp3Subtitle">Identidad Visual</p>
-          <p id="exp3Description" class="text-base text-[#e9d5ff] leading-relaxed">Desarrollamos identidades de marca coherentes y memorables que conectan con tu audiencia y destacan en el mercado digital.</p>
+         <div class="neon-card rounded-2xl p-8">
+          <h4 id="exp3Title" class="text-xl font-semibold text-white mb-3">Gestión de Equipos y Desarrollo Técnico</h4>
+          <p class="text-sm text-purple-300 mb-3" id="exp3Subtitle"></p>
+          <p id="exp3Description" class="text-base text-[#e9d5ff] leading-relaxed">
+    • Liderazgo y coordinación de proyectos
+    • Trabajo colaborativo y metodologías ágiles
+    •
+    Acompañamiento y asesoramiento estratégico
+    • Presentaciones Técnicas
+</p>
          </div>
         </div>
        </div>
       </div>
      </div>
     </div>
-   </section><!-- Sección Habilidades -->
-   <section id="skills" class="w-full py-16 px-6">
-    <div class="main-container mx-auto">
-     <h2 class="text-4xl font-bold text-center mb-12" id="skillsTitle">Habilidades</h2>
-     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto"><!-- Tarjeta Diseño -->
-      <div class="skill-card rounded-lg p-6 shadow-md">
-       <div class="text-4xl mb-4">
-        🎨
-       </div>
-       <h3 class="text-xl font-bold mb-4" id="skill1Title">Diseño UX/UI</h3>
-       <ul class="space-y-2">
-        <li id="skill1Item1">• Figma &amp; Adobe XD</li>
-        <li id="skill1Item2">• Prototipado interactivo</li>
-        <li id="skill1Item3">• Design Systems</li>
-        <li id="skill1Item4">• User Research</li>
-       </ul>
-      </div><!-- Tarjeta Desarrollo -->
-      <div class="skill-card rounded-lg p-6 shadow-md">
-       <div class="text-4xl mb-4">
-        💻
-       </div>
-       <h3 class="text-xl font-bold mb-4" id="skill2Title">Desarrollo Frontend</h3>
-       <ul class="space-y-2">
-        <li id="skill2Item1">• React &amp; Next.js</li>
-        <li id="skill2Item2">• TypeScript</li>
-        <li id="skill2Item3">• Tailwind CSS</li>
-        <li id="skill2Item4">• Git &amp; GitHub</li>
-       </ul>
-      </div><!-- Tarjeta Soft Skills -->
-      <div class="skill-card rounded-lg p-6 shadow-md">
-       <div class="text-4xl mb-4">
-        🤝
-       </div>
-       <h3 class="text-xl font-bold mb-4" id="skill3Title">Habilidades Blandas</h3>
-       <ul class="space-y-2">
-        <li id="skill3Item1">• Trabajo en equipo</li>
-        <li id="skill3Item2">• Comunicación efectiva</li>
-        <li id="skill3Item3">• Resolución de problemas</li>
-        <li id="skill3Item4">• Gestión de proyectos</li>
-       </ul>
-      </div>
-     </div>
-    </div>
-   </section><!-- Sección Contacto -->
-   <section id="contact" class="w-full py-16 px-6">
-    <div class="main-container mx-auto text-center">
-     <h2 class="text-4xl font-bold mb-6" id="contactTitle">¿Trabajamos juntos?</h2>
-     <p class="text-xl mb-8 max-w-2xl mx-auto" id="contactSubtitle">Estoy disponible para proyectos freelance, colaboraciones o posiciones full-time. ¡Hablemos!</p>
-     <div class="flex flex-wrap justify-center gap-6 mb-8">
-      <div class="flex items-center gap-2"><span class="text-2xl">📧</span> <span id="service1">Email: contacto@ejemplo.com</span>
-      </div>
-      <div class="flex items-center gap-2"><span class="text-2xl">💼</span> <span id="service2">LinkedIn: /tu-perfil</span>
-      </div>
-      <div class="flex items-center gap-2"><span class="text-2xl">🐙</span> <span id="service3">GitHub: /tu-usuario</span>
-      </div>
-      <div class="flex items-center gap-2"><span class="text-2xl">🎨</span> <span id="service4">Behance: /tu-portafolio</span>
-      </div>
-     </div>
-    </div>
    </section>
-  </main>
+
+   <!--<section id="skills" class="w-full py-20 px-6 bg-[#1a0f2e]/50">
+    <div class="main-container max-w-5xl mx-auto">
+     <h2 class="text-4xl font-bold text-center mb-12 text-white" id="skillsTitle">Habilidades</h2>
+     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="neon-card rounded-2xl p-6 text-center">
+       <div class="text-5xl mb-4"></div>
+       <h3 class="text-xl font-bold mb-4 text-purple-400" id="skill1Title">Diseño UX/UI</h3>
+       <ul class="space-y-2 text-purple-200 font-light">
+        <li id="skill1Item1">Figma &amp; Adobe XD</li>
+        <li id="skill1Item2">Prototipado interactivo</li>
+        <li id="skill1Item3">Design Systems</li>
+        <li id="skill1Item4">User Research</li>
+       </ul>
+      </div>
+      <div class="neon-card rounded-2xl p-6 text-center">
+       <div class="text-5xl mb-4"></div>
+       <h3 class="text-xl font-bold mb-4 text-purple-400" id="skill2Title">Desarrollo Frontend</h3>
+       <ul class="space-y-2 text-purple-200 font-light">
+        <li id="skill2Item1">React &amp; Next.js</li>
+        <li id="skill2Item2">TypeScript</li>
+        <li id="skill2Item3">Tailwind CSS</li>
+        <li id="skill2Item4">Git &amp; GitHub</li>
+       </ul>
+      </div>
+      <div class="neon-card rounded-2xl p-6 text-center">
+       <div class="text-5xl mb-4"></div>
+       <h3 class="text-xl font-bold mb-4 text-purple-400" id="skill3Title">Habilidades Blandas</h3>
+       <ul class="space-y-2 text-purple-200 font-light">
+        <li id="skill3Item1">Trabajo en equipo</li>
+        <li id="skill3Item2">Comunicación efectiva</li>
+        <li id="skill3Item3">Resolución de problemas</li>
+        <li id="skill3Item4">Gestión de proyectos</li>
+       </ul>
+      </div>
+     </div>
+    </div>
+   </section> -->
+
+   <section id="contact" class="w-full py-24 px-6">
+    <div class="main-container max-w-4xl mx-auto text-center">
+     <h2 class="text-4xl font-bold mb-6 text-white" id="contactTitle">¿Listo para impulsar tus ideas o tu negocio?</h2>
+<p class="text-xl mb-12 max-w-2xl mx-auto text-[#c084fc] font-light" id="contactSubtitle">Agenda una cita sin compromiso o escríbenos directamente. ¡Hablemos!</p>
+        
+        <div class="flex flex-col items-center justify-center gap-10">
+
+            <a href="https://calendar.app.google/CT8QmyBptQVe921v6" target="_blank" class="primary-button inline-flex items-center justify-center text-lg font-semibold px-12 py-4 rounded-full transition-all duration-300">
+                 Agendar una Cita Ahora
+            </a>
+
+<div class="flex items-center gap-3 px-6 py-3 border-2 border-purple-600 rounded-full bg-[#1a0f2e] hover:border-white transition-colors">
+    <span class="text-2xl text-purple-400"></span> 
+    <a href="mailto:contacto@inspireindesign.com" class="text-lg font-light text-[#e9d5ff]">inspireindesigncontacto@gmail.com</a>
+</div>
+            
+        </div>
+    </div>
+</section>
+
+  <footer class="py-8 text-center text-purple-900/60 text-sm bg-[#0f0a1f]">
+      <p>© 2025 Inspire in Design. Todos los derechos reservados.</p>
+  </footer>
+
   <script>
-    (function() {
-      "use strict";
-
-      // Configuración por defecto
-      const defaultConfig = {
-        background_color: "#f8f9fa",
-        surface_color: "#ffffff",
-        text_color: "#212529",
-        primary_color: "#0d6efd",
-        secondary_color: "#6c757d",
-        font_family: "system-ui",
-        font_size: 16,
-        brand_title: "Inspire in Design",
-        about_label: "Nosotros",
-        training_label: "Servicios",
-        experience_label: "Experiencia",
-        skills_label: "Especialidades",
-        projects_label: "Portafolio",
-        contact_label: "Contacto",
-        hero_title: "Inspire in Design",
-        hero_subtitle: "Transformamos ideas en experiencias digitales memorables",
-        hero_text: "Somos una agencia especializada en diseño UX/UI y desarrollo web que ayuda a empresas a destacar en el mundo digital con soluciones creativas y funcionales.",
-        profile_image_url: "",
-        about_title: "Sobre Nosotros",
-        about_paragraph_1: "En Inspire in Design somos un equipo apasionado por crear soluciones digitales que marcan la diferencia. Con amplia experiencia en diseño UX/UI y desarrollo web, nos especializamos en transformar ideas complejas en experiencias digitales intuitivas y atractivas.",
-        about_paragraph_2: "Nuestro enfoque combina la empatía con el usuario, el pensamiento estratégico y la excelencia técnica. Creemos firmemente que el buen diseño no solo se ve bien, sino que resuelve problemas reales de manera elegante y genera resultados medibles para tu negocio.",
-        about_paragraph_3: "Trabajamos con empresas de todos los tamaños, desde startups hasta corporaciones establecidas, ayudándolas a destacar en el mundo digital con soluciones personalizadas que reflejan su identidad única y conectan con su audiencia.",
-        certifications_title: "Nuestros Servicios",
-        certifications_subtitle: "Soluciones digitales completas para impulsar tu negocio al siguiente nivel.",
-        experience_title: "Nuestra Trayectoria",
-        exp_1_title: "Diseño UX/UI",
-        exp_1_description: "Creamos interfaces intuitivas y atractivas centradas en la experiencia del usuario",
-        exp_2_title: "Desarrollo Web",
-        exp_2_description: "Sitios web responsive y aplicaciones web modernas con las últimas tecnologías",
-        exp_3_title: "Branding Digital",
-        exp_3_subtitle: "Identidad Visual",
-        exp_3_description: "Desarrollamos identidades de marca coherentes y memorables que conectan con tu audiencia",
-        exp_job_1_title: "+20 años de experiencia en atención al cliente y liderazgo",
-        exp_job_1_description: "Trayectoria consolidada en gestión de ventas, coordinación de equipos y optimización de procesos comerciales. Habilidades sólidas en comunicación, resolución de conflictos y orientación al cliente, garantizando resultados de alto impacto.",
-        exp_job_2_title: "Prácticas Profesionales — X-Net Group",
-        exp_job_2_description: "Integrante del equipo de desarrollo web, participando en la creación, mantenimiento y mejora de sitios corporativos. Reforcé conocimientos en HTML, CSS, JavaScript y metodologías ágiles de trabajo colaborativo.",
-        exp_job_3_title: "Responsable Comercial y Comunicación Digital — SAO",
-        exp_job_3_subtitle: "Servicios Avanzados de Opinión",
-        exp_job_3_description: "Encargada de la estrategia comercial y comunicación digital de la empresa. Liderando la organización de equipos y la implementación de soluciones digitales personalizadas orientadas a la excelencia de marca y la satisfacción del cliente.",
-        exp_job_4_title: "Responsable Comercial y Comunicación Digital — SAO",
-        exp_job_4_subtitle: "Servicios Avanzados de Opinión",
-        exp_job_4_description: "Encargada de la estrategia comercial y comunicación digital de la empresa. Lidero la coordinación de equipos, la planificación de campañas digitales y la implementación de soluciones tecnológicas personalizadas orientadas al crecimiento, posicionamiento de marca y excelencia en la experiencia del cliente.",
-        skills_title: "Nuestras Especialidades",
-        skill_1_title: "Diseño Digital",
-        skill_1_item_1: "• Diseño UX/UI",
-        skill_1_item_2: "• Prototipado interactivo",
-        skill_1_item_3: "• Design Systems",
-        skill_1_item_4: "• Investigación de usuarios",
-        skill_2_title: "Desarrollo Web",
-        skill_2_item_1: "• Sitios web responsive",
-        skill_2_item_2: "• Aplicaciones web",
-        skill_2_item_3: "• E-commerce",
-        skill_2_item_4: "• Optimización SEO",
-        skill_3_title: "Estrategia Digital",
-        skill_3_item_1: "• Consultoría digital",
-        skill_3_item_2: "• Branding y identidad",
-        skill_3_item_3: "• Marketing digital",
-        skill_3_item_4: "• Análisis y métricas",
-        projects_section_title: "Nuestro Portafolio",
-        project_1_title: "App de Productividad",
-        project_1_description: "Diseño y desarrollo de una aplicación m����vil para gestión de tareas con sincronización en la nube.",
-        project_1_image_url: "",
-        project_1_link_url: "#",
-        project_2_title: "E-commerce Moderno",
-        project_2_description: "Plataforma de comercio electrónico con experiencia de compra optimizada y panel de administración.",
-        project_2_image_url: "",
-        project_2_link_url: "#",
-        project_3_title: "Dashboard Analytics",
-        project_3_description: "Sistema de visualización de datos en tiempo real con gráficos interactivos y reportes personalizables.",
-        project_3_image_url: "",
-        project_3_link_url: "#",
-        project_4_title: "Plataforma Educativa",
-        project_4_description: "Sistema de aprendizaje en línea con cursos interactivos, evaluaciones y seguimiento de progreso.",
-        project_4_image_url: "",
-        project_4_link_url: "#",
-        project_5_title: "App de Salud",
-        project_5_description: "Aplicación para seguimiento de hábitos saludables, recordatorios de medicación y citas médicas.",
-        project_5_image_url: "",
-        project_5_link_url: "#",
-        project_6_title: "Reproductor de Música",
-        project_6_description: "Interfaz elegante para streaming de música con listas personalizadas y recomendaciones inteligentes.",
-        project_6_image_url: "",
-        project_6_link_url: "#",
-        contact_title: "¿Listo para transformar tu presencia digital?",
-        contact_subtitle: "Estamos aqu�� para ayudarte a llevar tu negocio al siguiente nivel. ¡Conversemos sobre tu proyecto!",
-        service_1: "Email: hola@inspireindesign.com",
-        service_2: "LinkedIn: /inspire-in-design",
-        service_3: "Instagram: @inspireindesign",
-        service_4: "WhatsApp: +34 XXX XXX XXX"
-      };
-
-      // Referencias a elementos del DOM
-      const navToggle = document.getElementById("navToggle");
-      const navLinks = document.getElementById("navLinks");
-
-      // Función que aplica la configuración al DOM
-      async function onConfigChange(config) {
-        const cfg = Object.assign({}, defaultConfig, config || {});
-        const customFont = cfg.font_family || defaultConfig.font_family;
-        const baseFontStack = 'system-ui, -apple-system, sans-serif';
-        const fontFamily = `${customFont}, ${baseFontStack}`;
-        const baseSize = cfg.font_size || defaultConfig.font_size;
-
-        // Aplicar colores
-        document.body.style.backgroundColor = cfg.background_color;
-        document.body.style.color = cfg.text_color;
-        document.body.style.fontFamily = fontFamily;
-        document.body.style.fontSize = `${baseSize}px`;
-
-        // Header
-        const header = document.getElementById("header");
-        if (header) {
-          header.style.backgroundColor = cfg.surface_color;
-          header.style.color = cfg.text_color;
-        }
-
-        const brandTitle = document.getElementById("brandTitle");
-        if (brandTitle) {
-          brandTitle.textContent = cfg.brand_title;
-          brandTitle.style.color = cfg.primary_color;
-          brandTitle.style.fontSize = `${baseSize * 1.5}px`;
-        }
-
-        // Botón toggle
-        if (navToggle) {
-          navToggle.style.color = cfg.text_color;
-          navToggle.style.setProperty('--tw-ring-color', cfg.primary_color);
-        }
-
-        // Links de navegación
-        const navLinkElements = document.querySelectorAll("#navLinks a");
-        navLinkElements.forEach(link => {
-          link.style.color = cfg.text_color;
-          link.style.fontSize = `${baseSize}px`;
-        });
-
-        const aboutLabel = document.getElementById("aboutLabel");
-        if (aboutLabel) aboutLabel.textContent = cfg.about_label;
-        
-        const trainingLabel = document.getElementById("trainingLabel");
-        if (trainingLabel) trainingLabel.textContent = cfg.training_label;
-        
-        const experienceLabel = document.getElementById("experienceLabel");
-        if (experienceLabel) experienceLabel.textContent = cfg.experience_label;
-        
-        const skillsLabel = document.getElementById("skillsLabel");
-        if (skillsLabel) skillsLabel.textContent = cfg.skills_label;
-        
-        const projectsLabel = document.getElementById("projectsLabel");
-        if (projectsLabel) projectsLabel.textContent = cfg.projects_label;
-        
-        const contactLabel = document.getElementById("contactLabel");
-        if (contactLabel) contactLabel.textContent = cfg.contact_label;
-
-        // Sección Hero
-        const hero = document.getElementById("hero");
-        if (hero) {
-          hero.style.backgroundColor = cfg.background_color;
-        }
-
-        const heroTitle = document.getElementById("heroTitle");
-        if (heroTitle) {
-          heroTitle.textContent = cfg.hero_title;
-          heroTitle.style.color = cfg.text_color;
-          heroTitle.style.fontFamily = fontFamily;
-          heroTitle.style.fontSize = `${baseSize * 3.125}px`;
-        }
-
-        const heroSubtitle = document.getElementById("heroSubtitle");
-        if (heroSubtitle) {
-          heroSubtitle.textContent = cfg.hero_subtitle;
-          heroSubtitle.style.color = cfg.secondary_color;
-          heroSubtitle.style.fontFamily = fontFamily;
-          heroSubtitle.style.fontSize = `${baseSize * 1.5}px`;
-        }
-
-        const heroText = document.getElementById("heroText");
-        if (heroText) {
-          heroText.textContent = cfg.hero_text;
-          heroText.style.color = cfg.text_color;
-          heroText.style.fontFamily = fontFamily;
-          heroText.style.fontSize = `${baseSize * 1.125}px`;
-        }
-
-        const profileImage = document.getElementById("profileImage");
-        if (profileImage && cfg.profile_image_url) {
-          profileImage.src = cfg.profile_image_url;
-          profileImage.style.display = 'block';
-        } else if (profileImage) {
-          profileImage.style.display = 'none';
-        }
-
-        // Sección Sobre mí
-        const aboutTitle = document.getElementById("aboutTitle");
-        if (aboutTitle) {
-          aboutTitle.textContent = cfg.about_title;
-          aboutTitle.style.color = cfg.text_color;
-          aboutTitle.style.fontFamily = fontFamily;
-          aboutTitle.style.fontSize = `${baseSize * 2.5}px`;
-        }
-
-        const aboutParagraph1 = document.getElementById("aboutParagraph1");
-        if (aboutParagraph1) {
-          aboutParagraph1.textContent = cfg.about_paragraph_1;
-          aboutParagraph1.style.color = cfg.text_color;
-          aboutParagraph1.style.fontFamily = fontFamily;
-          aboutParagraph1.style.fontSize = `${baseSize * 1.125}px`;
-        }
-
-        const aboutParagraph2 = document.getElementById("aboutParagraph2");
-        if (aboutParagraph2) {
-          aboutParagraph2.textContent = cfg.about_paragraph_2;
-          aboutParagraph2.style.color = cfg.text_color;
-          aboutParagraph2.style.fontFamily = fontFamily;
-          aboutParagraph2.style.fontSize = `${baseSize * 1.125}px`;
-        }
-
-        const aboutParagraph3 = document.getElementById("aboutParagraph3");
-        if (aboutParagraph3) {
-          aboutParagraph3.textContent = cfg.about_paragraph_3;
-          aboutParagraph3.style.color = cfg.text_color;
-          aboutParagraph3.style.fontFamily = fontFamily;
-          aboutParagraph3.style.fontSize = `${baseSize * 1.125}px`;
-        }
-
-        // Sección Formación
-        const certificationsTitle = document.getElementById("certificationsTitle");
-        if (certificationsTitle) {
-          certificationsTitle.textContent = cfg.certifications_title;
-          certificationsTitle.style.color = cfg.text_color;
-          certificationsTitle.style.fontFamily = fontFamily;
-          certificationsTitle.style.fontSize = `${baseSize * 2.5}px`;
-        }
-
-        const certificationsSubtitle = document.getElementById("certificationsSubtitle");
-        if (certificationsSubtitle) {
-          certificationsSubtitle.textContent = cfg.certifications_subtitle;
-          certificationsSubtitle.style.color = cfg.text_color;
-          certificationsSubtitle.style.fontFamily = fontFamily;
-          certificationsSubtitle.style.fontSize = `${baseSize * 1.125}px`;
-        }
-
-        const dropdownButton = document.getElementById("dropdownButton");
-        if (dropdownButton) {
-          dropdownButton.style.backgroundColor = cfg.primary_color;
-          dropdownButton.style.color = cfg.surface_color;
-          dropdownButton.style.fontFamily = fontFamily;
-          dropdownButton.style.fontSize = `${baseSize * 1.125}px`;
-          dropdownButton.style.setProperty('--tw-ring-color', cfg.primary_color);
-        }
-
-        const dropdownMenu = document.getElementById("dropdownMenu");
-        if (dropdownMenu) {
-          dropdownMenu.style.backgroundColor = cfg.surface_color;
-          dropdownMenu.style.color = cfg.text_color;
-        }
-
-        const exp1Title = document.getElementById("exp1Title");
-        if (exp1Title) {
-          exp1Title.textContent = cfg.exp_1_title;
-          exp1Title.style.color = cfg.text_color;
-          exp1Title.style.fontFamily = fontFamily;
-          exp1Title.style.fontSize = `${baseSize * 1.125}px`;
-        }
-
-        const exp1Description = document.getElementById("exp1Description");
-        if (exp1Description) {
-          exp1Description.textContent = cfg.exp_1_description;
-          exp1Description.style.color = cfg.text_color;
-          exp1Description.style.fontFamily = fontFamily;
-          exp1Description.style.fontSize = `${baseSize}px`;
-        }
-
-        const exp2Title = document.getElementById("exp2Title");
-        if (exp2Title) {
-          exp2Title.textContent = cfg.exp_2_title;
-          exp2Title.style.color = cfg.text_color;
-          exp2Title.style.fontFamily = fontFamily;
-          exp2Title.style.fontSize = `${baseSize * 1.125}px`;
-        }
-
-        const exp2Description = document.getElementById("exp2Description");
-        if (exp2Description) {
-          exp2Description.textContent = cfg.exp_2_description;
-          exp2Description.style.color = cfg.text_color;
-          exp2Description.style.fontFamily = fontFamily;
-          exp2Description.style.fontSize = `${baseSize}px`;
-        }
-
-        const exp3Title = document.getElementById("exp3Title");
-        if (exp3Title) {
-          exp3Title.textContent = cfg.exp_3_title;
-          exp3Title.style.color = cfg.text_color;
-          exp3Title.style.fontFamily = fontFamily;
-          exp3Title.style.fontSize = `${baseSize * 1.125}px`;
-        }
-
-        const exp3Subtitle = document.getElementById("exp3Subtitle");
-        if (exp3Subtitle) {
-          exp3Subtitle.textContent = cfg.exp_3_subtitle;
-          exp3Subtitle.style.color = cfg.secondary_color;
-          exp3Subtitle.style.fontFamily = fontFamily;
-          exp3Subtitle.style.fontSize = `${baseSize * 0.875}px`;
-        }
-
-        const exp3Description = document.getElementById("exp3Description");
-        if (exp3Description) {
-          exp3Description.textContent = cfg.exp_3_description;
-          exp3Description.style.color = cfg.text_color;
-          exp3Description.style.fontFamily = fontFamily;
-          exp3Description.style.fontSize = `${baseSize}px`;
-        }
-
-        // Sección Experiencia Laboral
-        const experienceTitle = document.getElementById("experienceTitle");
-        if (experienceTitle) {
-          experienceTitle.textContent = cfg.experience_title;
-          experienceTitle.style.color = cfg.text_color;
-          experienceTitle.style.fontFamily = fontFamily;
-          experienceTitle.style.fontSize = `${baseSize * 2.5}px`;
-        }
-
-        const expJob1Title = document.getElementById("expJob1Title");
-        if (expJob1Title) {
-          expJob1Title.textContent = cfg.exp_job_1_title;
-          expJob1Title.style.fontFamily = fontFamily;
-          expJob1Title.style.fontSize = `${baseSize * 1.25}px`;
-        }
-
-        const expJob1Description = document.getElementById("expJob1Description");
-        if (expJob1Description) {
-          expJob1Description.textContent = cfg.exp_job_1_description;
-          expJob1Description.style.fontFamily = fontFamily;
-          expJob1Description.style.fontSize = `${baseSize}px`;
-        }
-
-        const expJob2Title = document.getElementById("expJob2Title");
-        if (expJob2Title) {
-          expJob2Title.textContent = cfg.exp_job_2_title;
-          expJob2Title.style.fontFamily = fontFamily;
-          expJob2Title.style.fontSize = `${baseSize * 1.25}px`;
-        }
-
-        const expJob2Description = document.getElementById("expJob2Description");
-        if (expJob2Description) {
-          expJob2Description.textContent = cfg.exp_job_2_description;
-          expJob2Description.style.fontFamily = fontFamily;
-          expJob2Description.style.fontSize = `${baseSize}px`;
-        }
-
-        const expJob3Title = document.getElementById("expJob3Title");
-        if (expJob3Title) {
-          expJob3Title.textContent = cfg.exp_job_3_title;
-          expJob3Title.style.fontFamily = fontFamily;
-          expJob3Title.style.fontSize = `${baseSize * 1.25}px`;
-        }
-
-        const expJob3Subtitle = document.getElementById("expJob3Subtitle");
-        if (expJob3Subtitle) {
-          expJob3Subtitle.textContent = cfg.exp_job_3_subtitle;
-          expJob3Subtitle.style.fontFamily = fontFamily;
-          expJob3Subtitle.style.fontSize = `${baseSize * 0.875}px`;
-        }
-
-        const expJob3Description = document.getElementById("expJob3Description");
-        if (expJob3Description) {
-          expJob3Description.textContent = cfg.exp_job_3_description;
-          expJob3Description.style.fontFamily = fontFamily;
-          expJob3Description.style.fontSize = `${baseSize}px`;
-        }
-
-        const expJob4Title = document.getElementById("expJob4Title");
-        if (expJob4Title) {
-          expJob4Title.textContent = cfg.exp_job_4_title;
-          expJob4Title.style.fontFamily = fontFamily;
-          expJob4Title.style.fontSize = `${baseSize * 1.25}px`;
-        }
-
-        const expJob4Subtitle = document.getElementById("expJob4Subtitle");
-        if (expJob4Subtitle) {
-          expJob4Subtitle.textContent = cfg.exp_job_4_subtitle;
-          expJob4Subtitle.style.fontFamily = fontFamily;
-          expJob4Subtitle.style.fontSize = `${baseSize * 0.875}px`;
-        }
-
-        const expJob4Description = document.getElementById("expJob4Description");
-        if (expJob4Description) {
-          expJob4Description.textContent = cfg.exp_job_4_description;
-          expJob4Description.style.fontFamily = fontFamily;
-          expJob4Description.style.fontSize = `${baseSize}px`;
-        }
-
-        // Sección Habilidades
-        const skillsTitle = document.getElementById("skillsTitle");
-        if (skillsTitle) {
-          skillsTitle.textContent = cfg.skills_title;
-          skillsTitle.style.color = cfg.text_color;
-          skillsTitle.style.fontFamily = fontFamily;
-          skillsTitle.style.fontSize = `${baseSize * 2.5}px`;
-        }
-
-        const skillCards = document.querySelectorAll(".skill-card");
-        skillCards.forEach(card => {
-          card.style.backgroundColor = cfg.surface_color;
-          card.style.color = cfg.text_color;
-        });
-
-        const skill1Title = document.getElementById("skill1Title");
-        if (skill1Title) {
-          skill1Title.textContent = cfg.skill_1_title;
-          skill1Title.style.color = cfg.primary_color;
-          skill1Title.style.fontFamily = fontFamily;
-          skill1Title.style.fontSize = `${baseSize * 1.25}px`;
-        }
-
-        const skill1Item1 = document.getElementById("skill1Item1");
-        if (skill1Item1) {
-          skill1Item1.textContent = cfg.skill_1_item_1;
-          skill1Item1.style.fontFamily = fontFamily;
-          skill1Item1.style.fontSize = `${baseSize}px`;
-        }
-
-        const skill1Item2 = document.getElementById("skill1Item2");
-        if (skill1Item2) {
-          skill1Item2.textContent = cfg.skill_1_item_2;
-          skill1Item2.style.fontFamily = fontFamily;
-          skill1Item2.style.fontSize = `${baseSize}px`;
-        }
-
-        const skill1Item3 = document.getElementById("skill1Item3");
-        if (skill1Item3) {
-          skill1Item3.textContent = cfg.skill_1_item_3;
-          skill1Item3.style.fontFamily = fontFamily;
-          skill1Item3.style.fontSize = `${baseSize}px`;
-        }
-
-        const skill1Item4 = document.getElementById("skill1Item4");
-        if (skill1Item4) {
-          skill1Item4.textContent = cfg.skill_1_item_4;
-          skill1Item4.style.fontFamily = fontFamily;
-          skill1Item4.style.fontSize = `${baseSize}px`;
-        }
-
-        const skill2Title = document.getElementById("skill2Title");
-        if (skill2Title) {
-          skill2Title.textContent = cfg.skill_2_title;
-          skill2Title.style.color = cfg.primary_color;
-          skill2Title.style.fontFamily = fontFamily;
-          skill2Title.style.fontSize = `${baseSize * 1.25}px`;
-        }
-
-        const skill2Item1 = document.getElementById("skill2Item1");
-        if (skill2Item1) {
-          skill2Item1.textContent = cfg.skill_2_item_1;
-          skill2Item1.style.fontFamily = fontFamily;
-          skill2Item1.style.fontSize = `${baseSize}px`;
-        }
-
-        const skill2Item2 = document.getElementById("skill2Item2");
-        if (skill2Item2) {
-          skill2Item2.textContent = cfg.skill_2_item_2;
-          skill2Item2.style.fontFamily = fontFamily;
-          skill2Item2.style.fontSize = `${baseSize}px`;
-        }
-
-        const skill2Item3 = document.getElementById("skill2Item3");
-        if (skill2Item3) {
-          skill2Item3.textContent = cfg.skill_2_item_3;
-          skill2Item3.style.fontFamily = fontFamily;
-          skill2Item3.style.fontSize = `${baseSize}px`;
-        }
-
-        const skill2Item4 = document.getElementById("skill2Item4");
-        if (skill2Item4) {
-          skill2Item4.textContent = cfg.skill_2_item_4;
-          skill2Item4.style.fontFamily = fontFamily;
-          skill2Item4.style.fontSize = `${baseSize}px`;
-        }
-
-        const skill3Title = document.getElementById("skill3Title");
-        if (skill3Title) {
-          skill3Title.textContent = cfg.skill_3_title;
-          skill3Title.style.color = cfg.primary_color;
-          skill3Title.style.fontFamily = fontFamily;
-          skill3Title.style.fontSize = `${baseSize * 1.25}px`;
-        }
-
-        const skill3Item1 = document.getElementById("skill3Item1");
-        if (skill3Item1) {
-          skill3Item1.textContent = cfg.skill_3_item_1;
-          skill3Item1.style.fontFamily = fontFamily;
-          skill3Item1.style.fontSize = `${baseSize}px`;
-        }
-
-        const skill3Item2 = document.getElementById("skill3Item2");
-        if (skill3Item2) {
-          skill3Item2.textContent = cfg.skill_3_item_2;
-          skill3Item2.style.fontFamily = fontFamily;
-          skill3Item2.style.fontSize = `${baseSize}px`;
-        }
-
-        const skill3Item3 = document.getElementById("skill3Item3");
-        if (skill3Item3) {
-          skill3Item3.textContent = cfg.skill_3_item_3;
-          skill3Item3.style.fontFamily = fontFamily;
-          skill3Item3.style.fontSize = `${baseSize}px`;
-        }
-
-        const skill3Item4 = document.getElementById("skill3Item4");
-        if (skill3Item4) {
-          skill3Item4.textContent = cfg.skill_3_item_4;
-          skill3Item4.style.fontFamily = fontFamily;
-          skill3Item4.style.fontSize = `${baseSize}px`;
-        }
-
-        // Sección Proyectos
-        const projectsSectionTitle = document.getElementById("projectsSectionTitle");
-        if (projectsSectionTitle) {
-          projectsSectionTitle.textContent = cfg.projects_section_title;
-          projectsSectionTitle.style.color = cfg.text_color;
-          projectsSectionTitle.style.fontFamily = fontFamily;
-          projectsSectionTitle.style.fontSize = `${baseSize * 2.5}px`;
-        }
-
-        const projectCards = document.querySelectorAll(".project-card");
-        projectCards.forEach(card => {
-          card.style.backgroundColor = cfg.surface_color;
-          card.style.color = cfg.text_color;
-        });
-
-        // Proyecto 1
-        const project1Title = document.getElementById("project1Title");
-        if (project1Title) {
-          project1Title.textContent = cfg.project_1_title;
-          project1Title.style.color = cfg.text_color;
-          project1Title.style.fontFamily = fontFamily;
-          project1Title.style.fontSize = `${baseSize * 1.25}px`;
-        }
-
-        const project1Description = document.getElementById("project1Description");
-        if (project1Description) {
-          project1Description.textContent = cfg.project_1_description;
-          project1Description.style.color = cfg.text_color;
-          project1Description.style.fontFamily = fontFamily;
-          project1Description.style.fontSize = `${baseSize}px`;
-        }
-
-        const project1Image = document.getElementById("project-1-image");
-        const project1Placeholder = document.getElementById("project-1-placeholder");
-        if (project1Image && cfg.project_1_image_url) {
-          project1Image.src = cfg.project_1_image_url;
-          project1Image.style.display = 'block';
-          if (project1Placeholder) project1Placeholder.style.display = 'none';
-        } else if (project1Image) {
-          project1Image.style.display = 'none';
-          if (project1Placeholder) project1Placeholder.style.display = 'block';
-        }
-
-        const project1Link = document.getElementById("project-1-link");
-        if (project1Link) {
-          project1Link.href = cfg.project_1_link_url || "#";
-          project1Link.style.backgroundColor = cfg.primary_color;
-          project1Link.style.color = cfg.surface_color;
-          project1Link.style.fontFamily = fontFamily;
-          project1Link.style.fontSize = `${baseSize}px`;
-        }
-
-        // Proyecto 2
-        const project2Title = document.getElementById("project2Title");
-        if (project2Title) {
-          project2Title.textContent = cfg.project_2_title;
-          project2Title.style.color = cfg.text_color;
-          project2Title.style.fontFamily = fontFamily;
-          project2Title.style.fontSize = `${baseSize * 1.25}px`;
-        }
-
-        const project2Description = document.getElementById("project2Description");
-        if (project2Description) {
-          project2Description.textContent = cfg.project_2_description;
-          project2Description.style.color = cfg.text_color;
-          project2Description.style.fontFamily = fontFamily;
-          project2Description.style.fontSize = `${baseSize}px`;
-        }
-
-        const project2Image = document.getElementById("project-2-image");
-        const project2Placeholder = document.getElementById("project-2-placeholder");
-        if (project2Image && cfg.project_2_image_url) {
-          project2Image.src = cfg.project_2_image_url;
-          project2Image.style.display = 'block';
-          if (project2Placeholder) project2Placeholder.style.display = 'none';
-        } else if (project2Image) {
-          project2Image.style.display = 'none';
-          if (project2Placeholder) project2Placeholder.style.display = 'block';
-        }
-
-        const project2Link = document.getElementById("project-2-link");
-        if (project2Link) {
-          project2Link.href = cfg.project_2_link_url || "#";
-          project2Link.style.backgroundColor = cfg.primary_color;
-          project2Link.style.color = cfg.surface_color;
-          project2Link.style.fontFamily = fontFamily;
-          project2Link.style.fontSize = `${baseSize}px`;
-        }
-
-        // Proyecto 3
-        const project3Title = document.getElementById("project3Title");
-        if (project3Title) {
-          project3Title.textContent = cfg.project_3_title;
-          project3Title.style.color = cfg.text_color;
-          project3Title.style.fontFamily = fontFamily;
-          project3Title.style.fontSize = `${baseSize * 1.25}px`;
-        }
-
-        const project3Description = document.getElementById("project3Description");
-        if (project3Description) {
-          project3Description.textContent = cfg.project_3_description;
-          project3Description.style.color = cfg.text_color;
-          project3Description.style.fontFamily = fontFamily;
-          project3Description.style.fontSize = `${baseSize}px`;
-        }
-
-        const project3Image = document.getElementById("project-3-image");
-        const project3Placeholder = document.getElementById("project-3-placeholder");
-        if (project3Image && cfg.project_3_image_url) {
-          project3Image.src = cfg.project_3_image_url;
-          project3Image.style.display = 'block';
-          if (project3Placeholder) project3Placeholder.style.display = 'none';
-        } else if (project3Image) {
-          project3Image.style.display = 'none';
-          if (project3Placeholder) project3Placeholder.style.display = 'block';
-        }
-
-        const project3Link = document.getElementById("project-3-link");
-        if (project3Link) {
-          project3Link.href = cfg.project_3_link_url || "#";
-          project3Link.style.backgroundColor = cfg.primary_color;
-          project3Link.style.color = cfg.surface_color;
-          project3Link.style.fontFamily = fontFamily;
-          project3Link.style.fontSize = `${baseSize}px`;
-        }
-
-        // Proyecto 4
-        const project4Title = document.getElementById("project4Title");
-        if (project4Title) {
-          project4Title.textContent = cfg.project_4_title;
-          project4Title.style.color = cfg.text_color;
-          project4Title.style.fontFamily = fontFamily;
-          project4Title.style.fontSize = `${baseSize * 1.25}px`;
-        }
-
-        const project4Description = document.getElementById("project4Description");
-        if (project4Description) {
-          project4Description.textContent = cfg.project_4_description;
-          project4Description.style.color = cfg.text_color;
-          project4Description.style.fontFamily = fontFamily;
-          project4Description.style.fontSize = `${baseSize}px`;
-        }
-
-        const project4Image = document.getElementById("project-4-image");
-        const project4Placeholder = document.getElementById("project-4-placeholder");
-        if (project4Image && cfg.project_4_image_url) {
-          project4Image.src = cfg.project_4_image_url;
-          project4Image.style.display = 'block';
-          if (project4Placeholder) project4Placeholder.style.display = 'none';
-        } else if (project4Image) {
-          project4Image.style.display = 'none';
-          if (project4Placeholder) project4Placeholder.style.display = 'block';
-        }
-
-        const project4Link = document.getElementById("project-4-link");
-        if (project4Link) {
-          project4Link.href = cfg.project_4_link_url || "#";
-          project4Link.style.backgroundColor = cfg.primary_color;
-          project4Link.style.color = cfg.surface_color;
-          project4Link.style.fontFamily = fontFamily;
-          project4Link.style.fontSize = `${baseSize}px`;
-        }
-
-        // Proyecto 5
-        const project5Title = document.getElementById("project5Title");
-        if (project5Title) {
-          project5Title.textContent = cfg.project_5_title;
-          project5Title.style.color = cfg.text_color;
-          project5Title.style.fontFamily = fontFamily;
-          project5Title.style.fontSize = `${baseSize * 1.25}px`;
-        }
-
-        const project5Description = document.getElementById("project5Description");
-        if (project5Description) {
-          project5Description.textContent = cfg.project_5_description;
-          project5Description.style.color = cfg.text_color;
-          project5Description.style.fontFamily = fontFamily;
-          project5Description.style.fontSize = `${baseSize}px`;
-        }
-
-        const project5Image = document.getElementById("project-5-image");
-        const project5Placeholder = document.getElementById("project-5-placeholder");
-        if (project5Image && cfg.project_5_image_url) {
-          project5Image.src = cfg.project_5_image_url;
-          project5Image.style.display = 'block';
-          if (project5Placeholder) project5Placeholder.style.display = 'none';
-        } else if (project5Image) {
-          project5Image.style.display = 'none';
-          if (project5Placeholder) project5Placeholder.style.display = 'block';
-        }
-
-        const project5Link = document.getElementById("project-5-link");
-        if (project5Link) {
-          project5Link.href = cfg.project_5_link_url || "#";
-          project5Link.style.backgroundColor = cfg.primary_color;
-          project5Link.style.color = cfg.surface_color;
-          project5Link.style.fontFamily = fontFamily;
-          project5Link.style.fontSize = `${baseSize}px`;
-        }
-
-        // Proyecto 6
-        const project6Title = document.getElementById("project6Title");
-        if (project6Title) {
-          project6Title.textContent = cfg.project_6_title;
-          project6Title.style.color = cfg.text_color;
-          project6Title.style.fontFamily = fontFamily;
-          project6Title.style.fontSize = `${baseSize * 1.25}px`;
-        }
-
-        const project6Description = document.getElementById("project6Description");
-        if (project6Description) {
-          project6Description.textContent = cfg.project_6_description;
-          project6Description.style.color = cfg.text_color;
-          project6Description.style.fontFamily = fontFamily;
-          project6Description.style.fontSize = `${baseSize}px`;
-        }
-
-        const project6Image = document.getElementById("project-6-image");
-        const project6Placeholder = document.getElementById("project-6-placeholder");
-        if (project6Image && cfg.project_6_image_url) {
-          project6Image.src = cfg.project_6_image_url;
-          project6Image.style.display = 'block';
-          if (project6Placeholder) project6Placeholder.style.display = 'none';
-        } else if (project6Image) {
-          project6Image.style.display = 'none';
-          if (project6Placeholder) project6Placeholder.style.display = 'block';
-        }
-
-        const project6Link = document.getElementById("project-6-link");
-        if (project6Link) {
-          project6Link.href = cfg.project_6_link_url || "#";
-          project6Link.style.backgroundColor = cfg.primary_color;
-          project6Link.style.color = cfg.surface_color;
-          project6Link.style.fontFamily = fontFamily;
-          project6Link.style.fontSize = `${baseSize}px`;
-        }
-
-        // Sección Contacto
-        const contactTitle = document.getElementById("contactTitle");
-        if (contactTitle) {
-          contactTitle.textContent = cfg.contact_title;
-          contactTitle.style.color = cfg.text_color;
-          contactTitle.style.fontFamily = fontFamily;
-          contactTitle.style.fontSize = `${baseSize * 2.5}px`;
-        }
-
-        const contactSubtitle = document.getElementById("contactSubtitle");
-        if (contactSubtitle) {
-          contactSubtitle.textContent = cfg.contact_subtitle;
-          contactSubtitle.style.color = cfg.text_color;
-          contactSubtitle.style.fontFamily = fontFamily;
-          contactSubtitle.style.fontSize = `${baseSize * 1.25}px`;
-        }
-
-        const service1 = document.getElementById("service1");
-        if (service1) {
-          service1.textContent = cfg.service_1;
-          service1.style.color = cfg.text_color;
-          service1.style.fontFamily = fontFamily;
-          service1.style.fontSize = `${baseSize}px`;
-        }
-
-        const service2 = document.getElementById("service2");
-        if (service2) {
-          service2.textContent = cfg.service_2;
-          service2.style.color = cfg.text_color;
-          service2.style.fontFamily = fontFamily;
-          service2.style.fontSize = `${baseSize}px`;
-        }
-
-        const service3 = document.getElementById("service3");
-        if (service3) {
-          service3.textContent = cfg.service_3;
-          service3.style.color = cfg.text_color;
-          service3.style.fontFamily = fontFamily;
-          service3.style.fontSize = `${baseSize}px`;
-        }
-
-        const service4 = document.getElementById("service4");
-        if (service4) {
-          service4.textContent = cfg.service_4;
-          service4.style.color = cfg.text_color;
-          service4.style.fontFamily = fontFamily;
-          service4.style.fontSize = `${baseSize}px`;
-        }
-      }
-
-      // Mapeo de capabilities para edición de colores y fuentes
-      function mapToCapabilities(config) {
-        const cfg = Object.assign({}, defaultConfig, config || {});
-        return {
-          recolorables: [
-            {
-              get: () => cfg.background_color,
-              set: (value) => {
-                cfg.background_color = value;
-                if (window.elementSdk) {
-                  window.elementSdk.setConfig({ background_color: value });
-                }
-              }
-            },
-            {
-              get: () => cfg.surface_color,
-              set: (value) => {
-                cfg.surface_color = value;
-                if (window.elementSdk) {
-                  window.elementSdk.setConfig({ surface_color: value });
-                }
-              }
-            },
-            {
-              get: () => cfg.text_color,
-              set: (value) => {
-                cfg.text_color = value;
-                if (window.elementSdk) {
-                  window.elementSdk.setConfig({ text_color: value });
-                }
-              }
-            },
-            {
-              get: () => cfg.primary_color,
-              set: (value) => {
-                cfg.primary_color = value;
-                if (window.elementSdk) {
-                  window.elementSdk.setConfig({ primary_color: value });
-                }
-              }
-            },
-            {
-              get: () => cfg.secondary_color,
-              set: (value) => {
-                cfg.secondary_color = value;
-                if (window.elementSdk) {
-                  window.elementSdk.setConfig({ secondary_color: value });
-                }
-              }
-            }
-          ],
-          borderables: [],
-          fontEditable: {
-            get: () => cfg.font_family,
-            set: (value) => {
-              cfg.font_family = value;
-              if (window.elementSdk) {
-                window.elementSdk.setConfig({ font_family: value });
-              }
-            }
-          },
-          fontSizeable: {
-            get: () => cfg.font_size,
-            set: (value) => {
-              cfg.font_size = value;
-              if (window.elementSdk) {
-                window.elementSdk.setConfig({ font_size: value });
-              }
-            }
+      document.addEventListener('DOMContentLoaded', () => {
+          const navToggle = document.getElementById('navToggle');
+          const mobileMenu = document.getElementById('mobileMenu');
+          
+          if (navToggle && mobileMenu) {
+              navToggle.addEventListener('click', () => {
+                  mobileMenu.classList.toggle('hidden');
+              });
+              
+              const links = mobileMenu.querySelectorAll('a');
+              links.forEach(link => {
+                  link.addEventListener('click', () => {
+                      mobileMenu.classList.add('hidden');
+                  });
+              });
           }
-        };
-      }
-
-      // Valores que verá el panel de edición de texto
-      function mapToEditPanelValues(config) {
-        const cfg = Object.assign({}, defaultConfig, config || {});
-        return new Map([
-          ["brand_title", cfg.brand_title],
-          ["about_label", cfg.about_label],
-          ["training_label", cfg.training_label],
-          ["experience_label", cfg.experience_label],
-          ["skills_label", cfg.skills_label],
-          ["projects_label", cfg.projects_label],
-          ["contact_label", cfg.contact_label],
-          ["hero_title", cfg.hero_title],
-          ["hero_subtitle", cfg.hero_subtitle],
-          ["hero_text", cfg.hero_text],
-          ["profile_image_url", cfg.profile_image_url],
-          ["about_title", cfg.about_title],
-          ["about_paragraph_1", cfg.about_paragraph_1],
-          ["about_paragraph_2", cfg.about_paragraph_2],
-          ["about_paragraph_3", cfg.about_paragraph_3],
-          ["certifications_title", cfg.certifications_title],
-          ["certifications_subtitle", cfg.certifications_subtitle],
-          ["experience_title", cfg.experience_title],
-          ["exp_1_title", cfg.exp_1_title],
-          ["exp_1_description", cfg.exp_1_description],
-          ["exp_2_title", cfg.exp_2_title],
-          ["exp_2_description", cfg.exp_2_description],
-          ["exp_3_title", cfg.exp_3_title],
-          ["exp_3_subtitle", cfg.exp_3_subtitle],
-          ["exp_3_description", cfg.exp_3_description],
-          ["exp_job_1_title", cfg.exp_job_1_title],
-          ["exp_job_1_description", cfg.exp_job_1_description],
-          ["exp_job_2_title", cfg.exp_job_2_title],
-          ["exp_job_2_description", cfg.exp_job_2_description],
-          ["exp_job_3_title", cfg.exp_job_3_title],
-          ["exp_job_3_subtitle", cfg.exp_job_3_subtitle],
-          ["exp_job_3_description", cfg.exp_job_3_description],
-          ["exp_job_4_title", cfg.exp_job_4_title],
-          ["exp_job_4_subtitle", cfg.exp_job_4_subtitle],
-          ["exp_job_4_description", cfg.exp_job_4_description],
-          ["skills_title", cfg.skills_title],
-          ["skill_1_title", cfg.skill_1_title],
-          ["skill_1_item_1", cfg.skill_1_item_1],
-          ["skill_1_item_2", cfg.skill_1_item_2],
-          ["skill_1_item_3", cfg.skill_1_item_3],
-          ["skill_1_item_4", cfg.skill_1_item_4],
-          ["skill_2_title", cfg.skill_2_title],
-          ["skill_2_item_1", cfg.skill_2_item_1],
-          ["skill_2_item_2", cfg.skill_2_item_2],
-          ["skill_2_item_3", cfg.skill_2_item_3],
-          ["skill_2_item_4", cfg.skill_2_item_4],
-          ["skill_3_title", cfg.skill_3_title],
-          ["skill_3_item_1", cfg.skill_3_item_1],
-          ["skill_3_item_2", cfg.skill_3_item_2],
-          ["skill_3_item_3", cfg.skill_3_item_3],
-          ["skill_3_item_4", cfg.skill_3_item_4],
-          ["projects_section_title", cfg.projects_section_title],
-          ["project_1_title", cfg.project_1_title],
-          ["project_1_description", cfg.project_1_description],
-          ["project_1_image_url", cfg.project_1_image_url],
-          ["project_1_link_url", cfg.project_1_link_url],
-          ["project_2_title", cfg.project_2_title],
-          ["project_2_description", cfg.project_2_description],
-          ["project_2_image_url", cfg.project_2_image_url],
-          ["project_2_link_url", cfg.project_2_link_url],
-          ["project_3_title", cfg.project_3_title],
-          ["project_3_description", cfg.project_3_description],
-          ["project_3_image_url", cfg.project_3_image_url],
-          ["project_3_link_url", cfg.project_3_link_url],
-          ["project_4_title", cfg.project_4_title],
-          ["project_4_description", cfg.project_4_description],
-          ["project_4_image_url", cfg.project_4_image_url],
-          ["project_4_link_url", cfg.project_4_link_url],
-          ["project_5_title", cfg.project_5_title],
-          ["project_5_description", cfg.project_5_description],
-          ["project_5_image_url", cfg.project_5_image_url],
-          ["project_5_link_url", cfg.project_5_link_url],
-          ["project_6_title", cfg.project_6_title],
-          ["project_6_description", cfg.project_6_description],
-          ["project_6_image_url", cfg.project_6_image_url],
-          ["project_6_link_url", cfg.project_6_link_url],
-          ["contact_title", cfg.contact_title],
-          ["contact_subtitle", cfg.contact_subtitle],
-          ["service_1", cfg.service_1],
-          ["service_2", cfg.service_2],
-          ["service_3", cfg.service_3],
-          ["service_4", cfg.service_4]
-        ]);
-      }
-
-      // Inicializar Element SDK si está disponible
-      if (window.elementSdk && typeof window.elementSdk.init === "function") {
-        window.elementSdk.init({
-          defaultConfig: defaultConfig,
-          onConfigChange: onConfigChange,
-          mapToCapabilities: mapToCapabilities,
-          mapToEditPanelValues: mapToEditPanelValues
-        });
-      } else {
-        // Sin SDK, aplicar configuración por defecto
-        onConfigChange(defaultConfig);
-      }
-
-      // Toggle menú móvil
-      if (navToggle && navLinks) {
-        navToggle.addEventListener("click", function () {
-          const isOpen = navLinks.classList.contains("flex");
-          if (isOpen) {
-            navLinks.classList.remove("flex");
-            navLinks.classList.add("hidden");
-            navToggle.setAttribute("aria-expanded", "false");
-          } else {
-            navLinks.classList.remove("hidden");
-            navLinks.classList.add("flex");
-            navLinks.classList.add("flex-col", "lg:flex-row", "lg:items-center");
-            navToggle.setAttribute("aria-expanded", "true");
-          }
-        });
-      }
-
-
-    })();
+      });
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9a552148b566cbd4',t:'MTc2NDI4MzI1NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+
+</body>
 </html>
