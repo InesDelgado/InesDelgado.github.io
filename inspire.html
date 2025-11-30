@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agencia Digital | Inspire in Design</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&family=Work+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    /* --- Estilos Base del Diseño (Tema Oscuro) --- */
+    body { 
+        font-family: 'Inter', sans-serif; 
+        box-sizing: border-box; 
+        background-color: #0f0a1f; /* Fondo oscuro principal */
+        color: #e9d5ff; /* Texto claro base */
+    }
+    
+    /* Títulos y acentos con Work Sans, incluida la clase brand-font */
+    h1, h2, h3, h4, h5, h6, .brand-font {
+        font-family: 'Work Sans', sans-serif;
+        color: white;
+    }
+
+    /* --- Clase de Tarjetas (Efecto Neón del diseño del portafolio) --- */
+    .neon-card {
+        background-color: #1a0f2e; /* Fondo de tarjeta más claro */
+        border: 2px solid rgba(126, 34, 206, 0.5); /* Borde morado sutil */
+        transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Curva suave de transición */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Efecto NEÓN VERDE en Hover para todas las tarjetas */
+    .neon-card:hover {
+        border-color: #00ff00; /* Borde verde neón */
+        box-shadow: 0 0 25px 5px rgba(0, 255, 0, 0.4), /* Sombra neón principal */
+                    0 0 50px 10px rgba(0, 255, 0, 0.1); /* Sombra difusa */
+        transform: translateY(-5px) scale(1.02);
+        z-index: 10;
+    }
+    
+    /* Estilo para el borde brillante de la foto de perfil */
+    .profile-glow {
+        box-shadow: 0 0 30px 8px rgba(168, 85, 247, 0.4),
+                    0 0 50px 15px rgba(168, 85, 247, 0.2);
+        border: 4px solid #a855f7;
+    }
+
+    /* Botón de Contacto Principal */
+    .primary-button {
+        border: 2px solid #a855f7;
+        background-color: transparent;
+        color: white;
+        transition: all 0.3s ease;
+    }
+
+    .primary-button:hover {
+        background-color: #a855f7;
+        color: #0f0a1f;
+        box-shadow: 0 0 15px rgba(168, 85, 247, 0.6);
+    }
+
+    /* Estilos específicos para el logo "ID" */
+    .logo-container {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem; /* Espacio entre el círculo y el texto */
+    }
+
+    .logo-circle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.25rem; /* w-9 */
+        height: 2.25rem; /* h-9 */
+        border-radius: 9999px; /* rounded-full */
+        background: linear-gradient(to bottom right, #a78bfa, #8b5cf6); /* from-purple-400 to-violet-600 */
+        color: white;
+        font-weight: 600; /* font-semibold */
+        font-size: 0.75rem; /* text-xs */
+        box-shadow: 0 4px 12px rgba(168, 85, 247, 0.3); /* shadow-lg shadow-purple-500/30 */
+        transition: box-shadow 0.3s ease;
+    }
+
+    .logo-circle:hover {
+        box-shadow: 0 6px 16px rgba(168, 85, 247, 0.5); /* group-hover:shadow-purple-500/50 */
+    }
+    
+    /* -- CORRECCIÓN APLICADA AQUÍ -- */
+    .logo-text {
+        font-size: 1rem; /* Más pequeño: text-base (16px) */
+        font-weight: 600; /* Más fino: font-semibold */
+        letter-spacing: 0.15em; /* Espaciado ajustado, un poco menos que antes */
+        text-transform: uppercase;
+        color: white;
+    }
+    /* ------------------------------ */
+
+  </style>
+  <script src="/_sdk/element_sdk.js"></script>
+</head>
+
+<body class="w-full">
+  <header class="w-full sticky top-0 z-50 bg-[#1a0f2e]/90 backdrop-blur-sm border-b border-purple-900/40" id="header">
+   <nav class="main-container max-w-7xl mx-auto px-6 py-4">
+    <div class="flex justify-between items-center">
+      
+      <a href="#hero" class="logo-container group">
+        <span class="logo-circle">ID</span>
+        <span class="logo-text">Inspire in Design</span>
+      </a>
+      
+      <button id="navToggle" class="lg:hidden text-[#e9d5ff] hover:text-white focus:outline-none focus:ring-2 focus:ring-purple-500 rounded p-2" aria-label="Toggle navigation menu" aria-expanded="false">
+       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+      </button> 
+      
+      <div id="navLinks" class="hidden lg:flex lg:items-center lg:space-x-8 text-sm font-light">
+          <a href="#about" class="block py-2 lg:py-0 text-[#e9d5ff] hover:text-white transition-colors" id="aboutLabel">Nosotros</a> 
+          <a href="#training" class="block py-2 lg:py-0 text-[#e9d5ff] hover:text-white transition-colors" id="trainingLabel">Servicios</a> 
+          <a href="#skills" class="block py-2 lg:py-0 text-[#e9d5ff] hover:text-white transition-colors" id="skillsLabel">Especialidades</a> 
+          <a href="#contact" class="px-6 py-2 text-sm font-normal rounded-full primary-button" id="contactLabel">Contacto</a>
+      </div>
+    </div>
+    <div id="mobileMenu" class="hidden lg:hidden mt-4 pb-4 space-y-4 text-center bg-[#1a0f2e]">
+        <a href="#about" class="block text-[#e9d5ff] hover:text-white">Nosotros</a>
+        <a href="#training" class="block text-[#e9d5ff] hover:text-white">Servicios</a>
+        <a href="#skills" class="block text-[#e9d5ff] hover:text-white">Especialidades</a>
+        <a href="#contact" class="block text-[#a855f7] font-medium">Contacto</a>
+    </div>
+   </nav>
+  </header>
+
+  <main class="pt-20">
+   <section class="w-full py-24 px-6 flex items-center justify-center min-h-[80vh]" id="hero">
+    <div class="main-container max-w-4xl mx-auto text-center">
+     <h1 class="text-6xl lg:text-7xl font-bold mb-6" id="heroTitle">
+        Hola, somos
+        <span class="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-violet-600">Inspire in Design</span>
+     </h1>
+     <h3 class="text-2xl lg:text-3xl font-light text-[#c084fc] mb-8" id="heroSubtitle">Soluciones Digitales | Excelencia de Marca | Gestión de Equipos</h3>
+     <p class="text-lg max-w-2xl mx-auto mb-12 text-[#e9d5ff] leading-relaxed" id="heroText">Creamos experiencias digitales excepcionales que combinan estilo, estrategias y sobre todo, hacemos crecer tus ideas y te acompañamos en todo el proceso.</p>
+     
+     <div class="relative inline-block">
+         <img id="profileImage" src="https://via.placeholder.com/200" alt="Foto de perfil profesional" class="w-48 h-48 rounded-full mx-auto object-cover profile-glow" onerror="this.style.display='none'; this.alt='Imagen no disponible';">
+     </div>
+    </div>
+   </section>
+
+   <section id="about" class="w-full py-20 px-6 bg-[#1a0f2e]/50">
+    <div class="main-container max-w-4xl mx-auto">
+     <h2 class="text-4xl font-bold text-center mb-12 text-white" id="aboutTitle">Sobre Nosotros</h2>
+     <div class="space-y-6 text-lg leading-relaxed font-light">
+      <p class="text-[#e9d5ff]" id="aboutParagraph1"><strong class="text-white font-normal">Tu voz es nuestra prioridad</strong> Digitalizamos tus ideas con alma y pasión para que tu marca alcance la excelencia, sin que dejemos de escucharte en cada paso.</p>
+      <p class="text-[#e9d5ff]" id="aboutParagraph2">Nuestro enfoque combina la <strong class="text-white font-normal">empatía con el usuario</strong>, el pensamiento estratégico y la excelencia técnica. Creemos firmemente que el buen diseño no solo se ve bien, sino que resuelve problemas reales de manera elegante.</p>
+      <p class="text-[#e9d5ff]" id="aboutParagraph3">Somos expertos en comunicación, en qué te conozcan, y en que quieran conocerte.¿Quieres vender tus ideas? ¿Buscas soluciones digitales? ¡Hablemos! </p>
+     </div>
+    </div>
+   </section>
+
+   <section id="training" class="w-full py-20 px-6">
+    <div class="main-container max-w-6xl mx-auto">
+     <h2 class="text-4xl font-bold text-center mb-8 text-white" id="certificationsTitle">Nuestros Servicios</h2>
+     <p class="text-center text-lg mb-16 max-w-2xl mx-auto text-[#c084fc]" id="certificationsSubtitle">Soluciones digitales completas para impulsar tu negocio al siguiente nivel.</p>
+     
+     <div class="max-w-5xl mx-auto">
+      <div class="relative">
+       <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-600 via-violet-500 to-purple-600 hidden md:block"></div>
+       
+       <div class="space-y-12">
+        <div class="relative pl-0 md:pl-24">
+         <div class="absolute left-0 top-0 w-16 h-16 rounded-full bg-gradient-to-br from-purple-400 to-violet-600 flex items-center justify-center shadow-lg shadow-purple-500/40 hidden md:flex z-10">
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" /></svg>
+         </div>
+         <div class="neon-card rounded-2xl p-8">
+          <h4 id="exp1Title" class="text-xl font-semibold text-white mb-3">Comunicación y Estrategia Comercial</h4>
+          <p id="exp1Description" class="text-base text-[#e9d5ff] leading-relaxed">
+    • Comunicación corporativa y digital
+    • Estrategia de marca y posicionamiento
+    • Gestión de campañas y contenidos
+    • Relaciones públicas y storytelling
+</p>
+         </div>
+        </div>
+
+        <div class="relative pl-0 md:pl-24">
+         <div class="absolute left-0 top-0 w-16 h-16 rounded-full bg-gradient-to-br from-purple-400 to-violet-600 flex items-center justify-center shadow-lg shadow-purple-500/40 hidden md:flex z-10">
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+         </div>
+         <div class="neon-card rounded-2xl p-8">
+          <h4 id="exp2Title" class="text-xl font-semibold text-white mb-3">Soluciones Digitales | Excelencia de Marca</h4>
+          <p id="exp2Description" class="text-base text-[#e9d5ff] leading-relaxed">
+    • Diseño UX/UI y experiencia de usuario
+    • Automatización y herramientas no-code
+    • Optimización de procesos digitales
+    • Gestión de identidad visual y coherencia de marca
+</p>
+         </div>
+        </div>
+
+        <div class="relative pl-0 md:pl-24">
+         <div class="absolute left-0 top-0 w-16 h-16 rounded-full bg-gradient-to-br from-purple-400 to-violet-600 flex items-center justify-center shadow-lg shadow-purple-500/40 hidden md:flex z-10">
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>
+         </div>
+         <div class="neon-card rounded-2xl p-8">
+          <h4 id="exp3Title" class="text-xl font-semibold text-white mb-3">Gestión de Equipos y Desarrollo Técnico</h4>
+          <p class="text-sm text-purple-300 mb-3" id="exp3Subtitle"></p>
+          <p id="exp3Description" class="text-base text-[#e9d5ff] leading-relaxed">
+    • Liderazgo y coordinación de proyectos
+    • Trabajo colaborativo y metodologías ágiles
+    •
+    Acompañamiento y asesoramiento estratégico
+    • Presentaciones Técnicas
+</p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+
+   <!--<section id="skills" class="w-full py-20 px-6 bg-[#1a0f2e]/50">
+    <div class="main-container max-w-5xl mx-auto">
+     <h2 class="text-4xl font-bold text-center mb-12 text-white" id="skillsTitle">Habilidades</h2>
+     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="neon-card rounded-2xl p-6 text-center">
+       <div class="text-5xl mb-4"></div>
+       <h3 class="text-xl font-bold mb-4 text-purple-400" id="skill1Title">Diseño UX/UI</h3>
+       <ul class="space-y-2 text-purple-200 font-light">
+        <li id="skill1Item1">Figma &amp; Adobe XD</li>
+        <li id="skill1Item2">Prototipado interactivo</li>
+        <li id="skill1Item3">Design Systems</li>
+        <li id="skill1Item4">User Research</li>
+       </ul>
+      </div>
+      <div class="neon-card rounded-2xl p-6 text-center">
+       <div class="text-5xl mb-4"></div>
+       <h3 class="text-xl font-bold mb-4 text-purple-400" id="skill2Title">Desarrollo Frontend</h3>
+       <ul class="space-y-2 text-purple-200 font-light">
+        <li id="skill2Item1">React &amp; Next.js</li>
+        <li id="skill2Item2">TypeScript</li>
+        <li id="skill2Item3">Tailwind CSS</li>
+        <li id="skill2Item4">Git &amp; GitHub</li>
+       </ul>
+      </div>
+      <div class="neon-card rounded-2xl p-6 text-center">
+       <div class="text-5xl mb-4"></div>
+       <h3 class="text-xl font-bold mb-4 text-purple-400" id="skill3Title">Habilidades Blandas</h3>
+       <ul class="space-y-2 text-purple-200 font-light">
+        <li id="skill3Item1">Trabajo en equipo</li>
+        <li id="skill3Item2">Comunicación efectiva</li>
+        <li id="skill3Item3">Resolución de problemas</li>
+        <li id="skill3Item4">Gestión de proyectos</li>
+       </ul>
+      </div>
+     </div>
+    </div>
+   </section> -->
+
+   <section id="contact" class="w-full py-24 px-6">
+    <div class="main-container max-w-4xl mx-auto text-center">
+     <h2 class="text-4xl font-bold mb-6 text-white" id="contactTitle">¿Listo para impulsar tus ideas o tu negocio?</h2>
+<p class="text-xl mb-12 max-w-2xl mx-auto text-[#c084fc] font-light" id="contactSubtitle">Agenda una cita sin compromiso o escríbenos directamente. ¡Hablemos!</p>
+        
+        <div class="flex flex-col items-center justify-center gap-10">
+
+            <a href="https://calendar.app.google/CT8QmyBptQVe921v6" target="_blank" class="primary-button inline-flex items-center justify-center text-lg font-semibold px-12 py-4 rounded-full transition-all duration-300">
+                 Agendar una Cita Ahora
+            </a>
+
+<div class="flex items-center gap-3 px-6 py-3 border-2 border-purple-600 rounded-full bg-[#1a0f2e] hover:border-white transition-colors">
+    <span class="text-2xl text-purple-400"></span> 
+    <a href="mailto:contacto@inspireindesign.com" class="text-lg font-light text-[#e9d5ff]">inspireindesigncontacto@gmail.com</a>
+</div>
+            
+        </div>
+    </div>
+</section>
+
+  <footer class="py-8 text-center text-purple-900/60 text-sm bg-[#0f0a1f]">
+      <p>© 2025 Inspire in Design. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+      document.addEventListener('DOMContentLoaded', () => {
+          const navToggle = document.getElementById('navToggle');
+          const mobileMenu = document.getElementById('mobileMenu');
+          
+          if (navToggle && mobileMenu) {
+              navToggle.addEventListener('click', () => {
+                  mobileMenu.classList.toggle('hidden');
+              });
+              
+              const links = mobileMenu.querySelectorAll('a');
+              links.forEach(link => {
+                  link.addEventListener('click', () => {
+                      mobileMenu.classList.add('hidden');
+                  });
+              });
+          }
+      });
+  </script>
+
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+
+</body>
+</html
