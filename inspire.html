@@ -20,7 +20,7 @@
     
     /* Títulos y acentos con Work Sans, incluida la clase brand-font */
     h1, h2, h3, h4, h5, h6, .brand-font {
-        font-family: 'Work Sans', sans-serif;
+        font-family: 'inter', sans-serif;
         color: white;
     }
 
@@ -90,12 +90,44 @@
     
     /* -- CORRECCIÓN APLICADA AQUÍ -- */
     .logo-text {
-        font-size: 1rem; /* Más pequeño: text-base (16px) */
-        font-weight: 600; /* Más fino: font-semibold */
-        letter-spacing: 0.15em; /* Espaciado ajustado, un poco menos que antes */
+        font-size: 0.9rem; /* Más pequeño: text-base (16px) */
+        font-weight: 305; /* Más fino: font-semibold */
+        letter-spacing: 0.20em; /* Espaciado ajustado, un poco menos que antes */
         text-transform: uppercase;
         color: white;
     }
+    /* --- Estilo para la Línea Animada de Navegación --- */
+/* --- Estilo para la Línea Animada de Navegación --- */
+.link-underline {
+    /* Base: posiciona el pseudo-elemento */
+    position: relative;
+    display: inline-block;
+    color: #e9d5ff; /* Color de texto normal */
+}
+
+.link-underline::after {
+    /* Pseudo-elemento: la línea blanca */
+    content: '';
+    position: absolute;
+    width: 0; /* Empieza con ancho cero */
+    height: 2px;
+    bottom: -5px; /* Separación de la línea del texto */
+    left: 0;
+    background-color: white; /* Color de la línea */
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Transición suave */
+}
+
+.link-underline:hover::after,
+.link-underline:focus::after {
+    /* Estado hover/focus: hace visible y estira la línea */
+    visibility: visible;
+    width: 100%;
+}
+/* Aseguramos que el texto se vuelva blanco al hacer hover */
+.link-underline:hover {
+    color: white !important; /* El !important puede ser necesario si Tailwind es muy fuerte */
+}
     /* ------------------------------ */
 
   </style>
@@ -117,11 +149,12 @@
       </button> 
       
 <div id="navLinks" class="hidden lg:flex lg:items-center lg:space-x-8 text-sm font-light">
-    <a href="#about" class="block py-2 lg:py-0 text-[#e9d5ff] hover:text-white transition-colors" id="aboutLabel">Nosotros</a> 
-    <a href="#training" class="block py-2 lg:py-0 text-[#e9d5ff] hover:text-white transition-colors" id="trainingLabel">Servicios</a> 
-    <a href="#skills" class="block py-2 lg:py-0 text-[#e9d5ff] hover:text-white transition-colors" id="skillsLabel">Especialidades</a> 
+    <a href="#about" class="block py-2 lg:py-0 link-underline text-[#e9d5ff] hover:text-white transition-colors" id="aboutLabel">Nosotros</a> 
+    <a href="#training" class="block py-2 lg:py-0 link-underline text-[#e9d5ff] hover:text-white transition-colors" id="trainingLabel">Servicios</a> 
+    <a href="#skills" class="block py-2 lg:py-0 link-underline text-[#e9d5ff] hover:text-white transition-colors" id="skillsLabel">Especialidades</a> 
+    
     <a href="#contact" class="px-6 py-2 text-sm font-normal rounded-full primary-button" id="contactLabel">Contacto</a>
-    <!-- Botón hacia otra página -->
+    
     <a href="index.html" target="_blank" class="px-6 py-2 text-sm font-normal rounded-full bg-purple-600 hover:bg-purple-700 text-white transition-colors">Ver Portfolio</a>
 </div>
 
@@ -130,7 +163,6 @@
     <a href="#training" class="block text-[#e9d5ff] hover:text-white">Servicios</a>
     <a href="#skills" class="block text-[#e9d5ff] hover:text-white">Especialidades</a>
     <a href="#contact" class="block text-[#a855f7] font-medium">Contacto</a>
-    <!-- Botón móvil hacia otra página -->
     <a href="index.html" target="_blank" class="block text-white bg-purple-600 rounded-full py-2 px-4 hover:bg-purple-700">Ver Portfolio</a>
 </div>
    </nav>
@@ -156,7 +188,7 @@
     <div class="main-container max-w-4xl mx-auto">
      <h2 class="text-4xl font-bold text-center mb-12 text-white" id="aboutTitle">Sobre Nosotros</h2>
      <div class="space-y-6 text-lg leading-relaxed font-light">
-      <p class="text-[#e9d5ff]" id="aboutParagraph1"><strong class="text-white font-normal">Tu voz es nuestra prioridad</strong> Digitalizamos tus ideas con alma y pasión para que tu marca alcance la excelencia, sin que dejemos de escucharte en cada paso.</p>
+      <p class="text-[#e9d5ff]" id="aboutParagraph1"><strong class="text-white font-normal">Tu voz es nuestra prioridad.</strong> Digitalizamos tus ideas con alma y pasión para que tu marca alcance la excelencia, sin que dejemos de escucharte en cada paso.</p>
       <p class="text-[#e9d5ff]" id="aboutParagraph2">Nuestro enfoque combina la <strong class="text-white font-normal">empatía con el usuario</strong>, el pensamiento estratégico y la excelencia técnica. Creemos firmemente que el buen diseño no solo se ve bien, sino que resuelve problemas reales de manera elegante.</p>
       <p class="text-[#e9d5ff]" id="aboutParagraph3">Somos expertos en comunicación, en qué te conozcan, y en que quieran conocerte.¿Quieres vender tus ideas? ¿Buscas soluciones digitales? ¡Hablemos! </p>
      </div>
@@ -263,26 +295,22 @@
     </div>
    </section> -->
 
-   <section id="contact" class="w-full py-24 px-6">
-    <div class="main-container max-w-4xl mx-auto text-center">
-     <h2 class="text-4xl font-bold mb-6 text-white" id="contactTitle">¿Listo para impulsar tus ideas o tu negocio?</h2>
+<section id="contact" class="w-full py-24 px-6">
+<div class="main-container max-w-4xl mx-auto text-center">
+<h2 class="text-4xl font-bold mb-6 text-white" id="contactTitle">¿Listo para impulsar tus ideas o tu negocio?</h2>
 <p class="text-xl mb-12 max-w-2xl mx-auto text-[#c084fc] font-light" id="contactSubtitle">Agenda una cita sin compromiso o escríbenos directamente. ¡Hablemos!</p>
-        
-        <div class="flex flex-col items-center justify-center gap-10">
+<div class="flex flex-col items-center justify-center gap-10">
 
-            <a href="https://calendar.app.google/CT8QmyBptQVe921v6" target="_blank" class="primary-button inline-flex items-center justify-center text-lg font-semibold px-12 py-4 rounded-full transition-all duration-300">
-                 Agendar una Cita Ahora
+<a href="https://calendar.app.google/CT8QmyBptQVe921v6" target="_blank" class="primary-button inline-flex items-center justify-center text-lg font-semibold px-12 py-4 rounded-full transition-all duration-300">
+Agendar una Cita Ahora
+</a>
+
+            <a href="mailto:inspireindesigncontacto@gmail.com" class="primary-button inline-flex items-center justify-center text-lg font-semibold px-12 py-4 rounded-full transition-all duration-300">
+                Enviar Email
             </a>
 
-<div class="flex items-center gap-3 px-6 py-3 border-2 border-purple-600 rounded-full bg-[#1a0f2e] hover:border-white transition-colors">
-    <span class="text-2xl text-purple-400"></span> 
-<a href="mailto:inspireindesigncontacto@gmail.com" class="text-lg font-light text-[#e9d5ff]">
-    inspireindesigncontacto@gmail.com
-</a>
 </div>
-            
-        </div>
-    </div>
+</div>
 </section>
 
   <footer class="py-8 text-center text-purple-900/60 text-sm bg-[#0f0a1f]">
@@ -312,4 +340,4 @@
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
 
 </body>
-</html
+</html>
