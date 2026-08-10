@@ -500,8 +500,22 @@ transition-all duration-300 bg-gradient-to-r from-purple-400 to-violet-600 hover
   </div>
 
   <div class="bg-[#1a0f2e] border border-purple-800/40 rounded-2xl p-6">
-    <!-- Botón que activa el desplegable -->
-    <button id="dropdownButton" class="focus-ring w-full flex items-center justify-between px-6 py-4 bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-500 hover:to-violet-500 rounded-xl text-white font-medium transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/40 cursor-pointer" type="button" aria-expanded="false" aria-controls="dropdownMenu">
+    <!-- Botón con onclick integrado -->
+    <button id="dropdownButton" 
+      onclick="
+        const menu = document.getElementById('dropdownMenu');
+        const icon = document.getElementById('dropdownIcon');
+        const text = document.getElementById('buttonText');
+        const isHidden = menu.style.display === 'none';
+        menu.style.display = isHidden ? 'block' : 'none';
+        this.setAttribute('aria-expanded', isHidden);
+        icon.style.transform = isHidden ? 'rotate(180deg)' : 'rotate(0deg)';
+        text.textContent = isHidden ? 'Ocultar Certificaciones' : 'Ver Certificaciones';
+      "
+      class="focus-ring w-full flex items-center justify-between px-6 py-4 bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-500 hover:to-violet-500 rounded-xl text-white font-medium transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/40 cursor-pointer" 
+      type="button" 
+      aria-expanded="false" 
+      aria-controls="dropdownMenu">
       <span class="flex items-center gap-3">
         <span id="buttonText">Ver Certificaciones</span>
       </span>
@@ -510,86 +524,86 @@ transition-all duration-300 bg-gradient-to-r from-purple-400 to-violet-600 hover
       </svg>
     </button>
 
-    <!-- Menú Desplegable con las tarjetas de certificaciones (no pulsables, con hover verde) -->
+    <!-- Menú Desplegable con efecto Verde Neón (#39FF14) -->
     <div id="dropdownMenu" style="display: none;" class="mt-4" aria-hidden="true">
       <div class="space-y-3 text-center">
 
-        <div class="px-5 py-4 bg-[#0f0a1f] border border-purple-800/40 rounded-xl text-center cursor-default" style="transition: all 0.3s ease;" onmouseenter="this.style.border='2px solid #00ff00'; this.style.boxShadow='0 0 25px 5px rgba(0, 255, 0, 0.4)';" onmouseleave="this.style.border='1px solid rgba(126, 34, 206, 0.4)'; this.style.boxShadow='none';">
+        <div class="px-5 py-4 bg-[#0f0a1f] border border-purple-800/40 rounded-xl text-center cursor-default" style="transition: all 0.3s ease;" onmouseenter="this.style.border='2px solid #39ff14'; this.style.boxShadow='0 0 15px #39ff14, inset 0 0 10px rgba(57, 255, 20, 0.2)';" onmouseleave="this.style.border='1px solid rgba(126, 34, 206, 0.4)'; this.style.boxShadow='none';">
           <div class="text-white font-medium mb-1">IFCD0210 — Desarrollo de Aplicaciones con Tecnología Web</div>
           <div class="text-sm text-purple-300">Web Development</div>
         </div>
 
-        <div class="px-5 py-4 bg-[#0f0a1f] border border-purple-800/40 rounded-xl text-center cursor-default" style="transition: all 0.3s ease;" onmouseenter="this.style.border='2px solid #00ff00'; this.style.boxShadow='0 0 25px 5px rgba(0, 255, 0, 0.4)';" onmouseleave="this.style.border='1px solid rgba(126, 34, 206, 0.4)'; this.style.boxShadow='none';">
+        <div class="px-5 py-4 bg-[#0f0a1f] border border-purple-800/40 rounded-xl text-center cursor-default" style="transition: all 0.3s ease;" onmouseenter="this.style.border='2px solid #39ff14'; this.style.boxShadow='0 0 15px #39ff14, inset 0 0 10px rgba(57, 255, 20, 0.2)';" onmouseleave="this.style.border='1px solid rgba(126, 34, 206, 0.4)'; this.style.boxShadow='none';">
           <div class="text-white font-medium mb-1">ADGD067PO — Dirección de Equipo y Coaching</div>
           <div class="text-sm text-purple-300">Leadership</div>
         </div>
 
-        <div class="px-5 py-4 bg-[#0f0a1f] border border-purple-800/40 rounded-xl text-center cursor-default" style="transition: all 0.3s ease;" onmouseenter="this.style.border='2px solid #00ff00'; this.style.boxShadow='0 0 25px 5px rgba(0, 255, 0, 0.4)';" onmouseleave="this.style.border='1px solid rgba(126, 34, 206, 0.4)'; this.style.boxShadow='none';">
+        <div class="px-5 py-4 bg-[#0f0a1f] border border-purple-800/40 rounded-xl text-center cursor-default" style="transition: all 0.3s ease;" onmouseenter="this.style.border='2px solid #39ff14'; this.style.boxShadow='0 0 15px #39ff14, inset 0 0 10px rgba(57, 255, 20, 0.2)';" onmouseleave="this.style.border='1px solid rgba(126, 34, 206, 0.4)'; this.style.boxShadow='none';">
           <div class="text-white font-medium mb-1">COMM001PO — Analítica web para medir resultado de Marketing</div>
           <div class="text-sm text-purple-300">Digital Analytics</div>
         </div>
 
-        <div class="px-5 py-4 bg-[#0f0a1f] border border-purple-800/40 rounded-xl text-center cursor-default" style="transition: all 0.3s ease;" onmouseenter="this.style.border='2px solid #00ff00'; this.style.boxShadow='0 0 25px 5px rgba(0, 255, 0, 0.4)';" onmouseleave="this.style.border='1px solid rgba(126, 34, 206, 0.4)'; this.style.boxShadow='none';">
+        <div class="px-5 py-4 bg-[#0f0a1f] border border-purple-800/40 rounded-xl text-center cursor-default" style="transition: all 0.3s ease;" onmouseenter="this.style.border='2px solid #39ff14'; this.style.boxShadow='0 0 15px #39ff14, inset 0 0 10px rgba(57, 255, 20, 0.2)';" onmouseleave="this.style.border='1px solid rgba(126, 34, 206, 0.4)'; this.style.boxShadow='none';">
           <div class="text-white font-medium mb-1">COMM41 — Marketing en buscadores: SEO, SEM y Analítica Web</div>
           <div class="text-sm text-purple-300">Search Marketing (SEO/SEM)</div>
         </div>
 
-        <div class="px-5 py-4 bg-[#0f0a1f] border border-purple-800/40 rounded-xl text-center cursor-default" style="transition: all 0.3s ease;" onmouseenter="this.style.border='2px solid #00ff00'; this.style.boxShadow='0 0 25px 5px rgba(0, 255, 0, 0.4)';" onmouseleave="this.style.border='1px solid rgba(126, 34, 206, 0.4)'; this.style.boxShadow='none';">
+        <div class="px-5 py-4 bg-[#0f0a1f] border border-purple-800/40 rounded-xl text-center cursor-default" style="transition: all 0.3s ease;" onmouseenter="this.style.border='2px solid #39ff14'; this.style.boxShadow='0 0 15px #39ff14, inset 0 0 10px rgba(57, 255, 20, 0.2)';" onmouseleave="this.style.border='1px solid rgba(126, 34, 206, 0.4)'; this.style.boxShadow='none';">
           <div class="text-white font-medium mb-1">SSCE0110 — Habilitación para la docencia en FP (Grados A, B y C)</div>
           <div class="text-sm text-purple-300">Education & Communications</div>
         </div>
 
-        <div class="px-5 py-4 bg-[#0f0a1f] border border-purple-800/40 rounded-xl text-center cursor-default" style="transition: all 0.3s ease;" onmouseenter="this.style.border='2px solid #00ff00'; this.style.boxShadow='0 0 25px 5px rgba(0, 255, 0, 0.4)';" onmouseleave="this.style.border='1px solid rgba(126, 34, 206, 0.4)'; this.style.boxShadow='none';">
+        <div class="px-5 py-4 bg-[#0f0a1f] border border-purple-800/40 rounded-xl text-center cursor-default" style="transition: all 0.3s ease;" onmouseenter="this.style.border='2px solid #39ff14'; this.style.boxShadow='0 0 15px #39ff14, inset 0 0 10px rgba(57, 255, 20, 0.2)';" onmouseleave="this.style.border='1px solid rgba(126, 34, 206, 0.4)'; this.style.boxShadow='none';">
           <div class="text-white font-medium mb-1">ADGD211PO — Posicionamiento en buscadores</div>
           <div class="text-sm text-purple-300">Search Engine Optimization (SEO)</div>
         </div>
 
-        <div class="px-5 py-4 bg-[#0f0a1f] border border-purple-800/40 rounded-xl text-center cursor-default" style="transition: all 0.3s ease;" onmouseenter="this.style.border='2px solid #00ff00'; this.style.boxShadow='0 0 25px 5px rgba(0, 255, 0, 0.4)';" onmouseleave="this.style.border='1px solid rgba(126, 34, 206, 0.4)'; this.style.boxShadow='none';">
+        <div class="px-5 py-4 bg-[#0f0a1f] border border-purple-800/40 rounded-xl text-center cursor-default" style="transition: all 0.3s ease;" onmouseenter="this.style.border='2px solid #39ff14'; this.style.boxShadow='0 0 15px #39ff14, inset 0 0 10px rgba(57, 255, 20, 0.2)';" onmouseleave="this.style.border='1px solid rgba(126, 34, 206, 0.4)'; this.style.boxShadow='none';">
           <div class="text-white font-medium mb-1">IFCT120PO — WordPress en el Sector de Publicidad y Comunicación</div>
           <div class="text-sm text-purple-300">Web Design</div>
         </div>
 
-        <div class="px-5 py-4 bg-[#0f0a1f] border border-purple-800/40 rounded-xl text-center cursor-default" style="transition: all 0.3s ease;" onmouseenter="this.style.border='2px solid #00ff00'; this.style.boxShadow='0 0 25px 5px rgba(0, 255, 0, 0.4)';" onmouseleave="this.style.border='1px solid rgba(126, 34, 206, 0.4)'; this.style.boxShadow='none';">
+        <div class="px-5 py-4 bg-[#0f0a1f] border border-purple-800/40 rounded-xl text-center cursor-default" style="transition: all 0.3s ease;" onmouseenter="this.style.border='2px solid #39ff14'; this.style.boxShadow='0 0 15px #39ff14, inset 0 0 10px rgba(57, 255, 20, 0.2)';" onmouseleave="this.style.border='1px solid rgba(126, 34, 206, 0.4)'; this.style.boxShadow='none';">
           <div class="text-white font-medium mb-1">ARGG0008 — ADOBE INDESIGN I</div>
           <div class="text-sm text-purple-300">Web Design</div>
         </div>
 
-        <div class="px-5 py-4 bg-[#0f0a1f] border border-purple-800/40 rounded-xl text-center cursor-default" style="transition: all 0.3s ease;" onmouseenter="this.style.border='2px solid #00ff00'; this.style.boxShadow='0 0 25px 5px rgba(0, 255, 0, 0.4)';" onmouseleave="this.style.border='1px solid rgba(126, 34, 206, 0.4)'; this.style.boxShadow='none';">
+        <div class="px-5 py-4 bg-[#0f0a1f] border border-purple-800/40 rounded-xl text-center cursor-default" style="transition: all 0.3s ease;" onmouseenter="this.style.border='2px solid #39ff14'; this.style.boxShadow='0 0 15px #39ff14, inset 0 0 10px rgba(57, 255, 20, 0.2)';" onmouseleave="this.style.border='1px solid rgba(126, 34, 206, 0.4)'; this.style.boxShadow='none';">
           <div class="text-white font-medium mb-1">ADGG035PO — Comercio Electrónico</div>
           <div class="text-sm text-purple-300">E-commerce</div>
         </div>
 
-        <div class="px-5 py-4 bg-[#0f0a1f] border border-purple-800/40 rounded-xl text-center cursor-default" style="transition: all 0.3s ease;" onmouseenter="this.style.border='2px solid #00ff00'; this.style.boxShadow='0 0 25px 5px rgba(0, 255, 0, 0.4)';" onmouseleave="this.style.border='1px solid rgba(126, 34, 206, 0.4)'; this.style.boxShadow='none';">
+        <div class="px-5 py-4 bg-[#0f0a1f] border border-purple-800/40 rounded-xl text-center cursor-default" style="transition: all 0.3s ease;" onmouseenter="this.style.border='2px solid #39ff14'; this.style.boxShadow='0 0 15px #39ff14, inset 0 0 10px rgba(57, 255, 20, 0.2)';" onmouseleave="this.style.border='1px solid rgba(126, 34, 206, 0.4)'; this.style.boxShadow='none';">
           <div class="text-white font-medium mb-1">Ciberseguridad — Acción formativa</div>
           <div class="text-sm text-purple-300">Cybersecurity</div>
         </div>
 
-        <div class="px-5 py-4 bg-[#0f0a1f] border border-purple-800/40 rounded-xl text-center cursor-default" style="transition: all 0.3s ease;" onmouseenter="this.style.border='2px solid #00ff00'; this.style.boxShadow='0 0 25px 5px rgba(0, 255, 0, 0.4)';" onmouseleave="this.style.border='1px solid rgba(126, 34, 206, 0.4)'; this.style.boxShadow='none';">
+        <div class="px-5 py-4 bg-[#0f0a1f] border border-purple-800/40 rounded-xl text-center cursor-default" style="transition: all 0.3s ease;" onmouseenter="this.style.border='2px solid #39ff14'; this.style.boxShadow='0 0 15px #39ff14, inset 0 0 10px rgba(57, 255, 20, 0.2)';" onmouseleave="this.style.border='1px solid rgba(126, 34, 206, 0.4)'; this.style.boxShadow='none';">
           <div class="text-white font-medium mb-1">Ciberseguridad en el trabajo</div>
           <div class="text-sm text-purple-300">Cybersecurity in the Workplace</div>
         </div>
 
-        <div class="px-5 py-4 bg-[#0f0a1f] border border-purple-800/40 rounded-xl text-center cursor-default" style="transition: all 0.3s ease;" onmouseenter="this.style.border='2px solid #00ff00'; this.style.boxShadow='0 0 25px 5px rgba(0, 255, 0, 0.4)';" onmouseleave="this.style.border='1px solid rgba(126, 34, 206, 0.4)'; this.style.boxShadow='none';">
+        <div class="px-5 py-4 bg-[#0f0a1f] border border-purple-800/40 rounded-xl text-center cursor-default" style="transition: all 0.3s ease;" onmouseenter="this.style.border='2px solid #39ff14'; this.style.boxShadow='0 0 15px #39ff14, inset 0 0 10px rgba(57, 255, 20, 0.2)';" onmouseleave="this.style.border='1px solid rgba(126, 34, 206, 0.4)'; this.style.boxShadow='none';">
           <div class="text-white font-medium mb-1">Introducción al desarrollo web</div>
           <div class="text-sm text-purple-300">Web Development Fundamentals</div>
         </div>
 
-        <div class="px-5 py-4 bg-[#0f0a1f] border border-purple-800/40 rounded-xl text-center cursor-default" style="transition: all 0.3s ease;" onmouseenter="this.style.border='2px solid #00ff00'; this.style.boxShadow='0 0 25px 5px rgba(0, 255, 0, 0.4)';" onmouseleave="this.style.border='1px solid rgba(126, 34, 206, 0.4)'; this.style.boxShadow='none';">
+        <div class="px-5 py-4 bg-[#0f0a1f] border border-purple-800/40 rounded-xl text-center cursor-default" style="transition: all 0.3s ease;" onmouseenter="this.style.border='2px solid #39ff14'; this.style.boxShadow='0 0 15px #39ff14, inset 0 0 10px rgba(57, 255, 20, 0.2)';" onmouseleave="this.style.border='1px solid rgba(126, 34, 206, 0.4)'; this.style.boxShadow='none';">
           <div class="text-white font-medium mb-1">Cloud Computing</div>
           <div class="text-sm text-purple-300">Cloud Computing Fundamentals</div>
         </div>
 
-        <div class="px-5 py-4 bg-[#0f0a1f] border border-purple-800/40 rounded-xl text-center cursor-default" style="transition: all 0.3s ease;" onmouseenter="this.style.border='2px solid #00ff00'; this.style.boxShadow='0 0 25px 5px rgba(0, 255, 0, 0.4)';" onmouseleave="this.style.border='1px solid rgba(126, 34, 206, 0.4)'; this.style.boxShadow='none';">
+        <div class="px-5 py-4 bg-[#0f0a1f] border border-purple-800/40 rounded-xl text-center cursor-default" style="transition: all 0.3s ease;" onmouseenter="this.style.border='2px solid #39ff14'; this.style.boxShadow='0 0 15px #39ff14, inset 0 0 10px rgba(57, 255, 20, 0.2)';" onmouseleave="this.style.border='1px solid rgba(126, 34, 206, 0.4)'; this.style.boxShadow='none';">
           <div class="text-white font-medium mb-1">Desarrollo de aplicaciones móviles</div>
           <div class="text-sm text-purple-300">Mobile App Development</div>
         </div>
 
-        <div class="px-5 py-4 bg-[#0f0a1f] border border-purple-800/40 rounded-xl text-center cursor-default" style="transition: all 0.3s ease;" onmouseenter="this.style.border='2px solid #00ff00'; this.style.boxShadow='0 0 25px 5px rgba(0, 255, 0, 0.4)';" onmouseleave="this.style.border='1px solid rgba(126, 34, 206, 0.4)'; this.style.boxShadow='none';">
+        <div class="px-5 py-4 bg-[#0f0a1f] border border-purple-800/40 rounded-xl text-center cursor-default" style="transition: all 0.3s ease;" onmouseenter="this.style.border='2px solid #39ff14'; this.style.boxShadow='0 0 15px #39ff14, inset 0 0 10px rgba(57, 255, 20, 0.2)';" onmouseleave="this.style.border='1px solid rgba(126, 34, 206, 0.4)'; this.style.boxShadow='none';">
           <div class="text-white font-medium mb-1">FreeCodeCamp — Responsive Web Design</div>
           <div class="text-sm text-purple-300">Responsive Web Design</div>
         </div>
 
-        <div class="px-5 py-4 bg-[#0f0a1f] border border-purple-800/40 rounded-xl text-center cursor-default" style="transition: all 0.3s ease;" onmouseenter="this.style.border='2px solid #00ff00'; this.style.boxShadow='0 0 25px 5px rgba(0, 255, 0, 0.4)';" onmouseleave="this.style.border='1px solid rgba(126, 34, 206, 0.4)'; this.style.boxShadow='none';">
+        <div class="px-5 py-4 bg-[#0f0a1f] border border-purple-800/40 rounded-xl text-center cursor-default" style="transition: all 0.3s ease;" onmouseenter="this.style.border='2px solid #39ff14'; this.style.boxShadow='0 0 15px #39ff14, inset 0 0 10px rgba(57, 255, 20, 0.2)';" onmouseleave="this.style.border='1px solid rgba(126, 34, 206, 0.4)'; this.style.boxShadow='none';">
           <div class="text-white font-medium mb-1">Gestión de Proyectos</div>
           <div class="text-sm text-purple-300">Project Management</div>
         </div>
@@ -599,27 +613,6 @@ transition-all duration-300 bg-gradient-to-r from-purple-400 to-violet-600 hover
   </div>
 </div>
 
-<!-- Script JS para dar funcionalidad al desplegable -->
-<script>
-  document.getElementById('dropdownButton').addEventListener('click', function() {
-    const menu = document.getElementById('dropdownMenu');
-    const icon = document.getElementById('dropdownIcon');
-    const buttonText = document.getElementById('buttonText');
-    
-    const isHidden = menu.style.display === 'none';
-    
-    // Alternar visibilidad
-    menu.style.display = isHidden ? 'block' : 'none';
-    this.setAttribute('aria-expanded', isHidden);
-    
-    // Rotar flecha
-    icon.style.transform = isHidden ? 'rotate(180deg)' : 'rotate(0deg)';
-    
-    // Cambiar texto
-    buttonText.textContent = isHidden ? 'Ocultar Certificaciones' : 'Ver Certificaciones';
-  });
-</script>
-</script>
 </section><!-- Sección Experiencia Laboral -->
 <section id="experience" class="py-20 px-6">
   <div class="max-w-5xl mx-auto">
