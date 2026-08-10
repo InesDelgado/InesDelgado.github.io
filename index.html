@@ -500,18 +500,8 @@ transition-all duration-300 bg-gradient-to-r from-purple-400 to-violet-600 hover
   </div>
 
   <div class="bg-[#1a0f2e] border border-purple-800/40 rounded-2xl p-6">
-    <!-- Botón con onclick integrado -->
+    <!-- Botón desplegable -->
     <button id="dropdownButton" 
-      onclick="
-        const menu = document.getElementById('dropdownMenu');
-        const icon = document.getElementById('dropdownIcon');
-        const text = document.getElementById('buttonText');
-        const isHidden = menu.style.display === 'none';
-        menu.style.display = isHidden ? 'block' : 'none';
-        this.setAttribute('aria-expanded', isHidden);
-        icon.style.transform = isHidden ? 'rotate(180deg)' : 'rotate(0deg)';
-        text.textContent = isHidden ? 'Ocultar Certificaciones' : 'Ver Certificaciones';
-      "
       class="focus-ring w-full flex items-center justify-between px-6 py-4 bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-500 hover:to-violet-500 rounded-xl text-white font-medium transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/40 cursor-pointer" 
       type="button" 
       aria-expanded="false" 
@@ -524,8 +514,8 @@ transition-all duration-300 bg-gradient-to-r from-purple-400 to-violet-600 hover
       </svg>
     </button>
 
-    <!-- Menú Desplegable con efecto Verde Neón (#39FF14) -->
-    <div id="dropdownMenu" style="display: none;" class="mt-4" aria-hidden="true">
+<!-- Menú Desplegable -->
+    <div id="dropdownMenu" class="hidden mt-4" aria-hidden="true">
       <div class="space-y-3 text-center">
 
         <div class="px-5 py-4 bg-[#0f0a1f] border border-purple-800/40 rounded-xl text-center cursor-default" style="transition: all 0.3s ease;" onmouseenter="this.style.border='2px solid #39ff14'; this.style.boxShadow='0 0 15px #39ff14, inset 0 0 10px rgba(57, 255, 20, 0.2)';" onmouseleave="this.style.border='1px solid rgba(126, 34, 206, 0.4)'; this.style.boxShadow='none';">
