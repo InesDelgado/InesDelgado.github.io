@@ -521,7 +521,7 @@ transition-all duration-300 bg-gradient-to-r from-purple-400 to-violet-600 hover
       </div>
 
 <!-- Sección de Certificaciones con Botón y Desplegable -->
-<div class="w-full flex justify-center items-center my-8 text-center">
+<div class="text-center my-8">
   <button id="dropdownButton" aria-expanded="false" class="primary-button inline-flex items-center gap-3 px-8 py-3 rounded-full text-base font-medium transition-all duration-300">
     <span id="buttonText">Ver Certificaciones</span>
     <svg id="dropdownIcon" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -530,7 +530,7 @@ transition-all duration-300 bg-gradient-to-r from-purple-400 to-violet-600 hover
   </button>
 </div>
 
-<div id="dropdownMenu" class="hidden mt-4 transition-all duration-300" aria-hidden="true">
+<div id="dropdownMenu" class="hidden mt-4" aria-hidden="true">
   <div class="space-y-3 text-center max-w-3xl mx-auto">
 
     <div class="px-5 py-4 bg-[#0f0a1f] border border-purple-800/40 rounded-xl text-center cursor-default transition-all duration-300 hover:border-[#39ff14] hover:shadow-[0_0_15px_#39ff14,inset_0_0_10px_rgba(57,255,20,0.2)]">
@@ -620,6 +620,7 @@ transition-all duration-300 bg-gradient-to-r from-purple-400 to-violet-600 hover
 
   </div>
 </div>
+
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const dropdownButton = document.getElementById('dropdownButton');
