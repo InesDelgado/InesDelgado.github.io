@@ -1,1539 +1,309 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <title>Inés Delgado | Consultoría Digital y Estrategia Comercial</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&amp;family=Work+Sans:wght@200;300;400;500&amp;display=swap" rel="stylesheet">
-
-  <style>
-    /* Botón de Contacto Principal */
-    .primary-button {
-      border: 2px solid #a855f7;
-      background-color: transparent;
-      color: white;
-      transition: all 0.3s ease;
-    }
-
-    .primary-button:hover {
-      background-color: #a855f7;
-      color: #0f0a1f;
-      box-shadow: 0 0 15px rgba(168, 85, 247, 0.6);
-    }
-
-    body {
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-    }
-
-    /* Estados de foco accesibles */
-    .focus-ring:focus-visible {
-      outline: 2px solid #a855f7;
-      outline-offset: 3px;
-    }
-
-    /* Línea sutil bajo enlaces al hover */
-    .link-underline {
-      position: relative;
-    }
-
-    .link-underline::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 0;
-      height: 1px;
-      background: currentColor;
-      transition: width 0.3s ease;
-    }
-
-    .link-underline:hover::after {
-      width: 100%;
-    }
-
-    /* Animaciones hero */
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    .animate-fadeInDown { animation: fadeInDown 1s ease-out; }
-    .animate-fadeInUp { animation: fadeInUp 1s ease-out 0.3s both; }
-    .animate-fadeIn { animation: fadeIn 1.2s ease-out 0.6s both; }
-
-    /* Smooth scroll */
-    html {
-      scroll-behavior: smooth;
-    }
-
-    /* Foto de perfil */
-    #profileImage {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      object-fit: cover;
-      box-shadow: 0 0 25px 5px rgba(168, 85, 247, 0.4);
-      border: 3px solid #a855f7;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inés Delgado | Consultoría Digital y Estrategia Comercial</title>
+<meta name="description" content="Inés Delgado, consultora digital y estratega comercial. Digitalización de empresas, marketing digital, desarrollo web y dirección de equipos.">
+<meta property="og:title" content="Inés Delgado | Consultoría Digital y Estrategia Comercial">
+<meta property="og:description" content="Aumento la visibilidad y las ventas de tu negocio uniendo estrategia comercial, tecnología y comunicación.">
+<meta property="og:image" content="imagenes/yo_ines.png">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0f0a1f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<style type="text/tailwindcss">
+  @layer base {
+    html { scroll-padding-top: 5.5rem; }
+    body { @apply m-0 bg-[#0f0a1f] text-[#e9d5ff] font-[Inter,system-ui,sans-serif]; }
+    section { @apply py-20 px-6; }
+    h2.title { @apply text-3xl lg:text-4xl font-bold text-white text-center mb-14; }
+    :focus-visible { outline: 2px solid #a855f7; outline-offset: 3px; }
+  }
+  @layer components {
+    .card { @apply bg-[#1a0f2e] border border-purple-800/40 rounded-2xl p-8 transition-all duration-300; }
+    .card:hover { @apply border-green-400; box-shadow: 0 0 25px 5px rgba(0,255,0,.35); }
+    .badge { @apply w-12 h-12 shrink-0 rounded-full bg-gradient-to-br from-purple-400 to-violet-600 flex items-center justify-center text-white shadow-lg shadow-purple-500/40; }
+    .btn { @apply inline-flex items-center justify-center px-8 py-2.5 rounded-full border-2 border-[#a855f7] text-white text-sm transition-all duration-300; }
+    .btn:hover { @apply bg-[#a855f7] text-[#0f0a1f]; box-shadow: 0 0 15px rgba(168,85,247,.6); }
+    .navlink { @apply relative hover:text-white transition-colors; }
+    .navlink::after { content:''; @apply absolute -bottom-1 left-0 h-px w-0 bg-current transition-all duration-300; }
+    .navlink:hover::after { @apply w-full; }
+    .cert { @apply px-5 py-4 bg-[#0f0a1f] border border-purple-800/40 rounded-xl transition-all duration-300 hover:border-[#39ff14]; }
+    .cert:hover { box-shadow: 0 0 15px #39ff14; }
+    .cert b { @apply block text-white font-medium; }
+    .cert span { @apply text-sm text-purple-300; }
+  }
+  @keyframes rise { from { opacity:0; transform:translateY(24px) } to { opacity:1; transform:none } }
+  .rise { animation: rise .9s ease-out both; }
+  @media (prefers-reduced-motion: reduce) { .rise { animation: none; } html { scroll-behavior: auto; } }
+</style>
 </head>
-
-<body class="m-0 bg-[#0f0a1f] text-[#e9d5ff]">
-
-  <!-- Barra de navegación fija -->
-  <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 w-full bg-[#1a0f2e]/95 backdrop-blur-md border-b border-purple-900/30 shadow-lg" aria-label="Navegación principal">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12 py-5 flex items-center justify-between gap-4">
-      <a id="brand-title" href="inspire.html" class="focus-ring flex items-center gap-4 text-base font-light tracking-wide text-white group"> 
-        <span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-gradient-to-br from-purple-400 to-violet-600 text-white font-semibold text-xs shadow-lg shadow-purple-500/30 group-hover:shadow-purple-500/50 transition-shadow"> ID </span> 
-        <span class="whitespace-nowrap uppercase tracking-[0.2em]">Inspire in Design</span>
-      </a> 
-
-      <!-- Botón móvil -->
-      <button id="nav-toggle" class="focus-ring inline-flex items-center justify-center px-2 py-2 text-sm font-light text-[#e9d5ff] hover:text-white transition-colors lg:hidden" type="button" aria-label="Abrir menú">
-        <span class="flex flex-col gap-[6px]">
-          <span class="block w-6 h-[1px] bg-[#e9d5ff]"></span>
-          <span class="block w-6 h-[1px] bg-[#e9d5ff]"></span>
-        </span>
-      </button>
-
-      <!-- Enlaces -->
-      <div id="nav-links" class="hidden lg:flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-10 text-sm font-light">
-        <a href="#about" class="focus-ring link-underline hover:text-white transition-colors"> Sobre Mí </a>
-        <a href="#training" class="focus-ring link-underline hover:text-white transition-colors"> Formación </a>
-        <a href="#experience" class="focus-ring link-underline hover:text-white transition-colors"> Experiencia </a>
-        <a href="#skills" class="focus-ring link-underline hover:text-white transition-colors"> Habilidades </a>
-        <a href="#projects" class="focus-ring link-underline hover:text-white transition-colors"> Proyectos </a>
-        <a href="#contact" class="focus-ring lg:ml-8 inline-flex items-center justify-center px-7 py-2.5 text-sm font-normal text-white border-2 border-[#a855f7] rounded-full hover:bg-[#a855f7] hover:text-[#0f0a1f] hover:shadow-lg hover:shadow-purple-500/40 transition-all duration-300"> Contacto </a>
-      </div>
-    </div>
-  </nav>
-
- <!-- Cabecera Hero corregida -->
-  <header id="inicio" class="pt-32 pb-8 text-center">
-    <div class="max-w-4xl mx-auto px-6">
-      <h1 id="hero-title" class="text-5xl lg:text-7xl font-bold text-white mb-4 animate-fadeInDown">Inés Delgado</h1>
-      <h3 id="hero-subtitle" class="text-2xl lg:text-3xl font-light text-[#c084fc] mb-6 animate-fadeInUp">Aumento la visibilidad y las ventas de tu negocio uniendo estrategia comercial, tecnología y comunicación.</h3>
-      <p id="hero-text" class="text-base lg:text-lg font-light text-[#e9d5ff] animate-fadeIn">Digitalizo tu empresa y optimizo tus procesos de venta para conectar con más clientes y escalar tu presencia en el mercado.</p>
-    </div>
-  </header>
-  <main>
-    <!-- Sección Sobre Mí -->
-    <section id="about" class="py-12 px-6">
-      <div class="max-w-4xl mx-auto">
-        
-        <!-- Foto de perfil -->
-        <div class="text-center mb-8">
-          <div class="w-40 h-40 mx-auto">
-            <img id="profileImage" src="imagenes/yo_ines.png" alt="Foto de perfil de Inés Delgado" class="w-40 h-40 rounded-full object-cover mx-auto">
-          </div>
-        </div>
-
-        <!-- Encabezados de la sección -->
-        <div class="text-center mb-8">
-          <h2 class="text-3xl lg:text-4xl font-bold text-white mb-3">Sobre Mí</h2>
-          <h4 class="text-xl text-[#c084fc] font-medium">Consultora Digital, Estratega Comercial y CEO en Inspire in Design</h4>
-        </div>
-
-        <!-- Párrafos descriptivos -->
-        <div class="space-y-4 text-[#e9d5ff]/90 text-base lg:text-lg font-light leading-relaxed text-left">
-          <p>
-            Ayudo a empresas y marcas a cerrar la brecha entre la estrategia comercial y la implementación tecnológica. Aporto una visión integral que une el desarrollo web <em>full stack</em>, la construcción de marca y la dirección comercial para transformar necesidades complejas en soluciones digitales rentables.
-          </p>
-          <p>
-            Con más de 20 años de trayectoria en gestión de ventas, atención al cliente y coordinación de equipos, actúo como conectora entre personas y tecnología. No solo desarrollo espacios web: diseño estrategias orientadas a aumentar la visibilidad, optimizar la experiencia de usuario y hacer crecer tu negocio.
-          </p>
-          <p>
-            Comprometida con la innovación tecnológica y el impacto social, participo activamente en comunidades como <strong>AdaLoveDev</strong> y <strong>WISE Canarias</strong>, impulsando el liderazgo femenino en STEAM y la diversidad en el sector digital.
-          </p>
-        </div>
-
-        <!-- Enlace a LinkedIn -->
-        <div class="text-center mt-10">
-          <div class="flex items-center justify-center gap-6">
-            <a href="https://www.linkedin.com/in/inesdelgado-inspireindesign" 
-               target="_blank" 
-               rel="noopener noreferrer" 
-               class="focus-ring inline-flex items-center justify-center w-12 h-12 rounded-full border-2 border-[#a855f7] text-[#a855f7] hover:bg-[#a855f7] hover:text-white transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/40" 
-               title="LinkedIn" 
-               aria-label="Visitar perfil de LinkedIn">
-              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-              </svg>
-            </a>
-          </div>
-        </div>
-
-      </div>
-    </section>
-  </main>
- 
-</body>
-</html>
-
-  <a href="inspire.html" id="link-inspire" class="primary-button inline-flex items-center justify-center text-sm font-normal px-8 py-2.5 rounded-full mt-6 transition-all duration-300">
-    Conoce Inspire in Design
-  </a>
-</div>
-
-   </section><!-- Sección Formación -->
-
-   <section id="training" class="py-20 px-6 bg-[#1a0f2e]/30">
-
-    <div class="max-w-6xl mx-auto">
-
-     <h2 id="training-title" class="text-4xl font-bold text-white text-center mb-16">Formación Destacada</h2>
-
-     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16"><!-- Tarjeta 1: Desarrollo Full Stack -->
-
-      <div class="bg-[#1a0f2e] border border-purple-800/40 rounded-2xl p-8 hover:shadow-xl transition-all duration-300" style="transition: all 0.3s ease;" onmouseenter="this.style.border='2px solid #00ff00'; this.style.boxShadow='0 0 25px 5px rgba(0, 255, 0, 0.4)';" onmouseleave="this.style.border='1px solid rgba(126, 34, 206, 0.4)'; this.style.boxShadow='none';">
-
-       <div class="flex items-center gap-3 mb-4">
-
-        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-purple-400 to-violet-600 flex items-center justify-center">
-
-         <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-
-         </svg>
-
-       </div><span class="text-sm font-light text-purple-300"></span> 
-
-       </div>
-
-       <h4 id="training-1-title" class="text-xl font-semibold text-white mb-2">Desarrollo de Aplicaciones Web</h4>
-
-       <h5 id="training-1-institution" class="text-base font-normal text-purple-300 mb-4">IFCD0210</h5>
-
-       <p id="training-1-description" class="text-sm text-[#e9d5ff] leading-relaxed">Formación intensiva en desarrollo web completo: frontend (React, Vue), backend (Node.js, Express) y bases de datos (MongoDB, PostgreSQL).</p>
-
-      </div><!-- Tarjeta 2: Marketing Digital -->
-
-      <div class="bg-[#1a0f2e] border border-purple-800/40 rounded-2xl p-8 hover:shadow-xl transition-all duration-300" style="transition: all 0.3s ease;" onmouseenter="this.style.border='2px solid #00ff00'; this.style.boxShadow='0 0 25px 5px rgba(0, 255, 0, 0.4)';" onmouseleave="this.style.border='1px solid rgba(126, 34, 206, 0.4)'; this.style.boxShadow='none';">
-
-       <div class="flex items-center gap-3 mb-4">
-
-        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-purple-400 to-violet-600 flex items-center justify-center">
-
-         <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-
-         </svg>
-
-        </div><span class="text-sm font-light text-purple-300"></span>
-
-       </div>
-
-       <h4 id="training-2-title" class="text-xl font-semibold text-white mb-2"> Dirección de Equipos y Coaching</h4>
-
-       <h5 id="training-2-institution" class="text-base font-normal text-purple-300 mb-4">ADGD067PO</h5>
-
-       <p id="training-2-description" class="text-sm text-[#e9d5ff] leading-relaxed">Especialización en liderazgo, comunicación efectiva y gestión de equipos de alto rendimiento</p>
-
-      </div><!-- Tarjeta 3: UX/UI Design -->
-
-      <div class="bg-[#1a0f2e] border border-purple-800/40 rounded-2xl p-8 hover:shadow-xl transition-all duration-300" style="transition: all 0.3s ease;" onmouseenter="this.style.border='2px solid #00ff00'; this.style.boxShadow='0 0 25px 5px rgba(0, 255, 0, 0.4)';" onmouseleave="this.style.border='1px solid rgba(126, 34, 206, 0.4)'; this.style.boxShadow='none';">
-
-       <div class="flex items-center gap-3 mb-4">
-
-        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-purple-400 to-violet-600 flex items-center justify-center">
-
-         <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-
-         </svg>
-
-        </div><span class="text-sm font-light text-purple-300"></span>
-
-       </div>
-
-       <h4 id="training-3-title" class="text-xl font-semibold text-white mb-2">Posicionamiento en Buscadores</h4>
-
-       <h5 id="training-3-institution" class="text-base font-normal text-purple-300 mb-4">ADGD211PO</h5>
-
-       <p id="training-3-description" class="text-sm text-[#e9d5ff] leading-relaxed">Formación en SEO: optimización On-site y Off-site, análisis de palabras clave, creación de contenidos, linkbuilding, analítica web y buenas prácticas según algoritmos de buscadores.</p>
-
-      </div><!-- Tarjeta 4: Gestión de Proyectos -->
-
-      <div class="bg-[#1a0f2e] border border-purple-800/40 rounded-2xl p-8 hover:shadow-xl transition-all duration-300" style="transition: all 0.3s ease;" onmouseenter="this.style.border='2px solid #00ff00'; this.style.boxShadow='0 0 25px 5px rgba(0, 255, 0, 0.4)';" onmouseleave="this.style.border='1px solid rgba(126, 34, 206, 0.4)'; this.style.boxShadow='none';">
-
-       <div class="flex items-center gap-3 mb-4">
-
-        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-purple-400 to-violet-600 flex items-center justify-center">
-
-         <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
-
-         </svg>
-
-        </div><span class="text-sm font-light text-purple-300"></span>
-
-       </div>
-
-       <h4 id="training-4-title" class="text-xl font-semibold text-white mb-2">Marketing en buscadores: SEO, SEM y Analítica Web</h4>
-
-       <h5 id="training-4-institution" class="text-base font-normal text-purple-300 mb-4">COMM41</h5>
-
-       <p id="training-4-description" class="text-sm text-[#e9d5ff] leading-relaxed">Especialización en el diseño y ejecución de estrategias de posicionamiento orgánico (SEO) y campañas de pago (SEM), integrando la analítica web para maximizar la visibilidad y rentabilidad de proyectos digitales.</p>
-
-      </div><!-- Tarjeta 5: Comunicación Corporativa -->
-
-      <div class="bg-[#1a0f2e] border border-purple-800/40 rounded-2xl p-8 hover:shadow-xl transition-all duration-300" style="transition: all 0.3s ease;" onmouseenter="this.style.border='2px solid #00ff00'; this.style.boxShadow='0 0 25px 5px rgba(0, 255, 0, 0.4)';" onmouseleave="this.style.border='1px solid rgba(126, 34, 206, 0.4)'; this.style.boxShadow='none';">
-
-       <div class="flex items-center gap-3 mb-4">
-
-        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-purple-400 to-violet-600 flex items-center justify-center">
-
-         <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
-
-         </svg>
-
-        </div><span class="text-sm font-light text-purple-300"></span>
-
-       </div>
-
-       <h4 id="training-5-title" class="text-xl font-semibold text-white mb-2">Analítica web para medir resultado de Marketing
-</h4>
-
-       <h5 id="training-5-institution" class="text-base font-normal text-purple-300 mb-4">COMM001PO</h5>
-
-       <p id="training-5-description" class="text-sm text-[#e9d5ff] leading-relaxed">Especialización en la definición de KPIs, medición de conversiones y análisis de datos para la optimización de estrategias digitales y toma de decisiones estratégicas en proyectos de marketing.</p>
-
-      </div><!-- Tarjeta 6: Desarrollo Móvil -->
-
-      <div class="bg-[#1a0f2e] border border-purple-800/40 rounded-2xl p-8 hover:shadow-xl transition-all duration-300" style="transition: all 0.3s ease;" onmouseenter="this.style.border='2px solid #00ff00'; this.style.boxShadow='0 0 25px 5px rgba(0, 255, 0, 0.4)';" onmouseleave="this.style.border='1px solid rgba(126, 34, 206, 0.4)'; this.style.boxShadow='none';">
-
-       <div class="flex items-center gap-3 mb-4">
-
-        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-purple-400 to-violet-600 flex items-center justify-center">
-
-         <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-
-         </svg>
-
-        </div><span class="text-sm font-light text-purple-300"></span>
-
-       </div>
-
-       <h4 id="training-6-title" class="text-xl font-semibold text-white mb-2">Habilitación docente en FP (Grados A, B y C)</h4>
-
-       <h5 id="training-6-institution" class="text-base font-normal text-purple-300 mb-4">SSCE0110</h5>
-
-       <p id="training-6-description" class="text-sm text-[#e9d5ff] leading-relaxed">Competencias pedagógicas para impartir enseñanza en el ámbito de la Formación Profesional. Herramientas en diseño e impartición de programas educativos efectivos</p>
-
-      </div>
-
-<!-- Sección de Certificaciones con Botón y Desplegable -->
-<div class="w-full flex justify-center items-center my-8 text-center">
-  <button id="dropdownButton" aria-expanded="false" class="primary-button inline-flex items-center gap-3 px-8 py-3 rounded-full text-base font-medium transition-all duration-300">
-    <span id="buttonText">Ver Certificaciones</span>
-    <svg id="dropdownIcon" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-    </svg>
-  </button>
-</div>
-
-<div id="dropdownMenu" class="hidden mt-4" aria-hidden="true">
-  <div class="space-y-3 text-center max-w-3xl mx-auto">
-
-    <div class="px-5 py-4 bg-[#0f0a1f] border border-purple-800/40 rounded-xl text-center cursor-default transition-all duration-300 hover:border-[#39ff14] hover:shadow-[0_0_15px_#39ff14,inset_0_0_10px_rgba(57,255,20,0.2)]">
-      <div class="text-white font-medium mb-1">IFCD0210 — Desarrollo de Aplicaciones con Tecnología Web</div>
-      <div class="text-sm text-purple-300">Web Development</div>
-    </div>
-
-    <div class="px-5 py-4 bg-[#0f0a1f] border border-purple-800/40 rounded-xl text-center cursor-default transition-all duration-300 hover:border-[#39ff14] hover:shadow-[0_0_15px_#39ff14,inset_0_0_10px_rgba(57,255,20,0.2)]">
-      <div class="text-white font-medium mb-1">ADGD067PO — Dirección de Equipo y Coaching</div>
-      <div class="text-sm text-purple-300">Leadership</div>
-    </div>
-
-    <div class="px-5 py-4 bg-[#0f0a1f] border border-purple-800/40 rounded-xl text-center cursor-default transition-all duration-300 hover:border-[#39ff14] hover:shadow-[0_0_15px_#39ff14,inset_0_0_10px_rgba(57,255,20,0.2)]">
-      <div class="text-white font-medium mb-1">COMM001PO — Analítica web para medir resultado de Marketing</div>
-      <div class="text-sm text-purple-300">Digital Analytics</div>
-    </div>
-
-    <div class="px-5 py-4 bg-[#0f0a1f] border border-purple-800/40 rounded-xl text-center cursor-default transition-all duration-300 hover:border-[#39ff14] hover:shadow-[0_0_15px_#39ff14,inset_0_0_10px_rgba(57,255,20,0.2)]">
-      <div class="text-white font-medium mb-1">COMM41 — Marketing en buscadores: SEO, SEM y Analítica Web</div>
-      <div class="text-sm text-purple-300">Search Marketing (SEO/SEM)</div>
-    </div>
-
-    <div class="px-5 py-4 bg-[#0f0a1f] border border-purple-800/40 rounded-xl text-center cursor-default transition-all duration-300 hover:border-[#39ff14] hover:shadow-[0_0_15px_#39ff14,inset_0_0_10px_rgba(57,255,20,0.2)]">
-      <div class="text-white font-medium mb-1">SSCE0110 — Habilitación para la docencia en FP (Grados A, B y C)</div>
-      <div class="text-sm text-purple-300">Education & Communications</div>
-    </div>
-
-    <div class="px-5 py-4 bg-[#0f0a1f] border border-purple-800/40 rounded-xl text-center cursor-default transition-all duration-300 hover:border-[#39ff14] hover:shadow-[0_0_15px_#39ff14,inset_0_0_10px_rgba(57,255,20,0.2)]">
-      <div class="text-white font-medium mb-1">ADGD211PO — Posicionamiento en buscadores</div>
-      <div class="text-sm text-purple-300">Search Engine Optimization (SEO)</div>
-    </div>
-
-    <div class="px-5 py-4 bg-[#0f0a1f] border border-purple-800/40 rounded-xl text-center cursor-default transition-all duration-300 hover:border-[#39ff14] hover:shadow-[0_0_15px_#39ff14,inset_0_0_10px_rgba(57,255,20,0.2)]">
-      <div class="text-white font-medium mb-1">IFCT120PO — WordPress en el Sector de Publicidad y Comunicación</div>
-      <div class="text-sm text-purple-300">Web Design</div>
-    </div>
-
-    <div class="px-5 py-4 bg-[#0f0a1f] border border-purple-800/40 rounded-xl text-center cursor-default transition-all duration-300 hover:border-[#39ff14] hover:shadow-[0_0_15px_#39ff14,inset_0_0_10px_rgba(57,255,20,0.2)]">
-      <div class="text-white font-medium mb-1">IFCT068PO — Metodologías Ágiles en Proyectos de Mantenimiento de Software</div>
-      <div class="text-sm text-purple-300">Agile & Project Management</div>
-    </div>
-
-    <div class="px-5 py-4 bg-[#0f0a1f] border border-purple-800/40 rounded-xl text-center cursor-default transition-all duration-300 hover:border-[#39ff14] hover:shadow-[0_0_15px_#39ff14,inset_0_0_10px_rgba(57,255,20,0.2)]">
-      <div class="text-white font-medium mb-1">ARGG0008 — ADOBE INDESIGN I</div>
-      <div class="text-sm text-purple-300">Web Design</div>
-    </div>
-
-    <div class="px-5 py-4 bg-[#0f0a1f] border border-purple-800/40 rounded-xl text-center cursor-default transition-all duration-300 hover:border-[#39ff14] hover:shadow-[0_0_15px_#39ff14,inset_0_0_10px_rgba(57,255,20,0.2)]">
-      <div class="text-white font-medium mb-1">ADGG035PO — Comercio Electrónico</div>
-      <div class="text-sm text-purple-300">E-commerce</div>
-    </div>
-
-    <div class="px-5 py-4 bg-[#0f0a1f] border border-purple-800/40 rounded-xl text-center cursor-default transition-all duration-300 hover:border-[#39ff14] hover:shadow-[0_0_15px_#39ff14,inset_0_0_10px_rgba(57,255,20,0.2)]">
-      <div class="text-white font-medium mb-1">Ciberseguridad — Acción formativa</div>
-      <div class="text-sm text-purple-300">Cybersecurity</div>
-    </div>
-
-    <div class="px-5 py-4 bg-[#0f0a1f] border border-purple-800/40 rounded-xl text-center cursor-default transition-all duration-300 hover:border-[#39ff14] hover:shadow-[0_0_15px_#39ff14,inset_0_0_10px_rgba(57,255,20,0.2)]">
-      <div class="text-white font-medium mb-1">Ciberseguridad en el trabajo</div>
-      <div class="text-sm text-purple-300">Cybersecurity in the Workplace</div>
-    </div>
-
-    <div class="px-5 py-4 bg-[#0f0a1f] border border-purple-800/40 rounded-xl text-center cursor-default transition-all duration-300 hover:border-[#39ff14] hover:shadow-[0_0_15px_#39ff14,inset_0_0_10px_rgba(57,255,20,0.2)]">
-      <div class="text-white font-medium mb-1">Introducción al desarrollo web</div>
-      <div class="text-sm text-purple-300">Web Development Fundamentals</div>
-    </div>
-
-    <div class="px-5 py-4 bg-[#0f0a1f] border border-purple-800/40 rounded-xl text-center cursor-default transition-all duration-300 hover:border-[#39ff14] hover:shadow-[0_0_15px_#39ff14,inset_0_0_10px_rgba(57,255,20,0.2)]">
-      <div class="text-white font-medium mb-1">Cloud Computing</div>
-      <div class="text-sm text-purple-300">Cloud Computing Fundamentals</div>
-    </div>
-
-    <div class="px-5 py-4 bg-[#0f0a1f] border border-purple-800/40 rounded-xl text-center cursor-default transition-all duration-300 hover:border-[#39ff14] hover:shadow-[0_0_15px_#39ff14,inset_0_0_10px_rgba(57,255,20,0.2)]">
-      <div class="text-white font-medium mb-1">Desarrollo de aplicaciones móviles</div>
-      <div class="text-sm text-purple-300">Mobile App Development</div>
-    </div>
-
-    <div class="px-5 py-4 bg-[#0f0a1f] border border-purple-800/40 rounded-xl text-center cursor-default transition-all duration-300 hover:border-[#39ff14] hover:shadow-[0_0_15px_#39ff14,inset_0_0_10px_rgba(57,255,20,0.2)]">
-      <div class="text-white font-medium mb-1">FreeCodeCamp — Responsive Web Design</div>
-      <div class="text-sm text-purple-300">Responsive Web Design</div>
-    </div>
-
-    <div class="px-5 py-4 bg-[#0f0a1f] border border-purple-800/40 rounded-xl text-center cursor-default transition-all duration-300 hover:border-[#39ff14] hover:shadow-[0_0_15px_#39ff14,inset_0_0_10px_rgba(57,255,20,0.2)]">
-      <div class="text-white font-medium mb-1">Gestión de Proyectos</div>
-      <div class="text-sm text-purple-300">Project Management</div>
+<body>
+
+<!-- Iconos reutilizables -->
+<svg width="0" height="0" class="absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-code" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></symbol>
+    <symbol id="i-megaphone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"/></symbol>
+    <symbol id="i-team" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></symbol>
+    <symbol id="i-screen" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></symbol>
+  </defs>
+</svg>
+
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[60] focus:bg-white focus:text-black focus:px-4 focus:py-2 focus:rounded">Saltar al contenido</a>
+
+<!-- Navegación -->
+<nav class="fixed inset-x-0 top-0 z-50 bg-[#1a0f2e]/95 backdrop-blur-md border-b border-purple-900/30 shadow-lg" aria-label="Navegación principal">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 py-4 flex flex-wrap items-center justify-between gap-4">
+    <a href="#inicio" class="flex items-center gap-4 text-white font-light uppercase tracking-[0.2em] text-base">
+      <span class="w-9 h-9 rounded-full bg-gradient-to-br from-purple-400 to-violet-600 flex items-center justify-center text-xs font-semibold tracking-normal">ID</span>
+      <span class="whitespace-nowrap">Inspire in Design</span>
+    </a>
+    <button id="nav-toggle" type="button" class="lg:hidden p-2" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
+      <span class="flex flex-col gap-1.5"><span class="block w-6 h-px bg-[#e9d5ff]"></span><span class="block w-6 h-px bg-[#e9d5ff]"></span></span>
+    </button>
+    <div id="nav-links" class="hidden w-full lg:w-auto lg:flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-10 text-sm font-light pb-2 lg:pb-0">
+      <a href="#about" class="navlink">Sobre mí</a>
+      <a href="#training" class="navlink">Formación</a>
+      <a href="#experience" class="navlink">Experiencia</a>
+      <a href="#skills" class="navlink">Habilidades</a>
+      <a href="#projects" class="navlink">Proyectos</a>
+      <a href="#contact" class="btn lg:ml-6 self-start">Contacto</a>
     </div>
   </div>
-</div>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const dropdownButton = document.getElementById('dropdownButton');
-    const dropdownMenu = document.getElementById('dropdownMenu');
-    const dropdownIcon = document.getElementById('dropdownIcon');
-    const buttonText = document.getElementById('buttonText');
+</nav>
 
-    if (dropdownButton && dropdownMenu) {
-      dropdownButton.addEventListener('click', () => {
-        const isHidden = dropdownMenu.classList.toggle('hidden');
-        const isOpen = !isHidden;
+<header id="inicio" class="pt-36 pb-8 px-6 text-center">
+  <div class="max-w-4xl mx-auto">
+    <h1 class="rise text-5xl lg:text-7xl font-bold text-white mb-4">Inés Delgado</h1>
+    <p class="rise text-2xl lg:text-3xl font-light text-[#c084fc] mb-6" style="animation-delay:.3s">Aumento la visibilidad y las ventas de tu negocio uniendo estrategia comercial, tecnología y comunicación.</p>
+    <p class="rise text-base lg:text-lg font-light" style="animation-delay:.6s">Digitalizo tu empresa y optimizo tus procesos de venta para conectar con más clientes y escalar tu presencia en el mercado.</p>
+  </div>
+</header>
 
-        dropdownButton.setAttribute('aria-expanded', isOpen);
-        dropdownMenu.setAttribute('aria-hidden', isHidden);
+<main id="main">
 
-        if (dropdownIcon) {
-          dropdownIcon.style.transform = isOpen ? 'rotate(180deg)' : 'rotate(0deg)';
-        }
-
-        if (buttonText) {
-          buttonText.textContent = isOpen ? 'Ocultar Certificaciones' : 'Ver Certificaciones';
-        }
-      });
-    }
-  });
-</script>
-
-</section><!-- Sección Experiencia Laboral -->
-<section id="experience" class="py-20 px-6">
-  <div class="max-w-5xl mx-auto">
-    <h2 id="experience-title" class="text-4xl font-bold text-white text-center mb-16">Experiencia Laboral</h2>
-    <div class="relative">
-      <!-- Línea vertical de timeline -->
-      <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-600 via-violet-500 to-purple-600 hidden md:block"></div>
-
-      <div class="space-y-12">
-
-        <!-- Experiencia 1 -->
-        <div class="relative pl-0 md:pl-20">
-          <div class="absolute left-0 top-0 w-16 h-16 rounded-full bg-gradient-to-br from-purple-400 to-violet-600 flex items-center justify-center shadow-lg shadow-purple-500/40 hidden md:flex">
-            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-            </svg>
-          </div>
-          <div class="bg-[#1a0f2e] border border-purple-800/40 rounded-2xl p-8 
-                      transition-all duration-300 hover:border-green-400 hover:shadow-[0_0_25px_5px_rgba(0,255,0,0.4)]">
-            <h4 id="exp-1-title" class="text-xl font-semibold text-white mb-3">+20 años de experiencia en atención al cliente y liderazgo</h4>
-            <p id="exp-1-description" class="text-base text-[#e9d5ff] leading-relaxed">
-              Trayectoria consolidada en <strong class="text-white">gestión de ventas, coordinación de equipos</strong> y <strong class="text-white">optimización de procesos comerciales</strong>. Habilidades sólidas en comunicación, resolución de conflictos y orientación al cliente, garantizando resultados de alto impacto.
-            </p>
-          </div>
-        </div>
-
-        <!-- Experiencia 2 -->
-        <div class="relative pl-0 md:pl-20">
-          <div class="absolute left-0 top-0 w-16 h-16 rounded-full bg-gradient-to-br from-purple-400 to-violet-600 flex items-center justify-center shadow-lg shadow-purple-500/40 hidden md:flex">
-            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-            </svg>
-          </div>
-          <div class="bg-[#1a0f2e] border border-purple-800/40 rounded-2xl p-8 
-                      transition-all duration-300 hover:border-green-400 hover:shadow-[0_0_25px_5px_rgba(0,255,0,0.4)]">
-            <h4 id="exp-2-title" class="text-xl font-semibold text-white mb-3">Prácticas Profesionales — X-Net Group</h4>
-            <p id="exp-2-description" class="text-base text-[#e9d5ff] leading-relaxed">
-              Integrante del <strong class="text-white">equipo de desarrollo web</strong>, participando en la creación, mantenimiento y mejora de sitios corporativos. Reforcé conocimientos en <em class="text-purple-300">HTML, CSS, JavaScript</em> y metodologías ágiles de trabajo colaborativo.
-            </p>
-          </div>
-        </div>
-
-        <!-- Experiencia 3 -->
-        <div class="relative pl-0 md:pl-20">
-          <div class="absolute left-0 top-0 w-16 h-16 rounded-full bg-gradient-to-br from-purple-400 to-violet-600 flex items-center justify-center shadow-lg shadow-purple-500/40 hidden md:flex">
-            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
-            </svg>
-          </div>
-          <div class="bg-[#1a0f2e] border border-purple-800/40 rounded-2xl p-8 
-                      transition-all duration-300 hover:border-green-400 hover:shadow-[0_0_25px_5px_rgba(0,255,0,0.4)]">
-            <div class="flex flex-wrap items-center gap-2 mb-3">
-              <h4 class="text-xl font-semibold text-white">Responsable Comercial y Comunicación Digital — SAO</h4>
-              <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-purple-600/20 text-purple-300 border border-purple-500/30">Actualidad</span>
-            </div>
-            <p class="text-sm text-purple-300 mb-3">Servicios Avanzados de Opinión</p>
-            <p class="text-base text-[#e9d5ff] leading-relaxed">
-              Encargada de la <strong class="text-white">Estrategia Comercial y Comunicación Digital.</strong>  
-              Lidero la <strong class="text-white">coordinación de equipos</strong>, la planificación de campañas digitales y la 
-              implementación de <strong class="text-white">soluciones tecnológicas personalizadas</strong> orientadas al crecimiento, 
-              posicionamiento de marca y excelencia en la experiencia del cliente.
-            </p>
-          </div>
-        </div>
-
-        <!-- Experiencia 4 -->
-        <div class="relative pl-0 md:pl-20">
-          <div class="absolute left-0 top-0 w-16 h-16 rounded-full bg-gradient-to-br from-purple-400 to-violet-600 flex items-center justify-center shadow-lg shadow-purple-500/40 hidden md:flex">
-            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
-            </svg>
-          </div>
-          <div class="bg-[#1a0f2e] border border-purple-800/40 rounded-2xl p-8 
-                      transition-all duration-300 hover:border-green-400 hover:shadow-[0_0_25px_5px_rgba(0,255,0,0.4)]">
-            <div class="flex flex-wrap items-center gap-2 mb-3">
-              <h4 class="text-xl font-semibold text-white">CEO y Fundadora Inspire in Design</h4>
-              <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-purple-600/20 text-purple-300 border border-purple-500/30">Actualidad</span>
-            </div>
-            <p class="text-base text-[#e9d5ff] leading-relaxed">
-              Empresa propia dedicada a la <strong class="text-white">Comunicación y Estrategia Comercial</strong>, especializada en Soluciones Digitales orientadas a la Excelencia de Marca, con <strong class="text-white">acompañamiento y asesoramiento estratégico</strong> y gestión eficaz de equipos.
-            </p>
-          </div>
-        </div>
-
-      </div>
+<!-- Sobre mí -->
+<section id="about" class="!py-12">
+  <div class="max-w-4xl mx-auto">
+    <img src="imagenes/yo_ines.png" alt="Foto de perfil de Inés Delgado" width="160" height="160" fetchpriority="high"
+         class="w-40 h-40 mx-auto mb-8 rounded-full object-cover border-[3px] border-[#a855f7] shadow-[0_0_25px_5px_rgba(168,85,247,.4)]">
+    <div class="text-center mb-8">
+      <h2 class="text-3xl lg:text-4xl font-bold text-white mb-3">Sobre mí</h2>
+      <p class="text-xl text-[#c084fc] font-medium">Consultora Digital, Estratega Comercial y CEO en Inspire in Design</p>
     </div>
+    <div class="space-y-4 text-base lg:text-lg font-light leading-relaxed text-[#e9d5ff]/90">
+      <p>Ayudo a empresas y marcas a cerrar la brecha entre la estrategia comercial y la implementación tecnológica. Aporto una visión integral que une el desarrollo web <em>full stack</em>, la construcción de marca y la dirección comercial para transformar necesidades complejas en soluciones digitales rentables.</p>
+      <p>Con más de 20 años de trayectoria en gestión de ventas, atención al cliente y coordinación de equipos, actúo como conectora entre personas y tecnología. No solo desarrollo espacios web: diseño estrategias orientadas a aumentar la visibilidad, optimizar la experiencia de usuario y hacer crecer tu negocio.</p>
+      <p>Comprometida con la innovación tecnológica y el impacto social, participo activamente en comunidades como <strong class="text-white">AdaLoveDev</strong> y <strong class="text-white">WISE Canarias</strong>, impulsando el liderazgo femenino en STEAM y la diversidad en el sector digital.</p>
+    </div>
+    <div class="flex flex-wrap items-center justify-center gap-6 mt-10">
+      <a href="inspire.html" class="btn">Conoce Inspire in Design</a>
+      <a href="https://www.linkedin.com/in/inesdelgado-inspireindesign" target="_blank" rel="noopener noreferrer" aria-label="Perfil de LinkedIn de Inés Delgado (se abre en otra pestaña)"
+         class="inline-flex items-center justify-center w-12 h-12 rounded-full border-2 border-[#a855f7] text-[#a855f7] hover:bg-[#a855f7] hover:text-white transition-all duration-300">
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 110-4.125 2.062 2.062 0 010 4.125zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+    </div>
+  </div>
 </section>
-<!-- Sección Habilidades -->
-  <section id="skills" class="py-20 px-6 bg-[#1a0f2e]/30">
+
+<!-- Formación -->
+<section id="training" class="bg-[#1a0f2e]/30">
   <div class="max-w-6xl mx-auto">
-    <h2 class="text-4xl font-bold text-white text-center mb-16">Habilidades</h2>
+    <h2 class="title">Formación destacada</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <article class="card"><div class="badge mb-4"><svg class="w-6 h-6"><use href="#i-code"/></svg></div>
+        <h3 class="text-xl font-semibold text-white mb-1">Desarrollo de Aplicaciones Web</h3><p class="text-purple-300 mb-4">IFCD0210</p>
+        <p class="text-sm leading-relaxed">Formación intensiva en desarrollo web completo: frontend (React, Vue), backend (Node.js, Express) y bases de datos (MongoDB, PostgreSQL).</p></article>
+      <article class="card"><div class="badge mb-4"><svg class="w-6 h-6"><use href="#i-team"/></svg></div>
+        <h3 class="text-xl font-semibold text-white mb-1">Dirección de Equipos y Coaching</h3><p class="text-purple-300 mb-4">ADGD067PO</p>
+        <p class="text-sm leading-relaxed">Especialización en liderazgo, comunicación efectiva y gestión de equipos de alto rendimiento.</p></article>
+      <article class="card"><div class="badge mb-4"><svg class="w-6 h-6"><use href="#i-chart"/></svg></div>
+        <h3 class="text-xl font-semibold text-white mb-1">Posicionamiento en Buscadores</h3><p class="text-purple-300 mb-4">ADGD211PO</p>
+        <p class="text-sm leading-relaxed">Formación en SEO: optimización On-site y Off-site, análisis de palabras clave, creación de contenidos, linkbuilding, analítica web y buenas prácticas según algoritmos de buscadores.</p></article>
+      <article class="card"><div class="badge mb-4"><svg class="w-6 h-6"><use href="#i-chart"/></svg></div>
+        <h3 class="text-xl font-semibold text-white mb-1">Marketing en buscadores: SEO, SEM y Analítica Web</h3><p class="text-purple-300 mb-4">COMM41</p>
+        <p class="text-sm leading-relaxed">Diseño y ejecución de estrategias de posicionamiento orgánico (SEO) y campañas de pago (SEM), integrando la analítica web para maximizar la visibilidad y rentabilidad de proyectos digitales.</p></article>
+      <article class="card"><div class="badge mb-4"><svg class="w-6 h-6"><use href="#i-chart"/></svg></div>
+        <h3 class="text-xl font-semibold text-white mb-1">Analítica web para medir resultados de Marketing</h3><p class="text-purple-300 mb-4">COMM001PO</p>
+        <p class="text-sm leading-relaxed">Definición de KPIs, medición de conversiones y análisis de datos para optimizar estrategias digitales y tomar decisiones en proyectos de marketing.</p></article>
+      <article class="card"><div class="badge mb-4"><svg class="w-6 h-6"><use href="#i-megaphone"/></svg></div>
+        <h3 class="text-xl font-semibold text-white mb-1">Habilitación docente en FP (Grados A, B y C)</h3><p class="text-purple-300 mb-4">SSCE0110</p>
+        <p class="text-sm leading-relaxed">Competencias pedagógicas para impartir enseñanza en Formación Profesional y herramientas para diseñar e impartir programas educativos efectivos.</p></article>
+    </div>
 
-      <!-- Habilidad 1: Comunicación y Estrategia Comercial -->
-<div class="bg-[#1a0f2e] border border-purple-800/40 rounded-2xl p-8 
-            hover:border-green-400 hover:shadow-[0_0_25px_5px_rgba(0,255,0,0.4)] 
-            transition-all duration-300">        <div class="flex justify-center mb-6">
-          <div class="w-20 h-20 rounded-full bg-gradient-to-br from-purple-400 to-violet-600 flex items-center justify-center shadow-lg shadow-purple-500/40">
-            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-            </svg>
-          </div>
-        </div>
-        <h3 class="text-xl font-semibold text-white text-center mb-4"><strong class="text-white">Comunicación y Estrategia Comercial</strong></h3>
-        <ul class="space-y-2">
-          <li class="text-sm text-[#e9d5ff] flex items-start gap-2"><span class="text-purple-400 mt-1">•</span> Comunicación corporativa y digital</li>
-          <li class="text-sm text-[#e9d5ff] flex items-start gap-2"><span class="text-purple-400 mt-1">•</span> Estrategia de marca y posicionamiento</li>
-          <li class="text-sm text-[#e9d5ff] flex items-start gap-2"><span class="text-purple-400 mt-1">•</span> Gestión de campañas y contenidos</li>
-          <li class="text-sm text-[#e9d5ff] flex items-start gap-2"><span class="text-purple-400 mt-1">•</span> Relaciones públicas y storytelling</li>
-        </ul>
-      </div>
+    <div class="flex justify-center my-10">
+      <button id="cert-btn" type="button" class="btn !px-8 !py-3 text-base gap-3" aria-expanded="false" aria-controls="cert-list">
+        <span id="cert-text">Ver certificaciones</span>
+        <svg id="cert-icon" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+      </button>
+    </div>
+    <ul id="cert-list" class="hidden space-y-3 text-center max-w-3xl mx-auto">
+      <li class="cert"><b>IFCD0210 — Desarrollo de Aplicaciones con Tecnología Web</b><span>Web Development</span></li>
+      <li class="cert"><b>ADGD067PO — Dirección de Equipo y Coaching</b><span>Leadership</span></li>
+      <li class="cert"><b>COMM001PO — Analítica web para medir resultado de Marketing</b><span>Digital Analytics</span></li>
+      <li class="cert"><b>COMM41 — Marketing en buscadores: SEO, SEM y Analítica Web</b><span>Search Marketing (SEO/SEM)</span></li>
+      <li class="cert"><b>SSCE0110 — Habilitación para la docencia en FP (Grados A, B y C)</b><span>Education &amp; Communications</span></li>
+      <li class="cert"><b>ADGD211PO — Posicionamiento en buscadores</b><span>Search Engine Optimization (SEO)</span></li>
+      <li class="cert"><b>IFCT120PO — WordPress en el Sector de Publicidad y Comunicación</b><span>Web Design</span></li>
+      <li class="cert"><b>IFCT068PO — Metodologías Ágiles en Proyectos de Mantenimiento de Software</b><span>Agile &amp; Project Management</span></li>
+      <li class="cert"><b>ARGG0008 — Adobe InDesign I</b><span>Graphic Design</span></li>
+      <li class="cert"><b>ADGG035PO — Comercio Electrónico</b><span>E-commerce</span></li>
+      <li class="cert"><b>Ciberseguridad — Acción formativa</b><span>Cybersecurity</span></li>
+      <li class="cert"><b>Ciberseguridad en el trabajo</b><span>Cybersecurity in the Workplace</span></li>
+      <li class="cert"><b>Introducción al desarrollo web</b><span>Web Development Fundamentals</span></li>
+      <li class="cert"><b>Cloud Computing</b><span>Cloud Computing Fundamentals</span></li>
+      <li class="cert"><b>Desarrollo de aplicaciones móviles</b><span>Mobile App Development</span></li>
+      <li class="cert"><b>FreeCodeCamp — Responsive Web Design</b><span>Responsive Web Design</span></li>
+      <li class="cert"><b>Gestión de Proyectos</b><span>Project Management</span></li>
+    </ul>
+  </div>
+</section>
 
-      <!-- Habilidad 2: Soluciones Digitales y Excelencia de Marca -->
-<div class="bg-[#1a0f2e] border border-purple-800/40 rounded-2xl p-8 
-            hover:border-green-400 hover:shadow-[0_0_25px_5px_rgba(0,255,0,0.4)] 
-            transition-all duration-300">        <div class="flex justify-center mb-6">
-          <div class="w-20 h-20 rounded-full bg-gradient-to-br from-purple-400 to-violet-600 flex items-center justify-center shadow-lg shadow-purple-500/40">
-            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-            </svg>
-          </div>
-        </div>
-        <h3 class="text-xl font-semibold text-white text-center mb-4"><strong class="text-white">Soluciones Digitales y Excelencia de Marca</strong></h3>
-        <ul class="space-y-2">
-          <li class="text-sm text-[#e9d5ff] flex items-start gap-2"><span class="text-purple-400 mt-1">•</span> Diseño UX/UI y experiencia de usuario</li>
-          <li class="text-sm text-[#e9d5ff] flex items-start gap-2"><span class="text-purple-400 mt-1">•</span> Automatización y herramientas no-code</li>
-          <li class="text-sm text-[#e9d5ff] flex items-start gap-2"><span class="text-purple-400 mt-1">•</span> Optimización de procesos digitales</li>
-          <li class="text-sm text-[#e9d5ff] flex items-start gap-2"><span class="text-purple-400 mt-1">•</span> Gestión de identidad visual y coherencia de marca</li>
-        </ul>
-      </div>
-
-      <!-- Habilidad 3: Gestión de Equipos y Desarrollo Técnico -->
-<div class="bg-[#1a0f2e] border border-purple-800/40 rounded-2xl p-8 
-            hover:border-green-400 hover:shadow-[0_0_25px_5px_rgba(0,255,0,0.4)] 
-            transition-all duration-300">        <div class="flex justify-center mb-6">
-          <div class="w-20 h-20 rounded-full bg-gradient-to-br from-purple-400 to-violet-600 flex items-center justify-center shadow-lg shadow-purple-500/40">
-            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-            </svg>
-          </div>
-        </div>
-        <h3 class="text-xl font-semibold text-white text-center mb-4"><strong class="text-white">Gestión de Equipos y Desarrollo Técnico</strong></h3>
-        <ul class="space-y-2">
-          <li class="text-sm text-[#e9d5ff] flex items-start gap-2"><span class="text-purple-400 mt-1">•</span> Liderazgo y coordinación de proyectos</li>
-          <li class="text-sm text-[#e9d5ff] flex items-start gap-2"><span class="text-purple-400 mt-1">•</span> Trabajo colaborativo y metodologías ágiles</li>
-          <li class="text-sm text-[#e9d5ff] flex items-start gap-2"><span class="text-purple-400 mt-1">•</span> <class="text-white">Acompañamiento y asesoramiento estratégico</li>
-          <li class="text-sm text-[#e9d5ff] flex items-start gap-2"><span class="text-purple-400 mt-1">•</span> Presentaciones Técnicas</li>
-        </ul>
-      </div>
-
+<!-- Experiencia -->
+<section id="experience">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="title">Experiencia laboral</h2>
+    <div class="relative">
+      <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-600 via-violet-500 to-purple-600 hidden md:block" aria-hidden="true"></div>
+      <ol class="space-y-12">
+        <li class="relative md:pl-20">
+          <div class="badge !w-16 !h-16 absolute left-0 top-0 hidden md:flex" aria-hidden="true"><svg class="w-8 h-8"><use href="#i-user"/></svg></div>
+          <div class="card"><h3 class="text-xl font-semibold text-white mb-3">+20 años de experiencia en atención al cliente y liderazgo</h3>
+            <p class="leading-relaxed">Trayectoria consolidada en <strong class="text-white">gestión de ventas, coordinación de equipos</strong> y <strong class="text-white">optimización de procesos comerciales</strong>. Habilidades sólidas en comunicación, resolución de conflictos y orientación al cliente, garantizando resultados de alto impacto.</p></div>
+        </li>
+        <li class="relative md:pl-20">
+          <div class="badge !w-16 !h-16 absolute left-0 top-0 hidden md:flex" aria-hidden="true"><svg class="w-8 h-8"><use href="#i-code"/></svg></div>
+          <div class="card"><h3 class="text-xl font-semibold text-white mb-3">Prácticas profesionales — X-Net Group</h3>
+            <p class="leading-relaxed">Integrante del <strong class="text-white">equipo de desarrollo web</strong>, participando en la creación, mantenimiento y mejora de sitios corporativos. Reforcé conocimientos en <em class="text-purple-300">HTML, CSS, JavaScript</em> y metodologías ágiles de trabajo colaborativo.</p></div>
+        </li>
+        <li class="relative md:pl-20">
+          <div class="badge !w-16 !h-16 absolute left-0 top-0 hidden md:flex" aria-hidden="true"><svg class="w-8 h-8"><use href="#i-megaphone"/></svg></div>
+          <div class="card">
+            <div class="flex flex-wrap items-center gap-2 mb-1"><h3 class="text-xl font-semibold text-white">Responsable Comercial y Comunicación Digital — SAO</h3>
+              <span class="px-3 py-1 rounded-full text-xs font-medium bg-purple-600/20 text-purple-300 border border-purple-500/30">Actualidad</span></div>
+            <p class="text-sm text-purple-300 mb-3">Servicios Avanzados de Opinión</p>
+            <p class="leading-relaxed">Encargada de la <strong class="text-white">estrategia comercial y comunicación digital</strong>. Lidero la <strong class="text-white">coordinación de equipos</strong>, la planificación de campañas digitales y la implementación de <strong class="text-white">soluciones tecnológicas personalizadas</strong> orientadas al crecimiento, posicionamiento de marca y excelencia en la experiencia del cliente.</p></div>
+        </li>
+        <li class="relative md:pl-20">
+          <div class="badge !w-16 !h-16 absolute left-0 top-0 hidden md:flex" aria-hidden="true"><svg class="w-8 h-8"><use href="#i-megaphone"/></svg></div>
+          <div class="card">
+            <div class="flex flex-wrap items-center gap-2 mb-3"><h3 class="text-xl font-semibold text-white">CEO y fundadora de Inspire in Design</h3>
+              <span class="px-3 py-1 rounded-full text-xs font-medium bg-purple-600/20 text-purple-300 border border-purple-500/30">Actualidad</span></div>
+            <p class="leading-relaxed">Empresa propia dedicada a la <strong class="text-white">comunicación y estrategia comercial</strong>, especializada en soluciones digitales orientadas a la excelencia de marca, con <strong class="text-white">acompañamiento y asesoramiento estratégico</strong> y gestión eficaz de equipos.</p></div>
+        </li>
+      </ol>
     </div>
   </div>
 </section>
 
-<!-- Sección Proyectos -->
-<section id="projects" class="w-full py-16 px-6">
-  <div class="main-container mx-auto">
-    <h2 class="text-4xl font-bold text-center mb-12" id="projectsSectionTitle">Últimos Proyectos Destacados</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-
-      <!-- Proyecto 1 -->
-      <div class="project-card rounded-lg overflow-hidden shadow-md border border-purple-800/40 transition-all duration-300 hover:border-green-400 hover:shadow-[0_0_25px_5px_rgba(0,255,0,0.4)]">
-        <div class="relative h-48 bg-gradient-to-br from-purple-900/40 to-violet-900/40 flex items-center justify-center overflow-hidden">
-          <img id="project-1-image" src="imagenes/PROSA_IMG.jpg" alt="Imagen del proyecto 1" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'; document.getElementById('project-1-placeholder').style.display='block';">
-          <svg id="project-1-placeholder" class="w-24 h-24 text-purple-400/30" style="display: none;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-          </svg>
-        </div>
-        <div class="p-6">
-          <h3 class="text-xl font-bold mb-1" id="project1Title">Comercio Local al alcance de tu mano</h3>
-          <p class="text-sm text-purple-300 mb-2">Responsable Comunicación y Comercial en Servicios Avanzados de Opinión</p>
-          <p class="mb-4" id="project1Description">Proyecto de Digitalización Comercial de la Asociación Empresarios Puerto del Rosario</p>
-          <a id="project-1-link" href="https://asociacionpuertodelrosario.es/prosa" target="_blank" rel="noopener noreferrer" class="inline-block px-4 py-2 rounded-lg font-medium hover:opacity-80 transition-opacity">Ver Proyecto →</a>
-        </div>
-      </div>
-
-      <!-- Proyecto 2 -->
-      <div class="project-card rounded-lg overflow-hidden shadow-md border border-purple-800/40 transition-all duration-300 hover:border-green-400 hover:shadow-[0_0_25px_5px_rgba(0,255,0,0.4)]">
-        <div class="relative h-48 bg-gradient-to-br from-purple-900/40 to-violet-900/40 flex items-center justify-center overflow-hidden">
-          <img id="project-2-image" src="imagenes/IHERRO_IMG.jpg" alt="Imagen del proyecto 2" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'; document.getElementById('project-2-placeholder').style.display='block';">
-          <svg id="project-2-placeholder" class="w-24 h-24 text-purple-400/30" style="display: none;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-          </svg>
-        </div>
-        <div class="p-6">
-          <h3 class="text-xl font-bold mb-1" id="project2Title">Tu Comercio en un Click</h3>
-          <p class="text-sm text-purple-300 mb-2">Responsable Comunicación y Comercial en Servicios Avanzados de Opinión</p>
-          <p class="mb-4" id="project2Description">Proyecto de Digitalización Comercial y de Fidelización de la isla de El Hierro</p>
-          <a id="project-2-link" href="https://iherro.com/" target="_blank" rel="noopener noreferrer" class="inline-block px-4 py-2 rounded-lg font-medium hover:opacity-80 transition-opacity">Ver Proyecto →</a>
-        </div>
-      </div>
-
-      <!-- Proyecto 3 -->
-      <div class="project-card rounded-lg overflow-hidden shadow-md border border-purple-800/40 transition-all duration-300 hover:border-green-400 hover:shadow-[0_0_25px_5px_rgba(0,255,0,0.4)]">
-        <div class="relative h-48 bg-gradient-to-br from-purple-900/40 to-violet-900/40 flex items-center justify-center overflow-hidden">
-          <img id="project-3-image" src="imagenes/TALEGA_IMG.jpg" alt="Imagen del proyecto 3" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'; document.getElementById('project-3-placeholder').style.display='block';">
-          <svg id="project-3-placeholder" class="w-24 h-24 text-purple-400/30" style="display: none;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-          </svg>
-        </div>
-        <div class="p-6">
-          <h3 class="text-xl font-bold mb-1" id="project3Title">Mercado de Tegueste</h3>
-          <p class="text-sm text-purple-300 mb-2">Responsable Comunicación y Comercial en Servicios Avanzados de Opinión</p>
-          <p class="mb-4" id="project3Description">Proyecto de Digitalización y Fidelización de un Mercado Tradicional</p>
-          <a id="project-3-link" href="https://apptalega.com/" target="_blank" rel="noopener noreferrer" class="inline-block px-4 py-2 rounded-lg font-medium hover:opacity-80 transition-opacity">Ver Proyecto →</a>
-        </div>
-      </div>
-
-      <!-- Proyecto 4 -->
-      <div class="project-card rounded-lg overflow-hidden shadow-md border border-purple-800/40 transition-all duration-300 hover:border-green-400 hover:shadow-[0_0_25px_5px_rgba(0,255,0,0.4)]">
-        <div class="relative h-48 bg-gradient-to-br from-purple-900/40 to-violet-900/40 flex items-center justify-center overflow-hidden">
-          <img id="project-4-image" src="imagenes/JABLECARD_IMG.jpg" alt="Imagen del proyecto 4" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'; document.getElementById('project-4-placeholder').style.display='block';">
-          <svg id="project-4-placeholder" class="w-24 h-24 text-purple-400/30" style="display: none;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-          </svg>
-        </div>
-        <div class="p-6">
-          <h3 class="text-xl font-bold mb-1" id="project4Title">JableCard</h3>
-          <p class="text-sm text-purple-300 mb-2">Responsable Comunicación y Comercial en Servicios Avanzados de Opinión</p>
-          <p class="mb-4" id="project4Description">Proyecto de Digitalización Comercial de San Bartolomé y Playa Honda</p>
-          <a id="project-4-link" href="https://acealanzarote.com/jable-card/" target="_blank" rel="noopener noreferrer" class="inline-block px-4 py-2 rounded-lg font-medium hover:opacity-80 transition-opacity">Ver Proyecto →</a>
-        </div>
-      </div>
-
-      <!-- Proyecto 5 -->
-      <div class="project-card rounded-lg overflow-hidden shadow-md border border-purple-800/40 transition-all duration-300 hover:border-green-400 hover:shadow-[0_0_25px_5px_rgba(0,255,0,0.4)]">
-        <div class="relative h-48 bg-gradient-to-br from-purple-900/40 to-violet-900/40 flex items-center justify-center overflow-hidden">
-          <img id="project-5-image" src="imagenes/krondoc.jpg" alt="Imagen del proyecto 5" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'; document.getElementById('project-5-placeholder').style.display='block';">
-          <svg id="project-5-placeholder" class="w-24 h-24 text-purple-400/30" style="display: none;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-          </svg>
-        </div>
-        <div class="p-6">
-          <h3 class="text-xl font-bold mb-1" id="project5Title">Krondoc</h3>
-          <p class="text-sm text-purple-300 mb-2">Responsable Comunicación y Comercial en Servicios Avanzados de Opinión</p>
-          <p class="mb-4" id="project5Description">La aplicación de fichaje inteligente y segura</p>
-          <a id="project-5-link" href="https://krondoc.com/" target="_blank" rel="noopener noreferrer" class="inline-block px-4 py-2 rounded-lg font-medium hover:opacity-80 transition-opacity">Ver Proyecto →</a>
-        </div>
-      </div>
-
-      <!-- Proyecto 6 (nuevo) -->
-      <div class="project-card rounded-lg overflow-hidden shadow-md border border-purple-800/40 transition-all duration-300 hover:border-green-400 hover:shadow-[0_0_25px_5px_rgba(0,255,0,0.4)]">
-        <div class="relative h-48 bg-gradient-to-br from-purple-900/40 to-violet-900/40 flex items-center justify-center overflow-hidden">
-          <img id="project-6-image" src="imagenes/tejineando.jpg" alt="Imagen del proyecto 6" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'; document.getElementById('project-6-placeholder').style.display='block';">
-          <svg id="project-6-placeholder" class="w-24 h-24 text-purple-400/30" style="display: none;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-          </svg>
-        </div>
-        <div class="p-6">
-          <h3 class="text-xl font-bold mb-1" id="project6Title">Tejineando</h3>
-          <p class="text-sm text-purple-300 mb-2">Responsable Comunicación y Comercial en Servicios Avanzados de Opinión</p>
-          <p class="mb-4" id="project6Description">Juego interactivo que convierte la historia y tradiciones de Tejina en una experiencia divertida y estratégica para toda la comunidad 6</p>
-          <a id="project-6-link" href="https://tejineando.com/" target="_blank" rel="noopener noreferrer" class="inline-block px-4 py-2 rounded-lg font-medium hover:opacity-80 transition-opacity">Ver Proyecto →</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- Carrusel de Imágenes Mejorado con descripción dinámicamente actualizada 
-<section id="carousel" class="hidden w-full py-16 px-6 bg-[#1a0f2e]">
+<!-- Habilidades -->
+<section id="skills" class="bg-[#1a0f2e]/30">
   <div class="max-w-6xl mx-auto">
-    <div class="relative overflow-hidden rounded-2xl shadow-lg">
-
-      <div id="carousel-images" class="flex transition-transform duration-500">
-        <div class="slide w-full flex-shrink-0 flex items-center justify-center h-72 bg-[#1a0f2e]">
-          <img src="imagenes/galeria_22.jpg" alt="Imagen 1" class="h-full object-contain">
-        </div>
-        <div class="slide w-full flex-shrink-0 flex items-center justify-center h-72 bg-[#1a0f2e]">
-          <img src="imagenes/galeria_1.png" alt="Imagen 2" class="h-full object-contain">
-        </div>
-        <div class="slide w-full flex-shrink-0 flex items-center justify-center h-72 bg-[#1a0f2e]">
-          <img src="imagenes/galeria_3.jpeg" alt="Imagen 3" class="h-full object-contain">
-        </div>
-        <div class="slide w-full flex-shrink-0 flex items-center justify-center h-72 bg-[#1a0f2e]">
-          <img src="imagenes/galeria_4.jpeg" alt="Imagen 4" class="h-full object-contain">
-        </div>
-        <div class="slide w-full flex-shrink-0 flex items-center justify-center h-72 bg-[#1a0f2e]">
-          <img src="imagenes/galeria_5.jpeg" alt="Imagen 5" class="h-full object-contain">
-        </div>
-        <div class="slide w-full flex-shrink-0 flex items-center justify-center h-72 bg-[#1a0f2e]">
-          <img src="imagenes/galeria_6.jpeg" alt="Imagen 6" class="h-full object-contain">
-        </div>
-        <div class="slide w-full flex-shrink-0 flex items-center justify-center h-72 bg-[#1a0f2e]">
-          <img src="imagenes/galeria_7.jpeg" alt="Imagen 7" class="h-full object-contain">
-        </div>
-        <div class="slide w-full flex-shrink-0 flex items-center justify-center h-72 bg-[#1a0f2e]">
-          <img src="imagenes/galeria_8.jpeg" alt="Imagen 8" class="h-full object-contain">
-        </div>
-        <div class="slide w-full flex-shrink-0 flex items-center justify-center h-72 bg-[#1a0f2e]">
-          <img src="imagenes/galeria_9.jpeg" alt="Imagen 9" class="h-full object-contain">
-        </div>
-        <div class="slide w-full flex-shrink-0 flex items-center justify-center h-72 bg-[#1a0f2e]">
-          <img src="imagenes/galeria_10.jpeg" alt="Imagen 10" class="h-full object-contain">
-        </div>
-        <div class="slide w-full flex-shrink-0 flex items-center justify-center h-72 bg-[#1a0f2e]">
-          <img src="imagenes/galeria_11.jpeg" alt="Imagen 11" class="h-full object-contain">
-        </div>
-        <div class="slide w-full flex-shrink-0 flex items-center justify-center h-72 bg-[#1a0f2e]">
-          <img src="imagenes/galeria_12.jpeg" alt="Imagen 12" class="h-full object-contain">
-        </div>
-        <div class="slide w-full flex-shrink-0 flex items-center justify-center h-72 bg-[#1a0f2e]">
-          <img src="imagenes/galeria_13.jpeg" alt="Imagen 13" class="h-full object-contain">
-        </div>
-        <div class="slide w-full flex-shrink-0 flex items-center justify-center h-72 bg-[#1a0f2e]">
-          <img src="imagenes/galeria_14.jpeg" alt="Imagen 14" class="h-full object-contain">
-        </div>
-        <div class="slide w-full flex-shrink-0 flex items-center justify-center h-72 bg-[#1a0f2e]">
-          <img src="imagenes/galeria_15.jpeg" alt="Imagen 15" class="h-full object-contain">
-        </div>
-      </div>
-
-      <button id="prev" class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-purple-600 text-white px-4 py-2 rounded-full shadow-md">‹</button>
-      <button id="next" class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-purple-600 text-white px-4 py-2 rounded-full shadow-md">›</button>
+    <h2 class="title">Habilidades</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <article class="card"><div class="badge !w-20 !h-20 mx-auto mb-6"><svg class="w-10 h-10"><use href="#i-megaphone"/></svg></div>
+        <h3 class="text-xl font-semibold text-white text-center mb-4">Comunicación y Estrategia Comercial</h3>
+        <ul class="space-y-2 text-sm list-disc list-inside marker:text-purple-400"><li>Comunicación corporativa y digital</li><li>Estrategia de marca y posicionamiento</li><li>Gestión de campañas y contenidos</li><li>Relaciones públicas y storytelling</li></ul></article>
+      <article class="card"><div class="badge !w-20 !h-20 mx-auto mb-6"><svg class="w-10 h-10"><use href="#i-screen"/></svg></div>
+        <h3 class="text-xl font-semibold text-white text-center mb-4">Soluciones Digitales y Excelencia de Marca</h3>
+        <ul class="space-y-2 text-sm list-disc list-inside marker:text-purple-400"><li>Diseño UX/UI y experiencia de usuario</li><li>Automatización y herramientas no-code</li><li>Optimización de procesos digitales</li><li>Gestión de identidad visual y coherencia de marca</li></ul></article>
+      <article class="card"><div class="badge !w-20 !h-20 mx-auto mb-6"><svg class="w-10 h-10"><use href="#i-team"/></svg></div>
+        <h3 class="text-xl font-semibold text-white text-center mb-4">Gestión de Equipos y Desarrollo Técnico</h3>
+        <ul class="space-y-2 text-sm list-disc list-inside marker:text-purple-400"><li>Liderazgo y coordinación de proyectos</li><li>Trabajo colaborativo y metodologías ágiles</li><li>Acompañamiento y asesoramiento estratégico</li><li>Presentaciones técnicas</li></ul></article>
     </div>
-
-    <p id="carousel-caption" class="text-center text-lg text-gray-300 mt-6 italic">
-      Mesa de Trabajo
-    </p>
   </div>
 </section>
+
+<!-- Proyectos -->
+<section id="projects">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="title">Últimos proyectos destacados</h2>
+    <div id="project-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+  </div>
+</section>
+
+<!-- Contacto -->
+<section id="contact" class="bg-[#1a0f2e]/30">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">¿Listo para impulsar tu negocio?</h2>
+      <p class="text-lg font-light">Estos son mis servicios principales</p>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+      <div class="flex justify-center">
+        <div class="p-6 rounded-2xl bg-white border-[3px] border-[#00ff00] shadow-[0_0_30px_8px_rgba(0,255,0,.5)]">
+          <img src="imagenes/QR_inspire.jpeg" alt="Código QR de contacto de Inés Delgado" width="288" height="288" loading="lazy" class="w-72 h-72 object-contain rounded-xl">
+        </div>
+      </div>
+      <ul class="space-y-6">
+        <li class="card !p-6 flex items-start gap-4"><div class="badge"><svg class="w-6 h-6"><use href="#i-screen"/></svg></div><p class="leading-relaxed">Marketing digital y soluciones digitales para empresas</p></li>
+        <li class="card !p-6 flex items-start gap-4"><div class="badge"><svg class="w-6 h-6"><use href="#i-megaphone"/></svg></div><p class="leading-relaxed">Comunicación, estrategia comercial e impulso de marca</p></li>
+        <li class="card !p-6 flex items-start gap-4"><div class="badge"><svg class="w-6 h-6"><use href="#i-team"/></svg></div><p class="leading-relaxed">Gestión y dirección de equipos</p></li>
+        <li class="card !p-6 flex items-start gap-4"><div class="badge"><svg class="w-6 h-6"><use href="#i-code"/></svg></div><p class="leading-relaxed">Mantenimiento y mejoras de espacios web, impulso de ideas empresariales</p></li>
+      </ul>
+    </div>
+    <div class="text-center">
+      <a href="https://calendar.app.google/CT8QmyBptQVe921v6" target="_blank" rel="noopener noreferrer"
+         class="inline-flex px-10 py-4 text-lg font-semibold text-white bg-gradient-to-r from-purple-600 to-violet-600 rounded-full hover:from-purple-500 hover:to-violet-500 hover:shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 hover:scale-105">Reservar consulta gratuita</a>
+      <ul class="flex flex-wrap justify-center gap-x-8 gap-y-2 mt-10 font-light"><li>100% confidencial</li><li>Respuesta en 24 h</li><li>Consulta gratuita</li></ul>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="py-8 text-center text-sm text-purple-300/80 border-t border-purple-900/30">
+  © <span id="year">2026</span> Inés Delgado · Inspire in Design
+</footer>
 
 <script>
-const carousel = document.getElementById('carousel-images');
-const slides = document.querySelectorAll('.slide');
-const caption = document.getElementById('carousel-caption');
-let index = 0;
+(() => {
+  // Menú móvil
+  const toggle = document.getElementById('nav-toggle'), links = document.getElementById('nav-links');
+  const setMenu = open => { links.classList.toggle('hidden', !open); toggle.setAttribute('aria-expanded', open); };
+  toggle.addEventListener('click', () => setMenu(toggle.getAttribute('aria-expanded') !== 'true'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
 
-// Texto por imagen
-const captions = [
-  "Mesa de Trabajo",
-  "Formación comercial en el proyecto ESCIUDAD -La Palma",
-  "Ponencia Feria Accountex 2025 - Ifema- Madrid",
-  "Presentación Proyecto Unidos por el Cole - El Hierro",
-  "Presentación a prensa proyecto PROSA- Fuerteventura",
-  "Formación Digital para el proyecto TALEGA - Tenerife",
-  "HUB- Tech 2025 - Tenerife",
-  "Cartel ponencia en Accountex 2025- Ifema- Madrid",
-  "Rueda de prensa presentación proyecto IHERRO - El Hierro",
-  "Formación digital para alumnado de IES Agustín Bethencourt-Tenerife",
-  "Ponencia en Accountex 2025 - IFema-Madrid",
-  "Presentación Krondoc en Digion -Infecar-  Gran Canaria",
-  "Presentación Proyecto Krondoc- El Hierro",
-  "Presentación Proyecto Krondoc- El Hierro",
-  "Formación digital para alumnado de IES Agustín Bethencourt-Tenerife"
-];
+  // Certificaciones
+  const btn = document.getElementById('cert-btn'), list = document.getElementById('cert-list');
+  btn.addEventListener('click', () => {
+    const open = list.classList.toggle('hidden') === false;
+    btn.setAttribute('aria-expanded', open);
+    document.getElementById('cert-text').textContent = open ? 'Ocultar certificaciones' : 'Ver certificaciones';
+    document.getElementById('cert-icon').style.transform = open ? 'rotate(180deg)' : '';
+  });
 
-function showSlide(i) {
-  carousel.style.transform = `translateX(-${i * 100}%)`;
-  // CAMBIO REALIZADO AQUÍ: Solo se muestra el texto descriptivo
-  caption.textContent = captions[i];
-}
+  // Proyectos (edita solo este array para añadir o cambiar proyectos)
+  const role = 'Responsable Comunicación y Comercial en Servicios Avanzados de Opinión';
+  const projects = [
+    { t: 'Comercio Local al alcance de tu mano', d: 'Proyecto de digitalización comercial de la Asociación de Empresarios de Puerto del Rosario', img: 'PROSA_IMG.jpg', url: 'https://asociacionpuertodelrosario.es/prosa' },
+    { t: 'Tu Comercio en un Click', d: 'Proyecto de digitalización comercial y fidelización de la isla de El Hierro', img: 'IHERRO_IMG.jpg', url: 'https://iherro.com/' },
+    { t: 'Mercado de Tegueste', d: 'Proyecto de digitalización y fidelización de un mercado tradicional', img: 'TALEGA_IMG.jpg', url: 'https://apptalega.com/' },
+    { t: 'JableCard', d: 'Proyecto de digitalización comercial de San Bartolomé y Playa Honda', img: 'JABLECARD_IMG.jpg', url: 'https://acealanzarote.com/jable-card/' },
+    { t: 'Krondoc', d: 'La aplicación de fichaje inteligente y segura', img: 'krondoc.jpg', url: 'https://krondoc.com/' },
+    { t: 'Tejineando', d: 'Juego interactivo que convierte la historia y tradiciones de Tejina en una experiencia divertida y estratégica para toda la comunidad', img: 'tejineando.jpg', url: 'https://tejineando.com/' }
+  ];
+  const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+  document.getElementById('project-grid').innerHTML = projects.map(p => `
+    <article class="card !p-0 overflow-hidden flex flex-col">
+      <div class="h-48 bg-gradient-to-br from-purple-900/40 to-violet-900/40">
+        <img src="imagenes/${p.img}" alt="Captura del proyecto ${esc(p.t)}" width="600" height="300" loading="lazy" class="w-full h-full object-cover" onerror="this.remove()">
+      </div>
+      <div class="p-6 flex flex-col flex-1">
+        <h3 class="text-xl font-bold text-white mb-1">${esc(p.t)}</h3>
+        <p class="text-sm text-purple-300 mb-2">${role}</p>
+        <p class="text-sm mb-4 flex-1">${esc(p.d)}</p>
+        <a href="${p.url}" target="_blank" rel="noopener noreferrer" class="btn !py-2 self-start" aria-label="Ver proyecto ${esc(p.t)} (se abre en otra pestaña)">Ver proyecto</a>
+      </div>
+    </article>`).join('');
 
-document.getElementById('next').addEventListener('click', () => {
-  index = (index + 1) % slides.length;
-  showSlide(index);
-});
-
-document.getElementById('prev').addEventListener('click', () => {
-  index = (index - 1 + slides.length) % slides.length;
-  showSlide(index);
-});
-
-// Autoplay cada 3s
-setInterval(() => {
-  index = (index + 1) % slides.length;
-  showSlide(index);
-}, 3000);
-
-// Forzar carga inicial de descripción correcta
-showSlide(0);
+  document.getElementById('year').textContent = new Date().getFullYear();
+})();
 </script>
-
-
-   </section><!-- Sección de Contacto -->
-   <section id="contact" class="py-20 px-6 bg-[#1a0f2e]/30">
-    <div class="max-w-6xl mx-auto">
-     <div class="text-center mb-16">
-      <h2 id="contact-title" class="text-4xl font-bold text-white mb-4">¿Listo para impulsar tu negocio?</h2>
-      <p id="contact-subtitle" class="text-lg text-[#e9d5ff] font-light">Estos son mis servicios principales</p>
-     </div>
-     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16"><!-- QR Code -->
-      <div class="flex justify-center">
-       <div class="inline-block p-6 rounded-2xl bg-white transition-all duration-300" style="box-shadow: 0 0 30px 8px rgba(0, 255, 0, 0.6), 0 0 50px 15px rgba(0, 255, 0, 0.3); border: 3px solid #00ff00;"><img src="imagenes/QR_inspire.jpeg" alt="Código QR - Inés Delgado" class="w-72 h-72 object-contain rounded-xl" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'w-72 h-72 flex items-center justify-center bg-gradient-to-br from-purple-400 to-violet-600 rounded-xl text-white text-6xl font-bold\'>QR</div>';">
-       </div>
-      </div><!-- Servicios -->
-      <div class="space-y-6">
-       <div class="bg-[#1a0f2e] border border-purple-800/40 rounded-xl p-6 hover:shadow-lg transition-all duration-300" style="transition: all 0.3s ease;" onmouseenter="this.style.border='2px solid #00ff00'; this.style.boxShadow='0 0 25px 5px rgba(0, 255, 0, 0.4)';" onmouseleave="this.style.border='1px solid rgba(126, 34, 206, 0.4)'; this.style.boxShadow='none';">
-        <div class="flex items-start gap-4">
-         <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-purple-400 to-violet-600 flex items-center justify-center shadow-lg shadow-purple-500/40">
-          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-          </svg>
-         </div>
-         <p id="service-1" class="text-[#e9d5ff] leading-relaxed">Marketing digital y soluciones digitales para empresas</p>
-        </div>
-       </div>
-       <div class="bg-[#1a0f2e] border border-purple-800/40 rounded-xl p-6 hover:shadow-lg transition-all duration-300" style="transition: all 0.3s ease;" onmouseenter="this.style.border='2px solid #00ff00'; this.style.boxShadow='0 0 25px 5px rgba(0, 255, 0, 0.4)';" onmouseleave="this.style.border='1px solid rgba(126, 34, 206, 0.4)'; this.style.boxShadow='none';">
-        <div class="flex items-start gap-4">
-         <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-purple-400 to-violet-600 flex items-center justify-center shadow-lg shadow-purple-500/40">
-          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
-          </svg>
-         </div>
-         <p id="service-2" class="text-[#e9d5ff] leading-relaxed">Comunicación y estrategia comercial e impulso de marca</p>
-        </div>
-       </div>
-       <div class="bg-[#1a0f2e] border border-purple-800/40 rounded-xl p-6 hover:shadow-lg transition-all duration-300" style="transition: all 0.3s ease;" onmouseenter="this.style.border='2px solid #00ff00'; this.style.boxShadow='0 0 25px 5px rgba(0, 255, 0, 0.4)';" onmouseleave="this.style.border='1px solid rgba(126, 34, 206, 0.4)'; this.style.boxShadow='none';">
-        <div class="flex items-start gap-4">
-         <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-purple-400 to-violet-600 flex items-center justify-center shadow-lg shadow-purple-500/40">
-          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-          </svg>
-         </div>
-         <p id="service-3" class="text-[#e9d5ff] leading-relaxed">Gestión y dirección de equipos</p>
-        </div>
-       </div>
-       <div class="bg-[#1a0f2e] border border-purple-800/40 rounded-xl p-6 hover:shadow-lg transition-all duration-300" style="transition: all 0.3s ease;" onmouseenter="this.style.border='2px solid #00ff00'; this.style.boxShadow='0 0 25px 5px rgba(0, 255, 0, 0.4)';" onmouseleave="this.style.border='1px solid rgba(126, 34, 206, 0.4)'; this.style.boxShadow='none';">
-        <div class="flex items-start gap-4">
-         <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-purple-400 to-violet-600 flex items-center justify-center shadow-lg shadow-purple-500/40">
-          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-          </svg>
-         </div>
-         <p id="service-4" class="text-[#e9d5ff] leading-relaxed">Mantenimiento y mejoras de espacios web, impulso de ideas empresariales</p>
-        </div>
-       </div>
-      </div>
-     </div><!-- CTA y Trust Indicators -->
-     <div class="text-center"><a href="https://calendar.app.google/CT8QmyBptQVe921v6" target="_blank" rel="noopener noreferrer" id="cta-button" class="focus-ring inline-flex items-center justify-center px-10 py-4 text-lg font-semibold text-white bg-gradient-to-r from-purple-600 to-violet-600 rounded-full hover:from-purple-500 hover:to-violet-500 hover:shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 transform hover:scale-105"> Reservar Consulta Gratuita </a>
-      <div class="flex flex-wrap items-center justify-center gap-8 mt-10">
-       <div class="flex items-center gap-3"><span class="text-[#e9d5ff] font-light">100% Confidencial</span>
-       </div>
-       <div class="flex items-center gap-3"><span class="text-[#e9d5ff] font-light">Respuesta en 24h</span>
-       </div>
-       <div class="flex items-center gap-3"><span class="text-[#e9d5ff] font-light">Consulta Gratuita</span>
-       </div>
-      </div>
-     </div>
-    </div>
-   </section>
-  </main>
-  <footer class="hidden">
-    </footer>
-    
-  <script>
-    (function () {
-      // Config por defecto minimalista con violetas
-      const defaultConfig = {
-        brand_title: "Inspire in Design",
-        about_label: "Sobre Mí",
-        training_label: "Formación",
-        experience_label: "Experiencia",
-        skills_label: "Habilidades",
-        projects_label: "Proyectos",
-        contact_label: "Contacto",
-        hero_title: "Inés Delgado",
-        hero_subtitle: "Comunicación y Estrategia Comercial",
-        hero_text: "Soluciones Digitales | Excelencia de Marca | Gestión de Equipos",
-        profile_image_url: "imagenes/yo_ines.png",
-        about_title: "Sobre Mí",
-        about_paragraph_1: "Soy una **profesional híbrida** que une la visión estratégica con la capacidad técnica. Cuento con experiencia en **desarrollo web full stack y multiplataforma**, **ventas**, **gestión de clientes** y **liderazgo de equipos**. Mi fortaleza está en actuar como **conectora entre personas y tecnología**, traduciendo necesidades complejas en **soluciones digitales claras y efectivas** que aportan valor real.",
-        about_paragraph_2: "Disfruto **coordinando proyectos**, **creando entornos colaborativos** y **acompañando a otros profesionales** en su desarrollo. Comprometida con la **diversidad y la inclusión**, participo en comunidades como **AdaLoveDev** y **WISE Canarias**, promoviendo el **liderazgo femenino en STEAM** y el acceso equitativo a la tecnología.",
-        about_paragraph_3: "Mi propósito es **impulsar proyectos con propósito**, construir **equipos cohesionados** y diseñar **procesos sostenibles** que integren **estrategia, negocio y ejecución técnica** para generar impacto positivo.",
-        certifications_title: "Mis Certificaciones",
-        certifications_subtitle: "Formación continua y especialización profesional",
-        experience_title: "Experiencia Laboral",
-        exp_1_title: "+20 años de experiencia en atención al cliente y liderazgo",
-        exp_1_description: "Trayectoria consolidada en **gestión de ventas, coordinación de equipos** y **optimización de procesos comerciales**. Habilidades sólidas en comunicación, resolución de conflictos y orientación al cliente, garantizando resultados de alto impacto.",
-        exp_2_title: "Prácticas Profesionales — X-Net Group",
-        exp_2_description: "Integrante del **equipo de desarrollo web**, participando en la creación, mantenimiento y mejora de sitios corporativos. Reforcé conocimientos en *HTML, CSS, JavaScript* y metodologías ágiles de trabajo colaborativo.",
-        exp_3_title: "Responsable Comercial y Comunicación Digital — SAO",
-        exp_3_subtitle: "Servicios Avanzados de Opinión",
-        exp_3_description: "Encargada de la **estrategia comercial y comunicación digital** de la empresa. Liderando la **organización de equipos** y la implementación de **soluciones digitales personalizadas** orientadas a la excelencia de marca y la satisfacción del cliente.",
-        skills_title: "Habilidades",
-        skill_1_title: "Comunicación y Estrategia Comercial",
-        skill_1_item_1: "Comunicación corporativa y digital",
-        skill_1_item_2: "Estrategia de marca y posicionamiento",
-        skill_1_item_3: "Gestión de campañas y contenidos",
-        skill_1_item_4: "Relaciones públicas y storytelling",
-        skill_2_title: "Soluciones Digitales | Excelencia de Marca",
-        skill_2_item_1: "Diseño UX/UI y experiencia de usuario",
-        skill_2_item_2: "Automatización y herramientas no-code",
-        skill_2_item_3: "Optimización de procesos digitales",
-        skill_2_item_4: "Gestión de identidad visual y coherencia de marca",
-        skill_3_title: "Gestión de Equipos y Desarrollo Técnico",
-        skill_3_item_1: "Liderazgo y coordinación de proyectos",
-        skill_3_item_2: "Trabajo colaborativo y metodologías ágiles",
-        skill_3_item_3: "HTML, CSS, JavaScript",
-        skill_3_item_4: "Git, GitHub, Bootstrap",
-        projects_section_title: "Proyectos Destacados",
-        project_1_title: "Proyecto 1",
-        project_1_description: "Breve descripción del proyecto, tecnologías usadas y objetivo alcanzado.",
-        project_2_title: "Proyecto 2",
-        project_2_description: "Breve descripción del proyecto, tecnologías usadas y objetivo alcanzado.",
-        project_3_title: "Proyecto 3",
-        project_3_description: "Breve descripción del proyecto, tecnologías usadas y objetivo alcanzado.",
-        project_4_title: "Proyecto 4",
-        project_4_description: "Breve descripción del proyecto, tecnologías usadas y objetivo alcanzado.",
-        project_5_title: "Proyecto 5",
-        project_5_description: "Breve descripción del proyecto, tecnologías usadas y objetivo alcanzado.",
-        project_6_title: "Proyecto 6",
-        project_6_description: "Breve descripción del proyecto, tecnologías usadas y objetivo alcanzado.",
-        contact_title: "¿Listo para impulsar tus ideas o tu negocio?",
-        contact_subtitle: "Estos son mis servicios principales",
-        service_1: "Marketing digital y soluciones digitales para empresas",
-        service_2: "Comunicación y estrategia comercial e impulso de marca",
-        service_3: "Gestión y dirección de equipos",
-        service_4: "Mantenimiento y mejoras de espacios web, impulso de ideas empresariales",
-        // Colores violetas originales
-        background_color: "#0f0a1f",
-        surface_color: "#1a0f2e",
-        text_color: "#e9d5ff",
-        primary_color: "#a855f7",
-        secondary_color: "#7c3aed",
-        font_family: "Inter",
-        font_size: 15
-      };
-
-      // Referencias a elementos
-      const bodyEl = document.body;
-      const navEl = document.getElementById("main-nav");
-      const brandEl = document.getElementById("brand-title");
-      const brandTextEl = brandEl ? brandEl.querySelector("span:last-child") : null;
-      const linkAbout = document.getElementById("link-about");
-      const linkTraining = document.getElementById("link-training");
-      const linkExperience = document.getElementById("link-experience");
-      const linkSkills = document.getElementById("link-skills");
-      const linkProjects = document.getElementById("link-projects");
-      const linkContact = document.getElementById("link-contact");
-      const navToggle = document.getElementById("nav-toggle");
-      const navLinks = document.getElementById("nav-links");
-      const heroTitle = document.getElementById("hero-title");
-      const heroSubtitle = document.getElementById("hero-subtitle");
-      const heroText = document.getElementById("hero-text");
-      const profileImage = document.getElementById("profileImage");
-      const profileImagePlaceholder = document.getElementById("profileImagePlaceholder");
-      const aboutTitle = document.getElementById("about-title");
-      const aboutParagraph1 = document.getElementById("about-paragraph-1");
-      const aboutParagraph2 = document.getElementById("about-paragraph-2");
-      const aboutParagraph3 = document.getElementById("about-paragraph-3");
-      const certificationsTitle = document.getElementById("certifications-title");
-      const certificationsSubtitle = document.getElementById("certifications-subtitle");
-      const experienceTitle = document.getElementById("experience-title");
-      const exp1Title = document.getElementById("exp-1-title");
-      const exp1Description = document.getElementById("exp-1-description");
-      const exp2Title = document.getElementById("exp-2-title");
-      const exp2Description = document.getElementById("exp-2-description");
-      const exp3Title = document.getElementById("exp-3-title");
-      const exp3Subtitle = document.getElementById("exp-3-subtitle");
-      const exp3Description = document.getElementById("exp-3-description");
-      const skillsTitle = document.getElementById("skills-title");
-      const skill1Title = document.getElementById("skill-1-title");
-      const skill1Item1 = document.getElementById("skill-1-item-1");
-      const skill1Item2 = document.getElementById("skill-1-item-2");
-      const skill1Item3 = document.getElementById("skill-1-item-3");
-      const skill1Item4 = document.getElementById("skill-1-item-4");
-      const skill2Title = document.getElementById("skill-2-title");
-      const skill2Item1 = document.getElementById("skill-2-item-1");
-      const skill2Item2 = document.getElementById("skill-2-item-2");
-      const skill2Item3 = document.getElementById("skill-2-item-3");
-      const skill2Item4 = document.getElementById("skill-2-item-4");
-      const skill3Title = document.getElementById("skill-3-title");
-      const skill3Item1 = document.getElementById("skill-3-item-1");
-      const skill3Item2 = document.getElementById("skill-3-item-2");
-      const skill3Item3 = document.getElementById("skill-3-item-3");
-      const skill3Item4 = document.getElementById("skill-3-item-4");
-      const projectsSectionTitle = document.getElementById("projects-title");
-      const project1Title = document.getElementById("project-1-title");
-      const project1Description = document.getElementById("project-1-description");
-      const project2Title = document.getElementById("project-2-title");
-      const project2Description = document.getElementById("project-2-description");
-      const project3Title = document.getElementById("project-3-title");
-      const project3Description = document.getElementById("project-3-description");
-      const project4Title = document.getElementById("project-4-title");
-      const project4Description = document.getElementById("project-4-description");
-      const project5Title = document.getElementById("project-5-title");
-      const project5Description = document.getElementById("project-5-description");
-      const project6Title = document.getElementById("project-6-title");
-      const project6Description = document.getElementById("project-6-description");
-      const contactTitle = document.getElementById("contact-title");
-      const contactSubtitle = document.getElementById("contact-subtitle");
-      const service1 = document.getElementById("service-1");
-      const service2 = document.getElementById("service-2");
-      const service3 = document.getElementById("service-3");
-      const service4 = document.getElementById("service-4");
-
-      // Función que aplica todos los cambios visuales basados en config
-      async function onConfigChange(config) {
-        const cfg = Object.assign({}, defaultConfig, config || {});
-        const baseFont = cfg.font_family || defaultConfig.font_family;
-        const baseSize = cfg.font_size || defaultConfig.font_size;
-
-        const fontStack = `${baseFont}, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif`;
-
-        // Colores principales
-        bodyEl.style.backgroundColor = cfg.background_color;
-        bodyEl.style.color = cfg.text_color;
-
-        if (navEl) {
-          navEl.style.backgroundColor = cfg.surface_color;
-          navEl.style.color = cfg.text_color;
-        }
-
-        // Textos de navegación
-        if (brandTextEl) brandTextEl.textContent = cfg.brand_title || defaultConfig.brand_title;
-        if (linkAbout) linkAbout.textContent = cfg.about_label || defaultConfig.about_label;
-        if (linkTraining) linkTraining.textContent = cfg.training_label || defaultConfig.training_label;
-        if (linkExperience) linkExperience.textContent = cfg.experience_label || defaultConfig.experience_label;
-        if (linkSkills) linkSkills.textContent = cfg.skills_label || defaultConfig.skills_label;
-        if (linkProjects) linkProjects.textContent = cfg.projects_label || defaultConfig.projects_label;
-        if (linkContact) linkContact.textContent = cfg.contact_label || defaultConfig.contact_label;
-
-        // Textos hero
-        if (heroTitle) heroTitle.textContent = cfg.hero_title || defaultConfig.hero_title;
-        if (heroSubtitle) heroSubtitle.textContent = cfg.hero_subtitle || defaultConfig.hero_subtitle;
-        if (heroText) heroText.textContent = cfg.hero_text || defaultConfig.hero_text;
-
-        // Foto de perfil
-        const imageUrl = cfg.profile_image_url || defaultConfig.profile_image_url;
-        if (profileImage && profileImagePlaceholder) {
-          if (imageUrl && imageUrl.trim() !== "") {
-            profileImage.src = imageUrl;
-            profileImage.style.display = "block";
-            profileImagePlaceholder.style.display = "none";
-          } else {
-            profileImage.style.display = "none";
-            profileImagePlaceholder.style.display = "flex";
-          }
-        }
-
-        // Textos sobre mí
-        if (aboutTitle) aboutTitle.textContent = cfg.about_title || defaultConfig.about_title;
-        if (aboutParagraph1) {
-          const text1 = cfg.about_paragraph_1 || defaultConfig.about_paragraph_1;
-          aboutParagraph1.innerHTML = text1.replace(/\*\*(.*?)\*\*/g, '<strong class="text-white">$1</strong>');
-        }
-        if (aboutParagraph2) {
-          const text2 = cfg.about_paragraph_2 || defaultConfig.about_paragraph_2;
-          aboutParagraph2.innerHTML = text2.replace(/\*\*(.*?)\*\*/g, '<strong class="text-white">$1</strong>');
-        }
-        if (aboutParagraph3) {
-          const text3 = cfg.about_paragraph_3 || defaultConfig.about_paragraph_3;
-          aboutParagraph3.innerHTML = text3.replace(/\*\*(.*?)\*\*/g, '<strong class="text-white">$1</strong>');
-        }
-
-        // Textos certificaciones
-        if (certificationsTitle) certificationsTitle.textContent = cfg.certifications_title || defaultConfig.certifications_title;
-        if (certificationsSubtitle) certificationsSubtitle.textContent = cfg.certifications_subtitle || defaultConfig.certifications_subtitle;
-
-        // Textos experiencia laboral
-        if (experienceTitle) experienceTitle.textContent = cfg.experience_title || defaultConfig.experience_title;
-        if (exp1Title) exp1Title.textContent = cfg.exp_1_title || defaultConfig.exp_1_title;
-        if (exp1Description) {
-          const text1 = cfg.exp_1_description || defaultConfig.exp_1_description;
-          exp1Description.innerHTML = text1.replace(/\*\*(.*?)\*\*/g, '<strong class="text-white">$1</strong>');
-        }
-        if (exp2Title) exp2Title.textContent = cfg.exp_2_title || defaultConfig.exp_2_title;
-        if (exp2Description) {
-          const text2 = cfg.exp_2_description || defaultConfig.exp_2_description;
-          exp2Description.innerHTML = text2
-            .replace(/\*\*(.*?)\*\*/g, '<strong class="text-white">$1</strong>')
-            .replace(/\*(.*?)\*/g, '<em class="text-purple-300">$1</em>');
-        }
-        if (exp3Title) exp3Title.textContent = cfg.exp_3_title || defaultConfig.exp_3_title;
-        if (exp3Subtitle) exp3Subtitle.textContent = cfg.exp_3_subtitle || defaultConfig.exp_3_subtitle;
-        if (exp3Description) {
-          const text3 = cfg.exp_3_description || defaultConfig.exp_3_description;
-          exp3Description.innerHTML = text3.replace(/\*\*(.*?)\*\*/g, '<strong class="text-white">$1</strong>');
-        }
-
-        // Textos contacto
-        if (contactTitle) contactTitle.textContent = cfg.contact_title || defaultConfig.contact_title;
-        if (contactSubtitle) contactSubtitle.textContent = cfg.contact_subtitle || defaultConfig.contact_subtitle;
-        if (service1) service1.textContent = cfg.service_1 || defaultConfig.service_1;
-        if (service2) service2.textContent = cfg.service_2 || defaultConfig.service_2;
-        if (service3) service3.textContent = cfg.service_3 || defaultConfig.service_3;
-        if (service4) service4.textContent = cfg.service_4 || defaultConfig.service_4;
-
-        // Tipografía y tamaños proporcionales
-        [bodyEl, navEl, brandEl, linkAbout, linkTraining, linkExperience, linkSkills, linkProjects, linkContact, heroTitle, heroSubtitle, heroText, aboutTitle, aboutParagraph1, aboutParagraph2, aboutParagraph3, certificationsTitle, certificationsSubtitle, experienceTitle, exp1Title, exp1Description, exp2Title, exp2Description, exp3Title, exp3Subtitle, exp3Description, contactTitle, contactSubtitle, service1, service2, service3, service4]
-          .forEach(function (el) {
-            if (!el) return;
-            el.style.fontFamily = fontStack;
-          });
-
-        if (brandTextEl) {
-          brandTextEl.style.fontSize = (baseSize * 1) + "px";
-        }
-
-        [linkAbout, linkTraining, linkExperience, linkSkills, linkProjects, linkContact].forEach(function (el) {
-          if (!el) return;
-          el.style.fontSize = baseSize + "px";
-        });
-
-        // Tamaños hero proporcionales
-        if (heroTitle) {
-          heroTitle.style.fontSize = (baseSize * 4) + "px";
-        }
-        if (heroSubtitle) {
-          heroSubtitle.style.fontSize = (baseSize * 1.8) + "px";
-          heroSubtitle.style.color = cfg.primary_color;
-        }
-        if (heroText) {
-          heroText.style.fontSize = (baseSize * 1.1) + "px";
-          heroText.style.color = cfg.text_color;
-        }
-
-        // Tamaños sección sobre mí
-        if (aboutTitle) {
-          aboutTitle.style.fontSize = (baseSize * 2.4) + "px";
-        }
-        if (aboutParagraph1) {
-          aboutParagraph1.style.fontSize = (baseSize * 1.2) + "px";
-          aboutParagraph1.style.color = cfg.text_color;
-        }
-        if (aboutParagraph2) {
-          aboutParagraph2.style.fontSize = (baseSize * 1.2) + "px";
-          aboutParagraph2.style.color = cfg.text_color;
-        }
-        if (aboutParagraph3) {
-          aboutParagraph3.style.fontSize = (baseSize * 1.2) + "px";
-          aboutParagraph3.style.color = cfg.text_color;
-        }
-
-        // Tamaños certificaciones
-        if (certificationsTitle) {
-          certificationsTitle.style.fontSize = (baseSize * 2) + "px";
-        }
-        if (certificationsSubtitle) {
-          certificationsSubtitle.style.fontSize = (baseSize * 1) + "px";
-        }
-
-        // Tamaños experiencia laboral
-        if (experienceTitle) {
-          experienceTitle.style.fontSize = (baseSize * 2.4) + "px";
-        }
-        [exp1Title, exp2Title, exp3Title].forEach(function (el) {
-          if (!el) return;
-          el.style.fontSize = (baseSize * 1.3) + "px";
-        });
-        if (exp3Subtitle) {
-          exp3Subtitle.style.fontSize = (baseSize * 0.9) + "px";
-        }
-        [exp1Description, exp2Description, exp3Description].forEach(function (el) {
-          if (!el) return;
-          el.style.fontSize = (baseSize * 1) + "px";
-          el.style.color = cfg.text_color;
-        });
-
-        // Textos proyectos
-        if (projectsSectionTitle) projectsSectionTitle.textContent = cfg.projects_section_title || defaultConfig.projects_section_title;
-        if (project1Title) project1Title.textContent = cfg.project_1_title || defaultConfig.project_1_title;
-        if (project1Description) project1Description.textContent = cfg.project_1_description || defaultConfig.project_1_description;
-        if (project2Title) project2Title.textContent = cfg.project_2_title || defaultConfig.project_2_title;
-        if (project2Description) project2Description.textContent = cfg.project_2_description || defaultConfig.project_2_description;
-        if (project3Title) project3Title.textContent = cfg.project_3_title || defaultConfig.project_3_title;
-        if (project3Description) project3Description.textContent = cfg.project_3_description || defaultConfig.project_3_description;
-        if (project4Title) project4Title.textContent = cfg.project_4_title || defaultConfig.project_4_title;
-        if (project4Description) project4Description.textContent = cfg.project_4_description || defaultConfig.project_4_description;
-        if (project5Title) project5Title.textContent = cfg.project_5_title || defaultConfig.project_5_title;
-        if (project5Description) project5Description.textContent = cfg.project_5_description || defaultConfig.project_5_description;
-        if (project6Title) project6Title.textContent = cfg.project_6_title || defaultConfig.project_6_title;
-        if (project6Description) project6Description.textContent = cfg.project_6_description || defaultConfig.project_6_description;
-
-        // Textos habilidades
-        if (skillsTitle) skillsTitle.textContent = cfg.skills_title || defaultConfig.skills_title;
-        if (skill1Title) skill1Title.textContent = cfg.skill_1_title || defaultConfig.skill_1_title;
-        if (skill1Item1) {
-          const span = skill1Item1.querySelector("span:last-child");
-          if (span) span.textContent = cfg.skill_1_item_1 || defaultConfig.skill_1_item_1;
-        }
-        if (skill1Item2) {
-          const span = skill1Item2.querySelector("span:last-child");
-          if (span) span.textContent = cfg.skill_1_item_2 || defaultConfig.skill_1_item_2;
-        }
-        if (skill1Item3) {
-          const span = skill1Item3.querySelector("span:last-child");
-          if (span) span.textContent = cfg.skill_1_item_3 || defaultConfig.skill_1_item_3;
-        }
-        if (skill1Item4) {
-          const span = skill1Item4.querySelector("span:last-child");
-          if (span) span.textContent = cfg.skill_1_item_4 || defaultConfig.skill_1_item_4;
-        }
-        if (skill2Title) skill2Title.textContent = cfg.skill_2_title || defaultConfig.skill_2_title;
-        if (skill2Item1) {
-          const span = skill2Item1.querySelector("span:last-child");
-          if (span) span.textContent = cfg.skill_2_item_1 || defaultConfig.skill_2_item_1;
-        }
-        if (skill2Item2) {
-          const span = skill2Item2.querySelector("span:last-child");
-          if (span) span.textContent = cfg.skill_2_item_2 || defaultConfig.skill_2_item_2;
-        }
-        if (skill2Item3) {
-          const span = skill2Item3.querySelector("span:last-child");
-          if (span) span.textContent = cfg.skill_2_item_3 || defaultConfig.skill_2_item_3;
-        }
-        if (skill2Item4) {
-          const span = skill2Item4.querySelector("span:last-child");
-          if (span) span.textContent = cfg.skill_2_item_4 || defaultConfig.skill_2_item_4;
-        }
-        if (skill3Title) skill3Title.textContent = cfg.skill_3_title || defaultConfig.skill_3_title;
-        if (skill3Item1) {
-          const span = skill3Item1.querySelector("span:last-child");
-          if (span) span.textContent = cfg.skill_3_item_1 || defaultConfig.skill_3_item_1;
-        }
-        if (skill3Item2) {
-          const span = skill3Item2.querySelector("span:last-child");
-          if (span) span.textContent = cfg.skill_3_item_2 || defaultConfig.skill_3_item_2;
-        }
-        if (skill3Item3) {
-          const span = skill3Item3.querySelector("span:last-child");
-          if (span) span.textContent = cfg.skill_3_item_3 || defaultConfig.skill_3_item_3;
-        }
-        if (skill3Item4) {
-          const span = skill3Item4.querySelector("span:last-child");
-          if (span) span.textContent = cfg.skill_3_item_4 || defaultConfig.skill_3_item_4;
-        }
-
-        // Tamaños proyectos
-        if (projectsSectionTitle) {
-          projectsSectionTitle.style.fontSize = (baseSize * 2.4) + "px";
-        }
-        [project1Title, project2Title, project3Title, project4Title, project5Title, project6Title].forEach(function (el) {
-          if (!el) return;
-          el.style.fontSize = (baseSize * 1.3) + "px";
-        });
-        [project1Description, project2Description, project3Description, project4Description, project5Description, project6Description].forEach(function (el) {
-          if (!el) return;
-          el.style.fontSize = (baseSize * 0.9) + "px";
-          el.style.color = cfg.text_color;
-        });
-
-        // Tamaños habilidades
-        if (skillsTitle) {
-          skillsTitle.style.fontSize = (baseSize * 2.4) + "px";
-        }
-        [skill1Title, skill2Title, skill3Title].forEach(function (el) {
-          if (!el) return;
-          el.style.fontSize = (baseSize * 1.3) + "px";
-        });
-        [skill1Item1, skill1Item2, skill1Item3, skill1Item4, skill2Item1, skill2Item2, skill2Item3, skill2Item4, skill3Item1, skill3Item2, skill3Item3, skill3Item4].forEach(function (el) {
-          if (!el) return;
-          el.style.fontSize = (baseSize * 0.9) + "px";
-          el.style.color = cfg.text_color;
-        });
-
-        // Tamaños contacto
-        if (contactTitle) {
-          contactTitle.style.fontSize = (baseSize * 2.4) + "px";
-        }
-        if (contactSubtitle) {
-          contactSubtitle.style.fontSize = (baseSize * 1.2) + "px";
-        }
-        [service1, service2, service3, service4].forEach(function (el) {
-          if (!el) return;
-          el.style.fontSize = (baseSize * 1) + "px";
-          el.style.color = cfg.text_color;
-        });
-
-        if (linkContact) {
-          linkContact.style.borderColor = cfg.primary_color;
-        }
-
-        // Aplicar color primario al hover del botón contacto
-        if (linkContact) {
-          linkContact.addEventListener("mouseenter", function() {
-            this.style.backgroundColor = cfg.primary_color;
-            this.style.color = cfg.background_color;
-          });
-          linkContact.addEventListener("mouseleave", function() {
-            this.style.backgroundColor = "transparent";
-            this.style.color = "#ffffff";
-          });
-        }
-      }
-
-      // Capabilities para recolor, tipografía, tamaño
-      function mapToCapabilities(config) {
-        const cfg = Object.assign({}, defaultConfig, config || {});
-        return {
-          recolorables: [
-            {
-              get: () => cfg.background_color,
-              set: (value) => {
-                cfg.background_color = value;
-                if (window.elementSdk) {
-                  window.elementSdk.setConfig({ background_color: value });
-                }
-              }
-            },
-            {
-              get: () => cfg.surface_color,
-              set: (value) => {
-                cfg.surface_color = value;
-                if (window.elementSdk) {
-                  window.elementSdk.setConfig({ surface_color: value });
-                }
-              }
-            },
-            {
-              get: () => cfg.text_color,
-              set: (value) => {
-                cfg.text_color = value;
-                if (window.elementSdk) {
-                  window.elementSdk.setConfig({ text_color: value });
-                }
-              }
-            },
-            {
-              get: () => cfg.primary_color,
-              set: (value) => {
-                cfg.primary_color = value;
-                if (window.elementSdk) {
-                  window.elementSdk.setConfig({ primary_color: value });
-                }
-              }
-            },
-            {
-              get: () => cfg.secondary_color,
-              set: (value) => {
-                cfg.secondary_color = value;
-                if (window.elementSdk) {
-                  window.elementSdk.setConfig({ secondary_color: value });
-                }
-              }
-            }
-          ],
-          borderables: [],
-          fontEditable: {
-            get: () => cfg.font_family,
-            set: (value) => {
-              cfg.font_family = value;
-              if (window.elementSdk) {
-                window.elementSdk.setConfig({ font_family: value });
-              }
-            }
-          },
-          fontSizeable: {
-            get: () => cfg.font_size,
-            set: (value) => {
-              cfg.font_size = value;
-              if (window.elementSdk) {
-                window.elementSdk.setConfig({ font_size: value });
-              }
-            }
-          }
-        };
-      }
-
-      // Valores que verá el panel de edición de texto
-      function mapToEditPanelValues(config) {
-        const cfg = Object.assign({}, defaultConfig, config || {});
-        return new Map([
-          ["brand_title", cfg.brand_title],
-          ["about_label", cfg.about_label],
-          ["training_label", cfg.training_label],
-          ["experience_label", cfg.experience_label],
-          ["skills_label", cfg.skills_label],
-          ["projects_label", cfg.projects_label],
-          ["contact_label", cfg.contact_label],
-          ["hero_title", cfg.hero_title],
-          ["hero_subtitle", cfg.hero_subtitle],
-          ["hero_text", cfg.hero_text],
-          ["profile_image_url", cfg.profile_image_url],
-          ["about_title", cfg.about_title],
-          ["about_paragraph_1", cfg.about_paragraph_1],
-          ["about_paragraph_2", cfg.about_paragraph_2],
-          ["about_paragraph_3", cfg.about_paragraph_3],
-          ["certifications_title", cfg.certifications_title],
-          ["certifications_subtitle", cfg.certifications_subtitle],
-          ["experience_title", cfg.experience_title],
-          ["exp_1_title", cfg.exp_1_title],
-          ["exp_1_description", cfg.exp_1_description],
-          ["exp_2_title", cfg.exp_2_title],
-          ["exp_2_description", cfg.exp_2_description],
-          ["exp_3_title", cfg.exp_3_title],
-          ["exp_3_subtitle", cfg.exp_3_subtitle],
-          ["exp_3_description", cfg.exp_3_description],
-          ["skills_title", cfg.skills_title],
-          ["skill_1_title", cfg.skill_1_title],
-          ["skill_1_item_1", cfg.skill_1_item_1],
-          ["skill_1_item_2", cfg.skill_1_item_2],
-          ["skill_1_item_3", cfg.skill_1_item_3],
-          ["skill_1_item_4", cfg.skill_1_item_4],
-          ["skill_2_title", cfg.skill_2_title],
-          ["skill_2_item_1", cfg.skill_2_item_1],
-          ["skill_2_item_2", cfg.skill_2_item_2],
-          ["skill_2_item_3", cfg.skill_2_item_3],
-          ["skill_2_item_4", cfg.skill_2_item_4],
-          ["skill_3_title", cfg.skill_3_title],
-          ["skill_3_item_1", cfg.skill_3_item_1],
-          ["skill_3_item_2", cfg.skill_3_item_2],
-          ["skill_3_item_3", cfg.skill_3_item_3],
-          ["skill_3_item_4", cfg.skill_3_item_4],
-          ["projects_section_title", cfg.projects_section_title],
-          ["project_1_title", cfg.project_1_title],
-          ["project_1_description", cfg.project_1_description],
-          ["project_2_title", cfg.project_2_title],
-          ["project_2_description", cfg.project_2_description],
-          ["project_3_title", cfg.project_3_title],
-          ["project_3_description", cfg.project_3_description],
-          ["project_4_title", cfg.project_4_title],
-          ["project_4_description", cfg.project_4_description],
-          ["project_5_title", cfg.project_5_title],
-          ["project_5_description", cfg.project_5_description],
-          ["project_6_title", cfg.project_6_title],
-          ["project_6_description", cfg.project_6_description],
-          ["contact_title", cfg.contact_title],
-          ["contact_subtitle", cfg.contact_subtitle],
-          ["service_1", cfg.service_1],
-          ["service_2", cfg.service_2],
-          ["service_3", cfg.service_3],
-          ["service_4", cfg.service_4]
-        ]);
-      }
-      
-
-      // Inicializar Element SDK si está disponible
-      if (window.elementSdk && typeof window.elementSdk.init === "function") {
-        window.elementSdk.init({
-          defaultConfig: defaultConfig,
-          onConfigChange: onConfigChange,
-          mapToCapabilities: mapToCapabilities,
-          mapToEditPanelValues: mapToEditPanelValues
-        });
-      } else {
-        // Sin SDK, aplicar configuración por defecto
-        onConfigChange(defaultConfig);
-      }
-
-      // Toggle menú móvil
-      if (navToggle && navLinks) {
-        navToggle.addEventListener("click", function () {
-          const isOpen = navLinks.classList.contains("flex");
-          if (isOpen) {
-            navLinks.classList.remove("flex");
-            navLinks.classList.add("hidden");
-            navToggle.setAttribute("aria-expanded", "false");
-          } else {
-            navLinks.classList.remove("hidden");
-            navLinks.classList.add("flex");
-            navLinks.classList.add("flex-col", "lg:flex-row", "lg:items-center");
-            navToggle.setAttribute("aria-expanded", "true");
-          }
-        });
-      }
-
-      // Funcionalidad del desplegable de certificaciones - SIMPLIFICADO
-      const dropdownButton = document.getElementById("dropdownButton");
-      const dropdownMenu = document.getElementById("dropdownMenu");
-      const buttonText = document.getElementById("buttonText");
-      const dropdownIcon = document.getElementById("dropdownIcon");
-
-      if (dropdownButton && dropdownMenu) {
-        dropdownButton.addEventListener("click", function(e) {
-          e.preventDefault();
-          
-          if (dropdownMenu.style.display === "none" || dropdownMenu.style.display === "") {
-            // Abrir
-            dropdownMenu.style.display = "block";
-            dropdownButton.setAttribute("aria-expanded", "true");
-            dropdownMenu.setAttribute("aria-hidden", "false");
-            if (buttonText) buttonText.textContent = "Ocultar Certificaciones";
-            if (dropdownIcon) dropdownIcon.style.transform = "rotate(180deg)";
-          } else {
-            // Cerrar
-            dropdownMenu.style.display = "none";
-            dropdownButton.setAttribute("aria-expanded", "false");
-            dropdownMenu.setAttribute("aria-hidden", "true");
-            if (buttonText) buttonText.textContent = "Ver Certificaciones";
-            if (dropdownIcon) dropdownIcon.style.transform = "rotate(0deg)";
-          }
-        });
-      }
-    })();
-
-  </script>
-  
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9a0b25a861ffcbe7',t:'MTc2MzUwNzQ4OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</body>
 </html>
